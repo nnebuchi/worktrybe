@@ -1,539 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="./assets/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet" />
     <title>Work Trybe</title>
-</head>
-<body>
-    <header class="bg-main px-5 sticky-top">
-        <nav class="navbar navbar-expand-lg ">
-            <div class="container-fluid">
-              <a class="navbar-brand text-sub bold text-italic" href="#"><img src="./assets/images/logo_c.png" height="60"  alt=""></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                  </li>
-                  
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Explore
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Admin Assistant</a></li>
-                      <li><a class="dropdown-item" href="#">Graphics Designer</a></li>
-                      <li><a class="dropdown-item" href="#">Shortlet Manager</a></li>
-                      
-                    </ul>
-                  </li>
+  </head>
+  <body>
+    <header class="px-5 sticky-top worktrybe-header">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand text-sub bold text-italic" href="#"
+            ><img src="./assets/images/logo_c.png" height="60" alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact us</a>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Explore
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Admin Assistant</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Graphics Designer</a>
                   </li>
-                 
+                  <li>
+                    <a class="dropdown-item" href="#">Shortlet Manager</a>
+                  </li>
                 </ul>
-                <form class="d-flex me-3" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-transparent nav-search-input" placeholder="Search for virtual talents" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <span class="input-group-text nav-search-icon-holder" id="basic-addon2"><i class="bi bi-search"></i></span>
-                    </div>
-                </form>
-                <div>
-                    <button class="btn btn-light">Login</button>
-                    <button class="btn btn-sub">Sign Up</button>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+              </li>
+            </ul>
+            <div
+              class="col-6 d-flex justify-content-lg-between gap-4 align-items-center">
+              <form class="d-flex col-6 h-50" role="search">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control bg-transparent nav-search-input"
+                    placeholder="Search for virtual talents"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" />
+                  <span
+                    class="input-group-text nav-search-icon-holder"
+                    id="basic-addon2"
+                    ><i class="bi bi-search"></i
+                  ></span>
                 </div>
-              </div>
+              </form>
+
+              <button class="btn btn-light">Login</button>
+              <button class="btn btn-sub">Sign Up</button>
             </div>
-          </nav>
+          </div>
+        </div>
+      </nav>
     </header>
     <section class="hero px-5">
-        <div class="row">
-            
-             <div class="col-lg-6 text-center d-flex flex-column align-items-center justify-content-center position-relative">
-                <h1 class="text-white"><b>  Get the job done </b><br> <span > with the right <span class="text-white">talents</span></span></h1>
-                <p class="text-white mt-3">Connecting your business to affordable excellent workforce</p>
-                <div class="d-flex justify-content-between flex-row mt-5">
-                    <a href="" class="btn-sub btn btn-lg me-5">Start Hiring</a>
-                    <a href="" class="btn-outline-light btn btn-lg">Join our workforce</a>
-                </div>
-                
-             </div>
-             <div class="col-lg-6 py-5 hero-right">
-                <img src="./assets/images/hero-img.png" alt="">
-             </div>
-             
-             
+      <div class="row justify-content-evenly">
+        <div
+          class="col-lg-7 text-center d-flex flex-column align-items-start justify-content-center position-relative">
+          <h1 class="text-white">
+            <b> Get the job done </b><br />
+            <span> with the right <span class="text-white">talents</span></span>
+          </h1>
+          <p class="text-white mt-3 wt-body-1">
+            Connecting your business to affordable excellent workforce
+          </p>
+          <div class="d-flex justify-content-start mt-5 gap-5 col-8">
+            <a href="" class="btn-sub btn btn-lg">Start Hiring</a>
+            <a href="" class="btn-outline-light btn btn-lg"
+              >Join our workforce</a
+            >
+          </div>
         </div>
+        <div class="col-lg-5 py-5 hero-right">
+          <img src="./assets/images/hero-img.png" alt="" />
+        </div>
+      </div>
     </section>
     <section class="talent-categories py-5 px-5 bg-light position-relative">
-        <div class="row">
-            <div class="col-12">
-                <h3>Find Talents By Categories</h3>
-            </div>
-            <a href="" class="text-dark col-lg-3 col-md-4 col-sm-6 col-12 p-3">
-                <div class="p-2 category bg-main-light rounded category-box">
-                    <div class="row justify-content-between">
-                        <div class="col-9">
-                            <h6>Customer Support Assistants</h6>
-                        </div>
-                        <div class="col-3 text-end">
-                            <h6><i class="bi bi-people"></i> 50</h6>
-                        </div>
-                        <div class="col-10 text-sub">
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-half"></i></span>
-                            <span><i class="bi bi-star"></i></span>
-                        </div>
-                        <div class="col-2">
-                            3.5
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </a>
-
-            <a href="" class="text-dark col-lg-3 col-md-4 col-sm-6 col-12 p-3">
-                <div class="p-2 category bg-main-light rounded category-box">
-                    <div class="row justify-content-between">
-                        <div class="col-9">
-                            <h6>Software & Coding</h6>
-                        </div>
-                        <div class="col-3 text-end">
-                            <h6><i class="bi bi-people"></i> 50</h6>
-                        </div>
-                        <div class="col-10 text-sub">
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-half"></i></span>
-                            <span><i class="bi bi-star"></i></span>
-                        </div>
-                        <div class="col-2">
-                            3.5
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </a>
-
-            <a href="" class="text-dark col-lg-3 col-md-4 col-sm-6 col-12 p-3">
-                <div class="p-2 category bg-main-light rounded category-box">
-                    <div class="row justify-content-between">
-                        <div class="col-9">
-                            <h6>Design Assistants</h6>
-                        </div>
-                        <div class="col-3 text-end">
-                            <h6><i class="bi bi-people"></i> 50</h6>
-                        </div>
-                        <div class="col-10 text-sub">
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-half"></i></span>
-                            <span><i class="bi bi-star"></i></span>
-                        </div>
-                        <div class="col-2">
-                            3.5
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </a>
-
-            <a href="" class="text-dark col-lg-3 col-md-4 col-sm-6 col-12 p-3">
-                <div class="p-2 category bg-main-light rounded category-box">
-                    <div class="row justify-content-between">
-                        <div class="col-9">
-                            <h6>Admin Assistants</h6>
-                        </div>
-                        <div class="col-3 text-end">
-                            <h6><i class="bi bi-people"></i> 50</h6>
-                        </div>
-                        <div class="col-10 text-sub">
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-half"></i></span>
-                            <span><i class="bi bi-star"></i></span>
-                        </div>
-                        <div class="col-2">
-                            3.5
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </a>
-
-            <a href="" class="text-dark col-lg-3 col-md-4 col-sm-6 col-12 p-3">
-                <div class="p-2 category bg-main-light rounded category-box">
-                    <div class="row justify-content-between">
-                        <div class="col-9">
-                            <h6>Executive Assistants</h6>
-                        </div>
-                        <div class="col-3 text-end">
-                            <h6><i class="bi bi-people"></i> 50</h6>
-                        </div>
-                        <div class="col-10 text-sub">
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-half"></i></span>
-                            <span><i class="bi bi-star"></i></span>
-                        </div>
-                        <div class="col-2">
-                            3.5
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </a>
-
-            <a href="" class="text-dark col-lg-3 col-md-4 col-sm-6 col-12 p-3">
-                <div class="p-2 category bg-main-light rounded category-box">
-                    <div class="row justify-content-between">
-                        <div class="col-9">
-                            <h6>Shortlet Assistants</h6>
-                        </div>
-                        <div class="col-3 text-end">
-                            <h6><i class="bi bi-people"></i> 50</h6>
-                        </div>
-                        <div class="col-10 text-sub">
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-half"></i></span>
-                            <span><i class="bi bi-star"></i></span>
-                        </div>
-                        <div class="col-2">
-                            3.5
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </a>
-
-            <a href="" class="text-dark col-lg-3 col-md-4 col-sm-6 col-12 p-3">
-                <div class="p-2 category bg-main-light rounded category-box">
-                    <div class="row justify-content-between">
-                        <div class="col-9">
-                            <h6>Software & IT</h6>
-                        </div>
-                        <div class="col-3 text-end">
-                            <h6><i class="bi bi-people"></i> 50</h6>
-                        </div>
-                        <div class="col-10 text-sub">
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-half"></i></span>
-                            <span><i class="bi bi-star"></i></span>
-                        </div>
-                        <div class="col-2">
-                            3.5
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </a>
-            
-            <a href="" class="text-dark col-lg-3 col-md-4 col-sm-6 col-12 p-3">
-                <div class="p-2 category bg-main-light rounded category-box">
-                    <div class="row justify-content-between">
-                        <div class="col-9">
-                            <h6>Software & IT</h6>
-                        </div>
-                        <div class="col-3 text-end">
-                            <h6><i class="bi bi-people"></i> 50</h6>
-                        </div>
-                        <div class="col-10 text-sub">
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-fill"></i></span>
-                            <span><i class="bi bi-star-half"></i></span>
-                            <span><i class="bi bi-star"></i></span>
-                        </div>
-                        <div class="col-2">
-                            3.5
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </a>
+      <div class="row justify-content-evenly row-gap-4">
+        <div class="col-12">
+          <h3>Find Talents By Categories</h3>
         </div>
+        <a
+          href=""
+          class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
+          <div class="category-box">
+            <div class="row justify-content-start">
+              <div class="col-9">
+                <h6>Customer Support Assistants</h6>
+              </div>
+              <div class="col-3 text-end">
+                <h6><i class="bi bi-people fs-5"></i> 50</h6>
+              </div>
+              <div class="col-10 text-sub">
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-half"></i></span>
+                <span><i class="bi bi-star"></i></span>
+              </div>
+              <div class="col-2">3.5</div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href=""
+          class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
+          <div class="category-box">
+            <div class="row justify-content-evenly">
+              <div class="col-9">
+                <h6>Software & Coding</h6>
+              </div>
+              <div class="col-3 text-end">
+                <h6><i class="bi bi-people fs-5"></i> 50</h6>
+              </div>
+              <div class="col-10 text-sub">
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-half"></i></span>
+                <span><i class="bi bi-star"></i></span>
+              </div>
+              <div class="col-2">3.5</div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href=""
+          class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
+          <div class="category-box">
+            <div class="row justify-content-evenly">
+              <div class="col-9">
+                <h6>Design Assistants</h6>
+              </div>
+              <div class="col-3 text-end">
+                <h6><i class="bi bi-people fs-5"></i> 50</h6>
+              </div>
+              <div class="col-10 text-sub">
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-half"></i></span>
+                <span><i class="bi bi-star"></i></span>
+              </div>
+              <div class="col-2">3.5</div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href=""
+          class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
+          <div class="category-box">
+            <div class="row justify-content-evenly">
+              <div class="col-9">
+                <h6>Admin Assistants</h6>
+              </div>
+              <div class="col-3 text-end">
+                <h6><i class="bi bi-people fs-5"></i> 50</h6>
+              </div>
+              <div class="col-10 text-sub">
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-half"></i></span>
+                <span><i class="bi bi-star"></i></span>
+              </div>
+              <div class="col-2">3.5</div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href=""
+          class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
+          <div class="category-box">
+            <div class="row justify-content-evenly">
+              <div class="col-9">
+                <h6>Executive Assistants</h6>
+              </div>
+              <div class="col-3 text-end">
+                <h6><i class="bi bi-people fs-5"></i> 50</h6>
+              </div>
+              <div class="col-10 text-sub">
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-half"></i></span>
+                <span><i class="bi bi-star"></i></span>
+              </div>
+              <div class="col-2">3.5</div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href=""
+          class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
+          <div class="category-box">
+            <div class="row justify-content-evenly">
+              <div class="col-9">
+                <h6>Shortlet Assistants</h6>
+              </div>
+              <div class="col-3 text-end">
+                <h6><i class="bi bi-people fs-5"></i> 50</h6>
+              </div>
+              <div class="col-10 text-sub">
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-half"></i></span>
+                <span><i class="bi bi-star"></i></span>
+              </div>
+              <div class="col-2">3.5</div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href=""
+          class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
+          <div class="category-box">
+            <div class="row justify-content-evenly">
+              <div class="col-9">
+                <h6>Software & IT</h6>
+              </div>
+              <div class="col-3 text-end">
+                <h6><i class="bi bi-people fs-5"></i> 50</h6>
+              </div>
+              <div class="col-10 text-sub">
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-half"></i></span>
+                <span><i class="bi bi-star"></i></span>
+              </div>
+              <div class="col-2">3.5</div>
+            </div>
+          </div>
+        </a>
+
+        <a
+          href=""
+          class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
+          <div class="category-box">
+            <div class="row justify-content-evenly">
+              <div class="col-9">
+                <h6>Software & IT</h6>
+              </div>
+              <div class="col-3 text-end">
+                <h6><i class="bi bi-people fs-5"></i> 50</h6>
+              </div>
+              <div class="col-10 text-sub">
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-fill"></i></span>
+                <span><i class="bi bi-star-half"></i></span>
+                <span><i class="bi bi-star"></i></span>
+              </div>
+              <div class="col-2">3.5</div>
+            </div>
+          </div>
+        </a>
+      </div>
     </section>
-    <section class="bg-light value px-5 py-5">
-        <div class="row value-holder ">
-            <div class="col-7 value-left px-3 py-4 bg-sub-light">
-                <h6>Innopower Initiative</h6>
-                <h2>Bridging the <span class="text-white">Capacity Gap</span> for Minority Businesses</h2>
-                <p>We provide a unique platform that empowers minority businesses in the U.S. to overcome capacity challenges and reach their full potential.</p>
-                <div class="row mb-3">
-                    <div class="col-1 value-icon text-main"><i class="bi bi-person-check"></i></div>
-                    <div class="col-11"> <b>Screened:</b> <span>All our virtual assistants undergo a comprehensive screening process to ensure the highest quality.</span></div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-1 value-icon text-main"><i class="bi bi-patch-check"></i></div>
-                    <div class="col-11"> <b>Trained:</b> <span>We provide ongoing training to enhance their skills and ensure they are well-equipped to meet your needs.</span></div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-1 value-icon text-main"><i class="bi bi-headset"></i></div>
-                    <div class="col-11"> <b>Dedicated:</b> <span>Our team provides ongoing support and guidance to ensure a smooth and productive working relationship.</span></div>
-                </div>
-
-                <a href="" class="btn btn-light mt-3">Learn More</a>
+    <section class="bg-main-light value">
+      <div class="row value-holder">
+        <div
+          class="col-7 value-left px-5 bg-sub-light flex-column flex justify-content-center align-content-center">
+          <h6 class="wt-body-1 text-dark">Innopower Initiative</h6>
+          <h2>
+            Bridging the <span class="text-white">Capacity Gap</span> for
+            Minority Businesses
+          </h2>
+          <p class="wt-body-2 text-dark">
+            We provide a unique platform that empowers minority businesses in
+            the U.S. to overcome capacity challenges and reach their full
+            potential.
+          </p>
+          <div class="row mb-3 wt-body">
+            <div class="col-1 value-icon text-main">
+              <i class="bi bi-person-check"></i>
             </div>
-            <div class="col-5 value-right"></div>
+            <div class="col-11 wt-body-3 text-dark">
+              <b>Screened:</b>
+              <span
+                >All our virtual assistants undergo a comprehensive screening
+                process to ensure the highest quality.</span
+              >
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-1 value-icon">
+              <i class="bi bi-patch-check"></i>
+            </div>
+            <div class="col-11 wt-body-3 text-dark">
+              <b>Trained:</b>
+              <span
+                >We provide ongoing training to enhance their skills and ensure
+                they are well-equipped to meet your needs.</span
+              >
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-1 value-icon text-main">
+              <i class="bi bi-headset"></i>
+            </div>
+            <div class="col-11 wt-body-3 text-dark">
+              <b>Dedicated:</b>
+              <span
+                >Our team provides ongoing support and guidance to ensure a
+                smooth and productive working relationship.</span
+              >
+            </div>
+          </div>
+
+          <a href="" class="btn btn-light mt-3">Learn More</a>
         </div>
+        <div class="col-5 value-right"></div>
+      </div>
     </section>
 
     <section class="bg-main-dark partners p-5">
-        <div class="row">
-            <div class="col-12">
-                <h3 class="text-white">Our Top Partners</h3>
-            </div>
-            <div class="col-md-3 col-6 p-1">
-                <img src="./assets/images/partners/indybiz-pass.png" alt="Google" class="h-12">
-            </div>
-            <div class="col-md-3 col-6 p-1">
-                <img src="./assets/images/partners/innopower.png" alt="Google" class="h-12">
-            </div>
-            <div class="col-md-3 col-6 p-1">
-                <img src="./assets/images/partners/javat.png" alt="Google" class="h-12">
-            </div>
-            <div class="col-md-3 col-6 p-1">
-                <img src="./assets/images/partners/aett.png" alt="Google" class="h-12">
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-white">Our Top Partners</h3>
         </div>
+        <div class="col-md-3 col-6 p-1">
+          <img
+            src="./assets/images/partners/indybiz-pass.png"
+            alt="Google"
+            class="h-12" />
+        </div>
+        <div class="col-md-3 col-6 p-1">
+          <img
+            src="./assets/images/partners/innopower.png"
+            alt="Google"
+            class="h-12" />
+        </div>
+        <div class="col-md-3 col-6 p-1">
+          <img
+            src="./assets/images/partners/javat.png"
+            alt="Google"
+            class="h-12" />
+        </div>
+        <div class="col-md-3 col-6 p-1">
+          <img
+            src="./assets/images/partners/aett.png"
+            alt="Google"
+            class="h-12" />
+        </div>
+      </div>
     </section>
 
-    <section class="made-by-us p-5 ">
-        <div class="row bg-main-light made-row p-3">
-            <div class="col-12">
-                <h3 class="text-dark">Made by Our Talents</h3>
-            </div>
-            <div class="col-md-4 p-3 proof">
-                <div id="videoContainer" class="position-relative text-center video-wrapper"
-                    style="background-image: url(./assets/images/proof/video-poster.avif);">
-                    <div class="overlay position-absolute"></div>
-                    <div class="proof-text-action position-absolute d-flex flex-column justify-content-end align-items-center pb-3">
-                        <h5 class="text-white">Video Jingle</h5>
-                        <button id="playButton" class="btn btn-light">Play Video <span><i class="bi bi-play-circle"></i></span></button>
-                    </div>
-                </div>
-            </div>
-            
-
-            <div class="col-md-4 p-3 proof">
-                <div class="position-relative text-center" style="background-image: url(./assets/images/proof/website-sample.png); background-size: cover; background-position: center;">
-                    <div class="overlay position-absolute"></div>
-                    <div class="proof-text-action position-absolute d-flex flex-column justify-content-end align-items-center pb-3">
-                        <h5 class="text-white">Website </h5>
-                        <a href="https://imbw.org" target="_blank" class="btn btn-light">view website <span><i class="bi bi-link"></i></span></a>
-                    </div>
-                </div>
-                
-            </div>
-
-
-            <div class="col-md-4 p-3 proof">
-                <div class="position-relative text-center bg-light text-main-dark p-2" >
-                    <div class="position-absolute">
-                         <h4 class="">Sarah Jones </h4>
-                    <p>"InnoPower has provided me with the support I need to scale my business. Their virtual assistants have freed up my time so I can focus on what matters most."</p>
-                    </div>
-                   
-                    <div class="proof-text-action-2 position-absolute d-flex flex-column justify-content-end align-items-center pb-3">
-                        <h5 class="text-dark bg-sub p-2 border-main">A Happy Client </h5>
-                       
-                    </div>
-                </div>
-                
-            </div>
+    <section class="made-by-us p-5">
+      <div class="row bg-main-light made-row p-3">
+        <div class="col-12">
+          <h3 class="text-dark">Made by Our Talents</h3>
         </div>
+        <div class="col-md-4 p-3 proof">
+          <div
+            id="videoContainer"
+            class="position-relative text-center video-wrapper"
+            style="
+              background-image: url(./assets/images/proof/video-poster.avif);
+            ">
+            <div class="overlay position-absolute"></div>
+            <div
+              class="proof-text-action position-absolute d-flex flex-column justify-content-end align-items-center pb-3">
+              <h5 class="text-white">Video Jingle</h5>
+              <button id="playButton" class="btn btn-light flex gap-2 w-50">
+                Play Video <span><i class="bi bi-play-circle"></i></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 p-3 proof">
+          <div
+            class="position-relative text-center"
+            style="
+              background-image: url(./assets/images/proof/website-sample.png);
+              background-size: cover;
+              background-position: center;
+            ">
+            <div class="overlay position-absolute"></div>
+            <div
+              class="proof-text-action position-absolute d-flex flex-column justify-content-end align-items-center pb-3">
+              <h5 class="text-white">Website</h5>
+              <a
+                href="https://imbw.org"
+                target="_blank"
+                class="btn btn-light flex gap-2 w-50"
+                >view website <span><i class="bi bi-link"></i></span
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3 proof">
+          <div
+            class="position-relative text-center"
+            style="
+              background-image: url(./assets/images/proof/website-sample.png);
+              background-size: cover;
+              background-position: center;
+            ">
+            <div class="overlay position-absolute"></div>
+            <div
+              class="proof-text-action position-absolute d-flex flex-column justify-content-end align-items-center pb-3">
+              <h5 class="text-white">Website</h5>
+              <a
+                href="https://imbw.org"
+                target="_blank"
+                class="btn btn-light flex gap-2 w-50"
+                >view website <span><i class="bi bi-link"></i></span
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="col-md-4 p-3 proof">
+          <div
+            class="position-relative text-center bg-light text-main-dark p-4">
+            <div class="position-absolute">
+              <h4 class="">Sarah Jones</h4>
+              <p>
+                "InnoPower has provided me with the support I need to scale my
+                business. Their virtual assistants have freed up my time so I
+                can focus on what matters most."
+              </p>
+            </div>
+
+            <div
+              class="proof-text-action-2 position-absolute d-flex flex-column justify-content-end align-items-center pb-3">
+              <h5 class="text-dark bg-sub p-2 border-main">A Happy Client</h5>
+            </div>
+          </div>
+        </div> -->
+      </div>
     </section>
 
     <section class="client-section p-5">
-        <div class="row">
-            <div class="col-12">
-                <div class="client-info position-relative">
-                    <div class="overlay"></div>
-                    <div class="row pt-5 px-4 position-absolute client-info-inner">
-                        <div class="col-5">
-                            <h2 class="text-white">Hire a workforce  that enables your Business to thrive  </h2>
-                            <p class="text-white mt-5 hire-value">We provide a unique platform that empowers minority businesses in the U.S. to overcome capacity challenges and reach their full potential.</p>
-                        </div>
-                        <div class="row">
-                            
-                            <div class="col-4">
-                                <div class="hire-step p-2 d-flex flex-column justify-content-between">
-                                    <h3 class="">Schedule a Meeting with us</h3>
-                                    <p>The first step is to schedule a meeting with us so we understand what you need</p>
-                                    <a href="" class=" hire-action">Schedule meeting <i class="bi bi-arrow-right"></i> </a>
-                                </div>
-                                
-                            </div>
-
-                            <div class="col-4">
-                                <div class="hire-step p-2 d-flex flex-column justify-content-between">
-                                    <h3 class="">Access selected talents</h3>
-                                    <p>After meeting with us, we give you our top three (3) available talents in your niche for accessment</p>
-                                    <a href="" class=" hire-action">Schedule meeting <i class="bi bi-arrow-right"></i> </a>
-                                </div>
-                                
-                            </div>
-
-                            <div class="col-4">
-                                <div class="hire-step p-2 d-flex flex-column justify-content-between">
-                                    <h3 class="">Contracts and Briefs</h3>
-                                    <p>Once you pick your preferred talent, we will send you our contract document for signing</p>
-                                    <a href="" class=" hire-action">Schedule meeting <i class="bi bi-arrow-right"></i> </a>
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="client-info position-relative">
+            <div class="overlay"></div>
+            <div class="row pt-5 px-4 position-absolute client-info-inner">
+              <div class="col-7">
+                <h2 class="text-white">
+                  Hire a workforce that enables your Business to thrive
+                </h2>
+                <p class="text-white mt-5 hire-value wt-body-1">
+                  We provide a unique platform that empowers minority businesses
+                  in the U.S. to overcome capacity challenges and reach their
+                  full potential.
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div
+                    class="hire-step d-flex flex-column justify-content-evenly">
+                    <h3 class="">Schedule a Meeting with us</h3>
+                    <p class="wt-paragraph--bold">
+                      The first step is to schedule a meeting with us so we
+                      understand what you need
+                    </p>
+                    <a href="" class="hire-action"
+                      >Schedule meeting <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
                 </div>
-                
-                    
-                
+
+                <div class="col-4">
+                  <div
+                    class="hire-step d-flex flex-column justify-content-evenly">
+                    <h3 class="">Access selected talents</h3>
+                    <p class="wt-paragraph--bold">
+                      After meeting with us, we give you our top three (3)
+                      available talents in your niche for accessment
+                    </p>
+                    <a href="" class="hire-action"
+                      >Schedule meeting <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-4">
+                  <div
+                    class="hire-step d-flex flex-column justify-content-evenly">
+                    <h3 class="">Contracts and Briefs</h3>
+                    <p class="wt-paragraph--bold">
+                      Once you pick your preferred talent, we will send you our
+                      contract document for signing
+                    </p>
+                    <a href="" class="hire-action"
+                      >Schedule meeting <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-    <footer class="p-5">
-        <div class="row bg-dark px-3 py-5">
-            <div class="col-6">
-                <img src="./assets/images/logo_c.png" alt="" height="200">
-                
-                <p class="mt-3"><b >Our Mission:</b> Providing Opportunities for Talented Nigerian Professionals</p>
+    <footer class="bg-dark">
+      <div class="row p-5 mx-0">
+        <div class="col-5">
+          <img src="./assets/images/logo_c.png" alt="" height="200" />
 
-                <h4>Quick Links</h4>
-                <div class="mt-3">
-                    <a href="#">Privacy Policy</a> <br>
-                    <a href="">Terms of use</a> <br>
-                    <a href="">About us</a> <br>
-                    <a href="">Contact us</a>
-                    <a href="">Blog</a>
-                </div>
-            </div>
-            <!-- <div class="col-4">
-                <h4>Quick Links</h4>
-                <div class="mt-3">
-                    <a href="#">Privacy Policy</a> <br>
-                    <a href="">Terms of use</a> <br>
-                    <a href="">About us</a> <br>
-                    <a href="">Contact us</a>
-                    <a href="">Blog</a>
-                </div>
-            </div> -->
-            <div class="col-6 d-flex flex-column justify-content-end gap-5">
-                <div>
-                    <h4>Contact us</h4>
-                    <div class="row mt-3">
-                        <div class="col-2 mb-2">
-                            <i class="bi bi-envelope-at"></i>
-                        </div>
-                        <div class="col-10 mb-2">
-                            info@worktrybe.com
-                        </div>
-
-                        <div class="col-2">
-                            <i class="bi bi-telephone"></i>
-                        </div>
-                        <div class="col-10">
-                            +1 (675) 840 440
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h4 >Follow us</h4>
-                    <div class="d-flex flex-row justify-content-start gap-5 socials mt-3">
-                        <span><i class="bi bi-twitter-x"></i></span>
-                        <span><i class="bi bi-linkedin"></i></span>
-                        <span><i class="bi bi-facebook"></i></span>
-                        <span><i class="bi bi-instagram"></i></span>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="">Join our Mailing List</h4>
-                    <form class="d-flex mt-3" role="search">
-                        <div class="input-group">
-                            <input type="email" class="form-control bg-transparent nav-search-input text-white" placeholder="Enter you email address" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <span class="input-group-text nav-search-icon-holder" id="basic-addon2"><button class="btn btn-white">Subscribe</button></span>
-                        </div>
-                    </form>
-                </div>
-                
-            </div>
-
-            <div class="col-12 text-center">
-                <hr>
-                Powered by <a href="innopowerindy.com">Innopower</a>
-                &copy; <script>document.write(new Date().getFullYear())</script>
-            </div>
+          <p class="mt-3 wt-body-3">
+            Providing Opportunities for Talented Nigerian Professionals
+          </p>
         </div>
+        <div class="col-7 d-flex flex justify-content-between flex-wrap">
+          <div>
+            <h4>Quick Links</h4>
+            <div class="mt-3 wt-body-3">
+              <a href="" class="wt-body-3">Privacy Policy</a> <br />
+              <a href="" class="wt-body-3">Terms of use</a> <br />
+              <a href="" class="wt-body-3">About us</a> <br />
+              <a href="" class="wt-body-3">Contact us</a>
+              <a href="" class="wt-body-3">Blog</a>
+            </div>
+          </div>
+          <div>
+            <h4>Contact us</h4>
+            <div class="row mt-3 flex-column flex gap-2 wt-body-3">
+              <div class="col-12 mb-2">
+                <i class="bi bi-envelope-at"></i>
+                <span>info@worktrybe.com</span>
+              </div>
+              <div class="col-12 mb-2">
+                <i class="bi bi-telephone"></i>
+                <span>+1 (675) 840 440</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4>Follow us</h4>
+            <div
+              class="d-flex flex-row justify-content-start gap-3 socials mt-3">
+              <span><i class="bi bi-twitter-x"></i></span>
+              <span><i class="bi bi-linkedin"></i></span>
+              <span><i class="bi bi-facebook"></i></span>
+              <span><i class="bi bi-instagram"></i></span>
+            </div>
+          </div>
+
+          <div class="col-11 mt-4">
+            <h4 class="">Join our Mailing List</h4>
+            <form class="d-flex mt-3" role="search">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control bg-transparent nav-search-input text-white"
+                  placeholder="Enter you email address"
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2" />
+                <span
+                  class="input-group-text nav-search-icon-holder"
+                  id="basic-addon2"
+                  ><button class="btn btn-white">Subscribe</button></span
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- <div class="col-12 text-center">
+          <hr />
+          Powered by <a href="innopowerindy.com">Innopower</a> &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+        </div> -->
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
     "></script>
 
     <script>
-      
+      document
+        .getElementById("playButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default behavior
 
-        document.getElementById("playButton").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default behavior
+          let container = document.getElementById("videoContainer");
+          let existingVideo = container.querySelector("video");
 
-    let container = document.getElementById("videoContainer");
-    let existingVideo = container.querySelector("video");
+          if (!existingVideo) {
+            // Create and add video
+            let video = document.createElement("video");
+            video.src = "./assets/videos/proofs/jingle.mp4"; // Change to your video path
+            video.autoplay = true;
+            video.muted = true;
+            video.loop = true;
+            video.classList.add("background-video");
 
-    if (!existingVideo) {
-        // Create and add video
-        let video = document.createElement("video");
-        video.src = "./assets/videos/proofs/jingle.mp4"; // Change to your video path
-        video.autoplay = true;
-        video.muted = true;
-        video.loop = true;
-        video.classList.add("background-video");
+            // Remove background image
+            container.style.backgroundImage = "none";
 
-        // Remove background image
-        container.style.backgroundImage = "none";
+            // Append video to container
+            container.appendChild(video);
 
-        // Append video to container
-        container.appendChild(video);
+            // Update button text
+            this.innerHTML =
+              'Stop Video <span><i class="bi bi-stop-circle"></i></span>';
+          } else {
+            // If video exists, remove it and restore background image
+            existingVideo.remove();
+            container.style.backgroundImage =
+              "url(./assets/images/proof/video-poster.avif)";
 
-        // Update button text
-        this.innerHTML = 'Stop Video <span><i class="bi bi-stop-circle"></i></span>';
-    } else {
-        // If video exists, remove it and restore background image
-        existingVideo.remove();
-        container.style.backgroundImage = "url(./assets/images/proof/video-poster.avif)";
-
-        // Update button text
-        this.innerHTML = 'Play Video <span><i class="bi bi-play-circle"></i></span>';
-    }
-});
-
-
+            // Update button text
+            this.innerHTML =
+              'Play Video <span><i class="bi bi-play-circle"></i></span>';
+          }
+        });
     </script>
-</body>
+  </body>
 </html>
