@@ -18,8 +18,17 @@ a {
 }
 
 .worktrybe-header {
+  background-color: var(--main);
+}
+
+.worktrybe-header {
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Background color when scrolled */
+.worktrybe-header.scrolled {
+  background-color: rgba(22, 134, 140, 0.476) !important; 
   backdrop-filter: blur(5px);
-  background-color: rgba(22, 134, 140, 0.476);
 }
 
 .bg-main {
@@ -197,9 +206,10 @@ a {
   position: relative;
   height: 500px;
   z-index: 5;
+  /* background-color: red; */
 }
 .hero-right img {
-  width: 76%;
+  width: 90%;
   /* min-height: 65%; */
   object-fit: cover;
   /* position: absolute; */
@@ -238,7 +248,7 @@ a {
 }
 .value {
   margin: 0 auto;
-  height: 85vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
 }

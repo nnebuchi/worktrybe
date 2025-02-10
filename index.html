@@ -118,11 +118,13 @@
       </div>
     </section>
     <section class="talent-categories py-5 px-5 bg-light position-relative">
-      <div class="row justify-content-evenly row-gap-4">
+      <div class="row ">
         <div class="col-12">
           <h3>Find Talents By Categories</h3>
         </div>
-        <a
+        <div class="col-12">
+          <div class="row gap-3">
+            <a
           href=""
           class="category bg-main-light rounded col-lg-3 col-md-4 col-sm-6 col-12 p-4">
           <div class="category-box">
@@ -305,9 +307,11 @@
             </div>
           </div>
         </a>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="bg-main-light value">
+    <section class="bg-main-light value py-5">
       <div class="row value-holder">
         <div
           class="col-7 value-left px-5 bg-sub-light flex-column flex justify-content-center align-content-center">
@@ -610,13 +614,13 @@
             </form>
           </div>
         </div>
-        <!-- <div class="col-12 text-center">
+        <div class="col-12 text-center">
           <hr />
           Powered by <a href="innopowerindy.com">Innopower</a> &copy;
           <script>
             document.write(new Date().getFullYear());
           </script>
-        </div> -->
+        </div>
       </div>
     </footer>
 
@@ -624,6 +628,15 @@
     "></script>
 
     <script>
+
+      window.addEventListener('scroll', function() {
+          let navbar = document.querySelector('.worktrybe-header');
+          if (window.scrollY > 50) {
+              navbar.classList.add('scrolled');
+          } else {
+              navbar.classList.remove('scrolled');
+          }
+      });
       document
         .getElementById("playButton")
         .addEventListener("click", function (event) {
