@@ -85,7 +85,7 @@ const ServiceDetailsTab = () => {
                 <div className="w-5/12 h-full">
                   <img
                     src="/work.svg"
-                    className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full"
+                    className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full shadow-lg shadow-ftvblue-200"
                     alt="administrative tasks"
                   />
                 </div>
@@ -121,7 +121,7 @@ const ServiceDetailsTab = () => {
                 <div className="w-5/12 h-full">
                   <img
                     src="/work.svg"
-                    className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full"
+                    className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full shadow-lg shadow-ftvblue-200"
                     alt="administrative tasks"
                   />
                 </div>
@@ -157,7 +157,7 @@ const ServiceDetailsTab = () => {
                 <div className="w-5/12 h-full">
                   <img
                     src="/work.svg"
-                    className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full"
+                    className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full shadow-lg shadow-ftvblue-200"
                     alt="administrative tasks"
                   />
                 </div>
@@ -193,7 +193,7 @@ const ServiceDetailsTab = () => {
                 <div className="w-5/12 h-full">
                   <img
                     src="/work.svg"
-                    className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full"
+                    className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full shadow-lg shadow-ftvblue-200"
                     alt="administrative tasks"
                   />
                 </div>

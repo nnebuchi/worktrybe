@@ -230,6 +230,59 @@ const Landing = () => {
       </section>
       <BenefitTabs />
       <ServiceDetailsTab />
+      <section className=" min-h-[300px] py-15 px-10 bg-white flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center w-full gap-10">
+          <h1 className="mb-4 text-3xl tracking-wide font-bold dark:text-ftvblue-500 text-ftvblue-500  text-center w-10/12">
+            You're just 3 steps away from time freedom
+          </h1>
+          <div className="flex justify-between items-center w-full space-x-10">
+            <div className="w-4/12 min-h-60 flex flex-col p-4  justify-evenly items-start rounded-lg ring-1 dark:ring-ftvblue-400 ring-ftvblue-400 dark:bg-ftvblue-25  bg:ftvblue-100  hover:dark:bg-white transition ease-in-out duration-300 border-t-5 border-ftvblue-500 dark:border-ftvblue-500 hover:shadow-xl">
+              <h1 className="font-bold text-ftvblue-500 text-lg">
+                1. Discovery
+              </h1>
+              <p className="font-normal text-ftvblue-400 text-lg">
+                Schedule a meeting with us so we understand what you need.
+              </p>
+              <a
+                href="#"
+                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvblue-300 hover:bg-ftvblue-100 focus:ring-2 focus:ring-ftvblue-100 dark:text-ftvblue-400 dark:border-ftvblue-500 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvblue-500 hover:text-ftvblue-25">
+                Schedule a Call
+                <span className="fa fa-calendar-plus ms-2"></span>
+              </a>
+            </div>
+            <div className="w-4/12 min-h-60 flex flex-col p-4  justify-evenly items-start rounded-lg ring-1 dark:ring-ftvblue-400 ring-ftvblue-400 dark:bg-ftvblue-25  bg:ftvblue-100  hover:dark:bg-white transition ease-in-out duration-300 border-t-5 border-ftvblue-500 dark:border-ftvblue-500 hover:shadow-xl">
+              <h1 className="font-bold text-ftvblue-500 text-lg">
+                2. Talent Matching
+              </h1>
+              <p className="font-normal text-ftvblue-400 text-lg">
+                We give you access to our talent pool for accessment.
+              </p>
+              <a
+                href="#"
+                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvblue-300 hover:bg-ftvblue-100 focus:ring-2 focus:ring-ftvblue-100 dark:text-ftvblue-400 dark:border-ftvblue-500 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvblue-500 hover:text-ftvblue-25">
+                Schedule a Call
+                <span className="fa fa-calendar-plus ms-2"></span>
+              </a>
+            </div>
+            <div className="w-4/12 min-h-60 flex flex-col p-4  justify-evenly items-start rounded-lg ring-1 dark:ring-ftvblue-400 ring-ftvblue-400 dark:bg-ftvblue-25  bg:ftvblue-100  hover:dark:bg-white transition ease-in-out duration-300 border-t-5 border-ftvblue-500 dark:border-ftvblue-500 hover:shadow-xl">
+              <h1 className="font-bold text-ftvblue-500 text-lg">
+                {" "}
+                3. Coontracts & Onboarding
+              </h1>
+              <p className="font-normal text-ftvblue-400 text-lg">
+                Once you pick your preferred talent, we will send you our
+                contract document for signing and onboarding.
+              </p>
+              <a
+                href="#"
+                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvblue-300 hover:bg-ftvblue-100 focus:ring-2 focus:ring-ftvblue-100 dark:text-ftvblue-400 dark:border-ftvblue-500 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvblue-500 hover:text-ftvblue-25">
+                Schedule a Call
+                <span className="fa fa-calendar-plus ms-2"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className=" min-h-[300px] py-15 px-10 bg-ftvblue-500 flex justify-center items-center">
         <div className="flex flex-col justify-center items-center w-full">
           <h1 className="mb-4 text-3xl tracking-wide font-bold text-white  text-center w-10/12">
