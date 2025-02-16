@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import RatingCard from "../components/RatingCard";
-import Tabs from "../components/Tabs";
+import BenefitTabs from "../components/BenefitTabs";
+import ServiceDetailsTab from "../components/ServiceDetailsTab";
 
 const Landing = () => {
   return (
@@ -8,7 +9,7 @@ const Landing = () => {
       <Navbar />
       <section className="bg-white dark:bg-ftvblue-25 pt-20 b">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-ftvblue-500">
+          <h1 className="mb-4 text-4xl font-extrabold tracking-wide leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-ftvblue-500">
             Free yourself from administrative tasks and accelerate your business
             growth.
           </h1>
@@ -42,7 +43,7 @@ const Landing = () => {
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
               </svg>
-              Become a VA
+              See how it works
             </a>
           </div>
           <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
@@ -151,7 +152,7 @@ const Landing = () => {
       <section className="bg-white dark:bg-linear-65 from-ftvblue-25 via-ftvpurple-50 to-ftvgreen-50 flex justify-center items-center h-[500px]">
         <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
           <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-            <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-ftvblue-500">
+            <h2 className="mb-4 text-4xl tracking-wide font-extrabold text-gray-900 dark:text-ftvblue-500">
               The National Small Business Association (NSBA) survey found
             </h2>
             <div className="flex">
@@ -171,7 +172,7 @@ const Landing = () => {
             </p>
             <button
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg text-sm py-3 px-5 text-center dark:bg-ftvgreen-600 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvgrey-400 cursor-pointer w-4/12 mt-5 text-xl">
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvgreen-600 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvgrey-400 cursor-pointer w-4/12 mt-5 text-xl">
               Hire assistant
             </button>
           </div>
@@ -191,7 +192,7 @@ const Landing = () => {
       </section>
       <section className="bg-white dark:bg-linear-65 from-ftvblue-25 via-ftvpurple-25 to-ftvgreen-25 flex flex-col justify-center items-center  min-h-[400px] py-15 px-10 ">
         <div className="flex justify-between items-center w-full mb-4">
-          <h1 className="mb-4 text-3xl tracking-tight font-bold text-gray-900 dark:text-ftvblue-500 capitalize  ">
+          <h1 className="mb-4 text-3xl tracking-wide font-bold text-gray-900 dark:text-ftvblue-500 capitalize  ">
             Find talents by categories
           </h1>
           <form className="flex items-center max-w-sm mx-auto me-3 w-7/12">
@@ -227,8 +228,22 @@ const Landing = () => {
           <RatingCard />
         </div>
       </section>
-      <Tabs />
-      <section className=" min-h-[500px] py-15 px-10"></section>
+      <BenefitTabs />
+      <ServiceDetailsTab />
+      <section className=" min-h-[300px] py-15 px-10 bg-ftvblue-500 flex justify-center items-center">
+        <div className="flex flex-col justify-center items-center w-full">
+          <h1 className="mb-4 text-3xl tracking-wide font-bold text-white  text-center w-10/12">
+            Ready to accelerate your business growth? Schedule a free
+            consultation to learn how Fasttrack VA can save you up to 20 hours
+            per week.
+          </h1>
+          <button
+            type="button"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvgreen-600 dark:hover:bg-ftvgreen-300 dark:focus:ring-ftvgrey-400 cursor-pointer w-4/12 mt-5 text-xl">
+            Book a Call
+          </button>
+        </div>
+      </section>
     </>
   );
 };

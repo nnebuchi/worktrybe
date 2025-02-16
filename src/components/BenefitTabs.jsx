@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Tabs = () => {
+const BenefitTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
@@ -34,7 +34,7 @@ const Tabs = () => {
               <li key={index}>
                 <button
                   onClick={() => handleTabClick(index)}
-                  className={`inline-flex items-center  rounded-lg w-full flex-col justify-center items-start text-base bg-blue-700 dark:bg-white border-t-4 border-ftvgrey-500  dark:border-t-4 dark:border-ftvblue-500 gap-4 ring-1 dark:ring-ftvgrey-400 ring-ftvgrey-400  ${
+                  className={`inline-flex items-center  rounded-lg w-full flex-col justify-center text-base bg-blue-700 dark:bg-white border-t-4 border-ftvgrey-500  dark:border-t-4 dark:border-ftvblue-500 gap-4 ring-1 dark:ring-ftvgrey-400 ring-ftvgrey-400  ${
                     activeTab === index
                       ? "text-ftvblue-400 bg-blue-700 dark:bg-ftvblue-50 h-fit pb-4 border-t-4 border-ftvgreen-500  dark:border-t-4 dark:border-ftvgreen-500 shadow-lg "
                       : "hover:text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-ftvgrey-50 dark:hover:bg-gray-700 dark:hover:text-ftvblue-400"
@@ -123,11 +123,11 @@ const Tabs = () => {
       </div>
       <button
         type="button"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg text-sm py-3 px-5 text-center text-xl dark:bg-ftvblue-500 dark:hover:bg-ftvgreen-600 dark:focus:ring-ftvgrey-400 cursor-pointer w-2/12 ">
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center text-xl dark:bg-ftvblue-500 dark:hover:bg-ftvgreen-600 dark:focus:ring-ftvgrey-400 cursor-pointer w-2/12 ">
         Get started
       </button>
     </section>
   );
 };
 
-export default Tabs;
+export default BenefitTabs;
