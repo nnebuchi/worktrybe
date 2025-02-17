@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <header>
-      <nav className="bg-white dark:bg-ftvwine-300 fixed w-full z-20 top-0 start-0 border-b border-ftvgrey-200 dark:border-ftvgrey-600 backdrop-blur">
+      <nav className="bg-white dark:bg-ftvwine-25 fixed w-full z-20 top-0 start-0 border-b border-ftvgrey-200 dark:border-ftvgrey-600 backdrop-blur">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="https://flowbite.com/"
@@ -23,32 +23,19 @@ const Navbar = () => {
               </label>
               <div class="relative w-full">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <svg
-                    class="w-4 h-4 text-ftvgrey-500 dark:text-ftvgrey-200"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 18 20">
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 5v10M3 5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm12 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0V6a3 3 0 0 0-3-3H9m1.5-2-2 2 2 2"
-                    />
-                  </svg>
+                  <span className="fa fa-user-plus text-ftvwine-50"></span>
                 </div>
                 <input
                   type="text"
                   id="simple-search"
-                  class="bg-ftvgrey-50 border border-ftvgrey-300 text-ftvgrey-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-ftvwine-300 focus:dark:bg-ftvwine-400  dark:border-ftvgrey-300 dark:placeholder-ftvgrey-200 dark:text-white dark:focus:ring-none dark:focus:border-none outline-none"
+                  class="border border-ftvgrey-300 text-ftvwine-25 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-ftvwine-100 focus:dark:bg-ftvwine-400  dark:border-ftvwine-200 dark:placeholder-ftvwine-50  dark:focus:ring-none dark:focus:border-none outline-none"
                   placeholder="Search virtual talents..."
                   required
                 />
               </div>
               <button
                 type="submit"
-                class="p-3 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-ftvwine-500 hover:bg-blue-800 focus:ring-none focus:outline-none focus:ring-blue-300 dark:bg-ftvwine-500 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvblue-500 ">
+                class="p-3 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg focus:ring-none focus:outline-none focus:ring-blue-300 dark:bg-ftvwine-500 dark:hover:bg-ftvwine-400 dark:focus:ring-ftvblue-500 ">
                 <svg
                   class="w-4 h-4"
                   aria-hidden="true"
@@ -68,7 +55,7 @@ const Navbar = () => {
             </form>
             <button
               type="button"
-              className="text-ftvwine-25 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-3 px-5 text-center dark:bg-ftvwine-500 dark:hover:bg-ftvblue-600 dark:focus:ring-blue-800 cursor-pointer ">
+              className="text-ftvwine-25 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 text-center dark:bg-ftvwine-500 dark:hover:bg-transparent dark:focus:ring-ftvwine-600 hover:ring-1 hover:ring-ftvwine-500 hover:text-ftvwine-500 cursor-pointer ">
               Get started
             </button>
             <button
@@ -98,7 +85,7 @@ const Navbar = () => {
           <div
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-sticky">
-            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-ftvgrey-100 rounded-lg bg-ftvgrey-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-ftvwine-300 dark:border-ftvgrey-700">
+            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-ftvgrey-100 rounded-lg bg-ftvgrey-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-ftvwine-25 dark:border-ftvgrey-700">
               <li>
                 <a
                   href="#"
@@ -110,21 +97,21 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-ftvgrey-900 rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvwine-25 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent dark:border-ftvgrey-700">
+                  className="block py-2 px-3 text-ftvgrey-900 rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvwine-200 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent dark:border-ftvgrey-700">
                   About
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-ftvgrey-900 rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvwine-25 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent dark:border-ftvgrey-700">
+                  className="block py-2 px-3 text-ftvgrey-900 rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvwine-200 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent dark:border-ftvgrey-700">
                   Services
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-ftvgrey-900 rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvwine-25 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent dark:border-ftvgrey-700">
+                  className="block py-2 px-3 text-ftvgrey-900 rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvwine-200 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent dark:border-ftvgrey-700">
                   Contact
                 </a>
               </li>
