@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@theme {
+  --color-ftvblue-500: #0a2540;
+  --color-ftvblue-400: #1f3a5a;
+  --color-ftvblue-300: #385273;
+  --color-ftvblue-200: #5e7794;
+  --color-ftvblue-100: #a1b1c7;
+  --color-ftvblue-50: #d0d9e5;
+  --color-ftvblue-25: #e8eef4;
+  --color-ftvgreen-600: #00ad94;
+  --color-ftvgreen-500: #00c6a9;
+  --color-ftvgreen-400: #1fd3b6;
+  --color-ftvgreen-300: #46dec4;
+  --color-ftvgreen-200: #7fe7d5;
+  --color-ftvgreen-100: #b8f0e5;
+  --color-ftvgreen-50: #daf7f1;
+  --color-ftvgreen-25: #eefdfb;
+  --color-ftvgrey-500: #6b7280;
+  --color-ftvgrey-400: #878c98;
+  --color-ftvgrey-300: #a3a7b0;
+  --color-ftvgrey-200: #c0c3c9;
+  --color-ftvgrey-50: #eceef1;
+  --color-ftvgrey-25: #f5f6f8;
+  --color-ftvpurple-500: #a78bfa;
+  --color-ftvpurple-400: #b79efb;
+  --color-ftvpurple-300: #c9b5fc;
+  --color-ftvpurple-200: #dccdfd;
+  --color-ftvpurple-100: #ece2fe;
+  --color-ftvpurple-50: #f5f0fe;
+  --color-ftvpurple-25: #faf8ff;
+  --color-darkred: #690031;
+  --color-pink: #ffeaec;
+  --color-grey: rgb(217 213 213);
+  --color-grey-light: rgb(236, 233, 233);
+  --color-light-blue: #cbefff;
+  --color-light-soft: #690031;
+  --color-purple: #222775;
+  --color-yellow: #D18600;
+  --color-light: #fff;
+  --color-gray-500: oklch(0.72 0.11 178);
+  --color-gray-500: oklch(0.72 0.11 178);
+}
+
+:root{
+  --darkred: #690031;
+  --pink:#ffeaec;
+  --grey: rgb(217 213 213);
+  --grey-light: rgb(236, 233, 233);
+  --light-blue: #cbefff;
+  --purple: #222775;
+  --ftvblue-25: #e8eef4;
+  --yellow:#D18600;
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", "Poppins", "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bg-darkred{
+  background-color: var(--darkred);
+  color: white;
+}
+.text-darkred{
+  color: var(--darkred);
+}
+
+.text-yellow{
+  color: var(--yellow);
+}
+
+.bg-light-blue{
+  background-color: var(--light-blue);
+}
+
+.text-light-blue{
+  color: var(--light-blue);
+}
+
+.text-purple{
+  color: var(--purple);
+}
+
+.bg-pink{
+  background-color: var(--pink);
+}
+
+.bg-grey{
+  background-color: var(--grey);
+}
+
+.bg-purple{
+  background-color: var(--purple);
+}
+
+.text-purple{
+  color: var(--purple);
+}
+
+.category-card{
+  box-shadow: 0px 2px 2px 2px var(--darkred);
+}
+
+.partners img{
+  width: 200px;
+  height: 80px;
+  /* align-items center */
+  background-color:rgb(255, 255, 255);
+  box-shadow: 0px 2px 2px 2px black;
+  box-sizing:border-box;
+  padding:5px;
+  border-radius: 10px;
+  object-fit: contain;
+  cursor: pointer;
+}
+.partners img:hover{
+  padding:5px;
+}
+
+.survey-section{
+  background: linear-gradient(to bottom, var(--pink), var(--ftvblue-25), var(--ftvblue-25));
+  /* border-radius: 10px; */
+  border-top:1px solid black;
+}
+
+.benefits-section{
+  background:var(--ftvblue-25);
+   /* linear-gradient(to bottom, var(--ftvblue-25), var(--light-blue), var(--light-blue)); */
+  
+  border-top:1px solid black;
+}
+.text-dark{
+  color: black;
+}
+
+.text-white{
+  color: white;
+}
+
+
+.navbar{
+  background-color: white;
+}
+
+.navlink {
+  display: flex;
+  gap: 1rem;
+  color: rgb(105, 104, 104);
+}
+
+
+.navlink:hover{
+  color: black;
+}
