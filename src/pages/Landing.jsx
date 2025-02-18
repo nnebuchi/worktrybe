@@ -20,7 +20,7 @@ const Landing = () => {
           <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <a
               href="#"
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center dark:text-ftvwine-500 text-ftvwine-500  rounded-lg bg-primary-700 focus:ring-4 focus:ring-ftvwine-400 dark:focus:ring-ftvwine-400 hover ">
+              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center dark:text-ftvwine-25 text-ftvwine-25  rounded-lg bg-primary-700 focus:ring-4 focus:ring-ftvwine-400 dark:focus:ring-ftvwine-400 bg-ftvwine-500 hover:bg-ftvwine-400 ">
               Find a VA
               <svg
                 className="ml-2 -mr-1 w-5 h-5"
@@ -35,7 +35,7 @@ const Landing = () => {
             </a>
             <a
               href="#"
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-ftvwine-400 dark:border-ftvwine-500 dark:hover:bg-ftvwine-500 dark:focus:ring-ftvwine-500 hover:text-ftvwine-25">
+              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-ftvblack-400 dark:border-ftvblack-500 dark:hover:bg-ftvblack-500 dark:focus:ring-ftvwine-500 hover:text-white">
               <svg
                 className="mr-2 -ml-1 w-5 h-5"
                 fill="currentColor"
@@ -111,10 +111,10 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className="bg-ftvsky-500 dark:bg-ftvsky-500 flex flex-col justify-center items-center  min-h-[400px] py-15 px-10 ">
-        <div className="rounded-lg bg-white dark:bg-ftvblue-500 min-h-100 w-full mx-auto flex justify-evenly items-center flex-wrap p-8">
+      <section className="bg-ftvsky-500 dark:bg-ftvwine-50 flex flex-col justify-center items-center  min-h-[400px] py-15 px-10 ">
+        <div className="rounded-lg bg-white dark:bg-ftvwine-500 min-h-100 w-full mx-auto flex justify-evenly items-center flex-wrap p-8">
           <div className="flex justify-between items-center w-full mb-4">
-            <h1 className="mb-4 text-3xl tracking-wide font-bold ftvsky-500 dark:text-ftvsky-500 capitalize  ">
+            <h1 className="mb-4 text-3xl tracking-wide font-bold ftvsky-500 dark:text-ftvwine-25 capitalize  ">
               Find talents by categories
             </h1>
             <form className="flex items-center max-w-sm mx-auto me-3 w-7/12">
@@ -128,20 +128,20 @@ const Landing = () => {
                 <input
                   type="text"
                   id="simple-search"
-                  className="bg-ftvgrey-50 border border-ftvgrey-300 focus:ring-1 text-ftvgrey-500 text-sm rounded-lg focus:ring-ftvblue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-ftvsky-100 focus:dark:bg-ftvsky-400  dark:border-ftvgrey-300 dark:placeholder-ftvgrey-200 dark:text-ftvblack-300 dark:focus:ring-none dark:focus:border-none outline-none h-12 "
+                  className="bg-ftvgrey-50 border border-ftvgrey-300 focus:ring-1 text-ftvgrey-500 text-sm rounded-lg focus:ring-ftvblue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-ftvwine-25 focus:dark:bg-white  dark:border-ftvgrey-300 dark:placeholder-ftvgrey-200 dark:text-ftvblack-300 dark:focus:ring-none dark:focus:border-none outline-none h-12 "
                   placeholder="Search virtual talents..."
                   required
                 />
+                <button
+                  type="submit"
+                  className="absolute cursor-pointer inset-y-0 end-4">
+                  <span className="fa fa-search text-ftvblack-300"></span>
+                  <span className="sr-only">Search</span>
+                </button>
               </div>
-              <button
-                type="submit"
-                className="p-3 ms-2 text-sm font-medium text-white bg-blue-700 rounded-lg  hover:bg-blue-800 focus:ring-none focus:outline-none focus:ring-blue-300 dark:bg-ftvblue-500 dark:hover:bg-ftvblue-400 dark:focus:ring-ftvblue-500 ">
-                <i className="fa fa-filter"></i>
-                <span className="sr-only">Search</span>
-              </button>
             </form>
           </div>
-          <div className="w-full flex justify-evenly items-center flex-wrap dark:bg-ftvsky-50 rounded-lg py-8 gap-y-8">
+          <div className="w-full flex justify-evenly items-center flex-wrap dark:bg-ftvwine-25 rounded-lg py-8 gap-y-8">
             <RatingCard />
             <RatingCard />
             <RatingCard />

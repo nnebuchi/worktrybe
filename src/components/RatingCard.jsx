@@ -4,7 +4,7 @@ const RatingCard = () => {
   return (
     <Link
       to="/"
-      className="w-[27%] h-30 dark:bg-ftvsky-200 hover:dark:bg-ftvsky-100 dark:ring-ftvblue-500 dark:ring-1 rounded-lg flex flex-col gap-3 justify-evenly items-between px-5 category-card">
+      className="w-[27%] h-30 dark:bg-ftvwine-50 hover:dark:bg-ftvwine-25 dark:ring-ftvblue-500 dark:ring-1 rounded-lg flex flex-col gap-3 justify-evenly items-between px-5 category-card">
       <div className="flex justify-between items-center">
         <h1 className="text-ftvblack-400 text-lg">Software & Coding</h1>
         <span className="text-ftvblack-400 space-x-2">
@@ -13,7 +13,7 @@ const RatingCard = () => {
         </span>
       </div>
       <div className="flex justify-between items-center">
-        <span className="text-ftvblue-500">
+        <span className="text-ftvwine-500">
           <i className="fa fa-star "></i>
           <i className="fa fa-star"></i>
           <i className="fa fa-star"></i>

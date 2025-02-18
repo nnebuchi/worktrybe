@@ -23,22 +23,22 @@ const Navbar = () => {
               </label>
               <div className="relative w-full">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <span className="fa fa-user-plus text-ftvgrey-200"></span>
+                  <span className="fa fa-user-plus text-ftvblack-300"></span>
                 </div>
                 <input
                   type="text"
                   id="simple-search"
-                  className="bg-grey text-ftvgrey-500  dark:text-ftvgrey-500 text-sm rounded-lg focus:ring-ftvblack-500  focus:border-ftvblack-300 block w-full ps-10 p-2.5  dark:bg-ftvgrey-50 focus:dark:bg-ftvgrey-100 focus:ring-1  outline-none"
+                  className="bg-grey text-ftvgrey-500  dark:text-ftvgrey-500 text-sm rounded-lg focus:ring-ftvblack-500  focus:border-ftvblack-300 block w-full ps-10 p-2.5  dark:bg-ftvgrey-200 focus:dark:bg-ftvgrey-100 focus:ring-1  outline-none"
                   placeholder="Search virtual talents..."
                   required
                 />
+                <button
+                  type="submit"
+                  className="absolute cursor-pointer inset-y-0 end-4">
+                  <span className="fa fa-search text-ftvblack-300"></span>
+                  <span className="sr-only">Search</span>
+                </button>
               </div>
-              <button
-                type="submit"
-                className="p-3 ms-2 text-sm font-medium  rounded-lg hover:bg-ftvblack-300 focus:ring-none  bg-ftvblack-500 dark:hover:bg-ftvblack-300 dark:focus:ring-ftvblue-500 cursor-pointer">
-                <span className="fa fa-search text-white"></span>
-                <span className="sr-only">Search</span>
-              </button>
             </form>
             <button
               type="button"
