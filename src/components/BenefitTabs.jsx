@@ -7,13 +7,32 @@ const BenefitTabs = () => {
     setActiveTab(index);
   };
 
+  const services = [
+    {
+      title: "Email and Customer Service Management",
+      desc: "We handle customer inquiries, manage inbox organization, and ensure timely responses to improve customer satisfaction.",
+    },
+    {
+      title: "Social Media and Marketing",
+      desc: "From content creation to audience engagement, we craft marketing strategies that enhance brand visibility and growth.",
+    },
+    {
+      title: "Administrative Tasks",
+      desc: "We efficiently manage scheduling, data entry, document organization, and other essential administrative duties to streamline operations.",
+    },
+    {
+      title: "Financial Management",
+      desc: "Our services include bookkeeping, invoicing, expense tracking, and financial reporting to keep your finances organized and optimized.",
+    },
+  ];
+
   return (
-    <section className="dark:bg-white bg-white min-h-[400px] flex flex-col gap-5 justify-between items-center px-10 py-15">
+    <section className="benefits-section min-h-[400px] flex flex-col gap-5 justify-between items-center px-10 py-15">
       <div>
-        <h1 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-ftvblack-500 capitalize text-center">
+        <h1 className="mb-4 text-4xl tracking-tight font-bold text-ftvblack-500 dark:text-ftvblack-500 capitalize text-center">
           Start Delegating Today
         </h1>
-        <p className="mb-4 text-ftvblack-400 text-lg w-9/12 text-center mx-auto">
+        <p className="mb-4 dark:text-ftvblack-400  text-ftvblack-400 text-lg w-9/12 text-center mx-auto">
           Fasttrack Virtuals combines practical innovations with proven
           expertise⁠—so you’re guaranteed top-tier assistance, for top-tier
           results.
@@ -22,30 +41,22 @@ const BenefitTabs = () => {
       <div>
         <div className="md:flex">
           <ul className="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0 w-5/12">
-            {[
-              `Email and Customer Service Management
-`,
-              `Social Media and Marketing
-`,
-              `Administrative Tasks
-`,
-              `Financial Management`,
-            ].map((tab, index) => (
+            {services.map((tab, index) => (
               <li key={index}>
                 <button
                   onClick={() => handleTabClick(index)}
-                  className={`inline-flex items-center  rounded-lg w-full flex-col justify-center text-base bg-blue-700 dark:bg-white border-t-4 border-ftvgrey-500  dark:border-t-4 dark:border-ftvgrey-500 gap-4 ring-1 dark:ring-ftvgrey-400 ring-ftvgrey-400  ${
+                  className={`inline-flex items-center  rounded-lg w-full flex-col justify-center text-base border-t-4 border-ftvgrey-400  dark:border-t-4 dark:border-ftvgrey-400 gap-4 ring-1 dark:ring-ftvgrey-400 ring-ftvgrey-400  ${
                     activeTab === index
-                      ? "text-ftvblue-400 bg-blue-700 dark:bg-ftvwine-50 h-fit pb-4 border-t-4 dark:border-t-ftvblue-500  dark:border-t-4 shadow-lg "
-                      : "hover:text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-ftvgrey-50 dark:hover:bg-gray-700 dark:hover:text-ftvblue-500"
+                      ? "text-ftvblack-500 bg-white dark:bg-white h-fit border-ftvblack-500  border-t-4 dark:border-ftvblack-500 pb-4"
+                      : "  dark:hover:text-ftvblack-400 hover:dark:ring-ftvblack-400 hover:dark:border-ftvblack-500"
                   }`}
                   aria-current={activeTab === index ? "page" : undefined}>
-                  <span className="flex items-center dark:bg-ftvsky-200 bg-ftvblue-25 w-full px-4 py-3 rounded-lg">
-                    {tab}
+                  <span className="flex items-center dark:bg-ftvblue-25 bg-ftvsky-25 w-full px-4 py-3 rounded-lg">
+                    {tab.title}
                   </span>
                   {activeTab === index && (
-                    <p className="text-ftvblack-300 text-sm text-start px-4">
-                      Lorem ipsum dolor sit amet.{tab}
+                    <p className="text-ftvblack-400 text-sm text-center px-4">
+                      {tab.title}
                     </p>
                   )}
                 </button>
@@ -54,76 +65,18 @@ const BenefitTabs = () => {
           </ul>
 
           <div className="tab-content w-full">
-            {activeTab === 0 && (
-              <div className="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  Profile Tab
-                </h3>
-                <p className="mb-2">
-                  This is some placeholder content the Profile tab's associated
-                  content, clicking another tab will toggle the visibility of
-                  this one for the next.
-                </p>
-                <p>
-                  The tab JavaScript swaps classes to control the content
-                  visibility and styling.
-                </p>
-              </div>
-            )}
-            {activeTab === 1 && (
-              <div className="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  Dashboard Tab
-                </h3>
-                <p className="mb-2">
-                  This is some placeholder content the Profile tab's associated
-                  content, clicking another tab will toggle the visibility of
-                  this one for the next.
-                </p>
-                <p>
-                  The tab JavaScript swaps classes to control the content
-                  visibility and styling.
-                </p>
-              </div>
-            )}
-            {activeTab === 2 && (
-              <div className="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  Settings Tab
-                </h3>
-                <p className="mb-2">
-                  This is some placeholder content the Profile tab's associated
-                  content, clicking another tab will toggle the visibility of
-                  this one for the next.
-                </p>
-                <p>
-                  The tab JavaScript swaps classes to control the content
-                  visibility and styling.
-                </p>
-              </div>
-            )}
-            {activeTab === 3 && (
-              <div className="p-6 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full">
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                  Contact Tab
-                </h3>
-                <p className="mb-2">
-                  This is some placeholder content the Profile tab's associated
-                  content, clicking another tab will toggle the visibility of
-                  this one for the next.
-                </p>
-                <p>
-                  The tab JavaScript swaps classes to control the content
-                  visibility and styling.
-                </p>
-              </div>
-            )}
+            <div className="p-6 bg-ftvblack-400 text-medium text-gray-500 dark:text-gray-400 bg-darkred rounded-lg w-full">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                {services[activeTab].title}
+              </h3>
+              <div className="mb-2">{services[activeTab].desc}</div>
+            </div>
           </div>
         </div>
       </div>
       <button
         type="button"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center text-xl dark:bg-ftvblack-500 dark:hover:bg-ftvblack-300 dark:focus:ring-ftvgrey-400 cursor-pointer w-2/12 ">
+        className="text-white bg-ftvblack-500 hover:bg-ftvblack-300 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center text-xl dark:bg-ftvblack-500 dark:hover:bg-ftvblack-300 dark:focus:ring-ftvgrey-400 cursor-pointer w-2/12 ">
         Get started
       </button>
     </section>
