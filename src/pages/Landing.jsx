@@ -35,7 +35,7 @@ const Landing = () => {
             </a>
             <a
               href="#"
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-ftvblack-400 dark:border-ftvblack-500 dark:hover:bg-ftvblack-500 dark:focus:ring-ftvwine-500 hover:text-white">
+              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-ftvblack-400 dark:border-ftvblack-500 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvwine-500 hover:text-white">
               <svg
                 className="mr-2 -ml-1 w-5 h-5"
                 fill="currentColor"
@@ -93,20 +93,15 @@ const Landing = () => {
             </p>
             <button
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvblack-600 dark:hover:bg-ftvblack-300 dark:focus:ring-ftvgrey-400 cursor-pointer w-4/12 mt-5 text-xl">
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvblack-600 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvgrey-400 cursor-pointer w-4/12 mt-5 text-xl">
               Hire assistant
             </button>
           </div>
-          <div className="grid grid-cols-2 gap-4 mt-8 ">
+          <div className="w-full shadow-lg rounded-lg shadow-ftvgrey-500 hover:shadow-none transition all ease-in-out 300">
             <img
               className="w-full rounded-lg ring-ftvgrey-500 ring-1 "
-              src="/remote.svg"
+              src="/stressed.jpg"
               alt="office content 1"
-            />
-            <img
-              className="mt-4 h-full w-full lg:mt-10 rounded-lg ring-ftvgrey-500 ring-1"
-              src="/work.svg"
-              alt="office content 2"
             />
           </div>
         </div>
@@ -114,7 +109,7 @@ const Landing = () => {
       <section className="bg-ftvsky-500 dark:bg-ftvwine-50 flex flex-col justify-center items-center  min-h-[400px] py-15 px-10 ">
         <div className="rounded-lg bg-white dark:bg-ftvwine-500 min-h-100 w-full mx-auto flex justify-evenly items-center flex-wrap p-8">
           <div className="flex justify-between items-center w-full mb-4">
-            <h1 className="mb-4 text-3xl tracking-wide font-bold ftvsky-500 dark:text-ftvwine-25 capitalize  ">
+            <h1 className="mb-4 text-3xl tracking-wide font-bold ftvsky-500 dark:text-white capitalize  ">
               Find talents by categories
             </h1>
             <form className="flex items-center max-w-sm mx-auto me-3 w-7/12">

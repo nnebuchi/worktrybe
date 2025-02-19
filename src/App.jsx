@@ -9,6 +9,7 @@ import AlertModal from "./components/UI/AlertModal";
 import ClientOnboardingStep1 from "./components/screens/onboarding/ClientOnboardingStep1";
 import ClientOnboardingStep2 from "./components/screens/onboarding/ClientOnboardingStep2";
 import BookMeeeting from "./components/screens/onboarding/BookMeeting";
+import Dashboard from "./components/UI/Dashboard";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             element={<ClientOnboardingStep2 />}
           />
           <Route path="/book-meeting" element={<BookMeeeting />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </>

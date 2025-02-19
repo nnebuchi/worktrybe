@@ -15,8 +15,8 @@ const BookMeeting = () => {
           />
           Flowbite
         </a>
-        <div className="h-full w-8/12 space-y-10  flex-col flex items-center pb-4 bg-ftvsky-50 rounded-lg shadow dark:border md:mt-0   dark:bg-ftvsky-50 dark:border-ftvwine-200 ">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <div className="h-full w-7/12 space-y-10  flex-col flex items-center pb-4 bg-ftvsky-50 rounded-lg shadow dark:border md:mt-0   dark:bg-ftvsky-50 dark:border-ftvwine-200 ">
+          <div className="p-6 space-y-4 md:space-y-6 sm:p-8 w-full">
             <div className="flex justify-between items-center">
               <div className="flex flex-col justify-center items-center w-3/12">
                 <span className="text-2xl font-semibold text-ftvblue-500">
@@ -51,8 +51,9 @@ const BookMeeting = () => {
             <InlineWidget
               url="https://calendly.com/emmanueljoce/30min"
               styles={{
-                height: "500px",
-                width: "100%",
+                height: "800px",
+                borderRadius: "20px",
+                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
               }}
             />
           </div>
@@ -60,11 +61,11 @@ const BookMeeting = () => {
           <button
             onClick={(e) => {
               e.preventDefault();
-              navigate("/client-profile-setup/step-2");
+              navigate("/");
             }}
             type="submit"
             className="w-5/12 text-white bg-ftvwine-500  hover:bg-ftvwine-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvwine-500  dark:hover:bg-ftvwine-400 dark:focus:ring-primary-800 cursor-pointer s">
-            Next <span className=" fa fa-arrow-right-long ms-5"></span>
+            Back to Dashboard
           </button>
         </div>
       </section>
