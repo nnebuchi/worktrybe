@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <header>
@@ -40,11 +42,11 @@ const Navbar = () => {
                 </button>
               </div>
             </form>
-            <button
-              type="button"
+            <Link
+              to={'register'}
               className="ddaark:text-white text-white hover:bg-ftvblack-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 text-center dark:bg-ftvblack-500 dark:focus:ring-ftvblack-500 cursor-pointer ">
               Get started
-            </button>
+            </Link>
             <button
               data-collapse-toggle="navbar-sticky"
               type="button"
