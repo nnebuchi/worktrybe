@@ -113,7 +113,7 @@ const Landing = () => {
               Find talents by categories
             </h1>
             <form className="flex items-center max-w-sm mx-auto me-3 w-7/12">
-              <label for="simple-search" className="sr-only">
+              <label htmlFor="simple-search" className="sr-only">
                 Search
               </label>
               <div className="relative w-full ">
@@ -204,21 +204,21 @@ const Landing = () => {
           </button>
         </div>
       </section>
-      <footer class="bg-ftvwine-500 antialiased dark:bg-ftvwine-500">
-        <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-          <div class="border-b border-gray-100 py-6 dark:border-ftvgrey-200 md:py-8 lg:py-16">
-            <div class="items-start gap-6 md:gap-8 lg:flex 2xl:gap-24">
-              <div class="grid min-w-0 flex-1 grid-cols-2 gap-6 md:gap-8 xl:grid-cols-3">
+      <footer className="bg-ftvwine-500 antialiased dark:bg-ftvwine-500">
+        <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
+          <div className="border-b border-gray-100 py-6 dark:border-ftvgrey-200 md:py-8 lg:py-16">
+            <div className="items-start gap-6 md:gap-8 lg:flex 2xl:gap-24">
+              <div className="grid min-w-0 flex-1 grid-cols-2 gap-6 md:gap-8 xl:grid-cols-3">
                 <div>
-                  <h6 class="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+                  <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                     Company
                   </h6>
-                  <ul class="space-y-3">
+                  <ul className="space-y-3">
                     <li>
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         {" "}
                         Home{" "}
                       </a>
@@ -227,7 +227,7 @@ const Landing = () => {
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         {" "}
                         About{" "}
                       </a>
@@ -237,7 +237,7 @@ const Landing = () => {
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         {" "}
                         Services
                       </a>
@@ -247,7 +247,7 @@ const Landing = () => {
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         {" "}
                         Contact
                       </a>
@@ -256,15 +256,15 @@ const Landing = () => {
                 </div>
 
                 <div>
-                  <h6 class="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+                  <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                     Fasttrack Virtuals
                   </h6>
-                  <ul class="space-y-3">
+                  <ul className="space-y-3">
                     <li>
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         Digital Marketing
                       </a>
                     </li>
@@ -272,7 +272,7 @@ const Landing = () => {
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         Administrative Tasks
                       </a>
                     </li>
@@ -280,7 +280,7 @@ const Landing = () => {
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         Financial Management
                       </a>
                     </li>
@@ -289,7 +289,7 @@ const Landing = () => {
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         Payment Methods
                       </a>
                     </li>
@@ -297,15 +297,15 @@ const Landing = () => {
                 </div>
 
                 <div>
-                  <h6 class="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
+                  <h6 className="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
                     Support & Services
                   </h6>
-                  <ul class="space-y-3">
+                  <ul className="space-y-3">
                     <li>
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         Contact Support
                       </a>
                     </li>
@@ -313,7 +313,7 @@ const Landing = () => {
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         FAQs
                       </a>
                     </li>
@@ -321,7 +321,7 @@ const Landing = () => {
                       <a
                         href="#"
                         title=""
-                        class="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
+                        className="text-gray-500 hover:text-gray-900 dark:text-ftvwine-25 dark:hover:text-white">
                         Returns & Refunds
                       </a>
                     </li>
@@ -329,29 +329,29 @@ const Landing = () => {
                 </div>
               </div>
 
-              <div class="mt-6 w-full md:mt-8 lg:mt-0 lg:max-w-lg">
-                <div class="space-y-5 rounded-lg bg-gray-50 p-6 dark:bg-ftvwine-100">
+              <div className="mt-6 w-full md:mt-8 lg:mt-0 lg:max-w-lg">
+                <div className="space-y-5 rounded-lg bg-gray-50 p-6 dark:bg-ftvwine-100">
                   <a
                     href="#"
                     title=""
-                    class="text-base font-medium text-ftvwine-500  hover:underline dark:text-ftvwine-500">
+                    className="text-base font-medium text-ftvwine-500  hover:underline dark:text-ftvwine-500">
                     {" "}
                     Sign In or Create Account{" "}
                   </a>
 
-                  <hr class="border-ftvwine-500 dark:borderftvwine-500" />
+                  <hr className="border-ftvwine-500 dark:borderftvwine-500" />
 
                   <form action="#">
-                    <div class="items-end space-y-4 sm:flex sm:space-y-0">
-                      <div class="relative mr-3 w-full sm:w-96 lg:w-full">
+                    <div className="items-end space-y-4 sm:flex sm:space-y-0">
+                      <div className="relative mr-3 w-full sm:w-96 lg:w-full">
                         <label
-                          for="email"
-                          class="mb-2 block text-sm font-medium text-ftvwine-500 dark:text-ftvwine-500">
+                          htmlFor="email"
+                          className="mb-2 block text-sm font-medium text-ftvwine-500 dark:text-ftvwine-500">
                           {" "}
                           Get the latest deals and more.{" "}
                         </label>
                         <input
-                          class="block w-full rounded-lg border border-gray-300 bg-white p-3 text-sm text-ftvblack-300 focus:border-ftvwine-300 focus:ring-primary-500 dark:border-gray-500 dark:bg-ftvgrey-100 dark:text-ftvblack-300 dark:placeholder-gray-400 dark:focus:border-ftvwine-400 dark:focus:ring-primary-500 sm:w-96 lg:w-full outline-none"
+                          className="block w-full rounded-lg border border-gray-300 bg-white p-3 text-sm text-ftvblack-300 focus:border-ftvwine-300 focus:ring-primary-500 dark:border-gray-500 dark:bg-ftvgrey-100 dark:text-ftvblack-300 dark:placeholder-gray-400 dark:focus:border-ftvwine-400 dark:focus:ring-primary-500 sm:w-96 lg:w-full outline-none"
                           placeholder="Enter your email address"
                           type="email"
                           id="email"
@@ -361,21 +361,21 @@ const Landing = () => {
                       <div>
                         <button
                           type="submit"
-                          class="w-full cursor-pointer rounded-lg bg-primary-700 px-5 py-3 text-center text-sm font-medium text-white hover:bg-ftvwine-400 focus:ring-4 focus:ring-primary-300 dark:bg-ftvwine-500 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                          className="w-full cursor-pointer rounded-lg bg-primary-700 px-5 py-3 text-center text-sm font-medium text-white hover:bg-ftvwine-400 focus:ring-4 focus:ring-primary-300 dark:bg-ftvwine-500 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                           Subscribe
                         </button>
                       </div>
                     </div>
                   </form>
 
-                  <hr class="border-ftvwine-500 dark:borderftvwine-500" />
+                  <hr className="border-ftvwine-500 dark:borderftvwine-500" />
 
-                  <div class="flex space-x-4">
+                  <div className="flex space-x-4">
                     <a
                       href="#"
-                      class="text-ftvwine-500 hover:text-ftvwine-500 dark:text-ftvwine-500 dark:hover:text-ftvwine-400">
+                      className="text-ftvwine-500 hover:text-ftvwine-500 dark:text-ftvwine-500 dark:hover:text-ftvwine-400">
                       <svg
-                        class="w-6 h-6 "
+                        className="w-6 h-6 "
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -384,18 +384,18 @@ const Landing = () => {
                         viewBox="0 0 24 24">
                         <path
                           fill="currentColor"
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </a>
 
                     <a
                       href="#"
-                      class="text-ftvwine-500 hover:text-ftvwine-500 dark:text-ftvwine-500 dark:hover:text-ftvwine-400">
+                      className="text-ftvwine-500 hover:text-ftvwine-500 dark:text-ftvwine-500 dark:hover:text-ftvwine-400">
                       <svg
-                        class="w-6 h-6 "
+                        className="w-6 h-6 "
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -403,9 +403,9 @@ const Landing = () => {
                         fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                         <path d="M7.2 8.809H4V19.5h3.2V8.809Z" />
                       </svg>
@@ -413,9 +413,9 @@ const Landing = () => {
 
                     <a
                       href="#"
-                      class="text-ftvwine-500 hover:text-ftvwine-500 dark:text-ftvwine-500 dark:hover:text-ftvwine-400">
+                      className="text-ftvwine-500 hover:text-ftvwine-500 dark:text-ftvwine-500 dark:hover:text-ftvwine-400">
                       <svg
-                        class="w-6 h-6 "
+                        className="w-6 h-6 "
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -428,9 +428,9 @@ const Landing = () => {
 
                     <a
                       href="#"
-                      class="text-ftvwine-500 hover:text-ftvwine-500 dark:text-ftvwine-500 dark:hover:text-ftvwine-400">
+                      className="text-ftvwine-500 hover:text-ftvwine-500 dark:text-ftvwine-500 dark:hover:text-ftvwine-400">
                       <svg
-                        class="w-6 h-6"
+                        className="w-6 h-6"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -438,9 +438,9 @@ const Landing = () => {
                         fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                          fill-rule="evenodd"
+                          fillRule="evenodd"
                           d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
-                          clip-rule="evenodd"
+                          clipRule="evenodd"
                         />
                       </svg>
                     </a>
@@ -450,45 +450,45 @@ const Landing = () => {
             </div>
           </div>
 
-          <div class="py-6 md:py-8">
-            <div class="gap-4 space-y-5 xl:flex xl:items-center xl:justify-between xl:space-y-0">
-              <a href="#" title="" class="block">
+          <div className="py-6 md:py-8">
+            <div className="gap-4 space-y-5 xl:flex xl:items-center xl:justify-between xl:space-y-0">
+              <a href="#" title="" className="block">
                 <img
-                  class="block h-8 w-auto dark:hidden"
+                  className="block h-8 w-auto dark:hidden"
                   src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg"
                   alt=""
                 />
                 <img
-                  class="hidden h-8 w-auto dark:block"
+                  className="hidden h-8 w-auto dark:block"
                   src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg"
                   alt=""
                 />
               </a>
 
-              <ul class="flex flex-wrap items-center gap-4 text-sm text-gray-900 dark:text-white xl:justify-center">
+              <ul className="flex flex-wrap items-center gap-4 text-sm text-gray-900 dark:text-white xl:justify-center">
                 <li>
-                  <a href="#" title="" class="font-medium hover:underline">
+                  <a href="#" title="" className="font-medium hover:underline">
                     {" "}
                     Legal Notice{" "}
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="" class="font-medium hover:underline">
+                  <a href="#" title="" className="font-medium hover:underline">
                     {" "}
                     Assistant Onboarding Policy{" "}
                   </a>
                 </li>
                 <li>
-                  <a href="#" title="" class="font-medium hover:underline">
+                  <a href="#" title="" className="font-medium hover:underline">
                     {" "}
                     Terms of Use{" "}
                   </a>
                 </li>
               </ul>
 
-              <p class="text-sm text-ftvwine-25 dark:text-ftvwine-25">
+              <p className="text-sm text-ftvwine-25 dark:text-ftvwine-25">
                 © 2025{" "}
-                <a href="#" class="hover:underline">
+                <a href="#" className="hover:underline">
                   Innopower
                 </a>
                 , Inc. All rights reserved.
