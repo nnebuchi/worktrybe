@@ -8,6 +8,7 @@ import ResetPassword from "./pages/ResetPassword";
 import AlertModal from "./components/UI/AlertModal";
 import ClientOnboardingStep1 from "./components/screens/onboarding/ClientOnboardingStep1";
 import ClientOnboardingStep2 from "./components/screens/onboarding/ClientOnboardingStep2";
+import BookMeeeting from "./components/screens/onboarding/BookMeeting";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             path="/client-profile-setup/step-2"
             element={<ClientOnboardingStep2 />}
           />
+          <Route path="/book-meeting" element={<BookMeeeting />} />
         </Routes>
       </BrowserRouter>
     </>

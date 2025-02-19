@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 const ClientOnboardingStep1 = () => {
+  const navigate = useNavigate();
   return (
     <>
       <section className="min-h-[100vh] bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-25 ">
@@ -17,14 +19,14 @@ const ClientOnboardingStep1 = () => {
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <div className="flex justify-between items-center">
                 <div className="flex flex-col justify-center items-center w-3/12">
-                  <span className="text-2xl font-semibold text-ftvwine-500">
+                  <span className="text-2xl font-semibold text-ftvblue-500">
                     1
                   </span>
-                  <h6 className="text-ftvwine-500 font-semibold">
+                  <h6 className="text-ftvblue-500 font-semibold">
                     Personal Info
                   </h6>
                 </div>
-                <hr className="border-ftvwine-500  w-1/12" />
+                <hr className="border-ftvblue-500  w-1/12" />
                 <div className="flex flex-col justify-center items-center w-3/12">
                   <span className="text-2xl font-semibold text-ftvgrey-400">
                     2
@@ -36,7 +38,7 @@ const ClientOnboardingStep1 = () => {
                   <span className="text-2xl font-semibold text-ftvgrey-400">
                     3
                   </span>
-                  <h6 className="text-ftvgrey-400"> Suggestions</h6>
+                  <h6 className="text-ftvgrey-400"> Book Meeting</h6>
                 </div>
               </div>
 
@@ -110,6 +112,10 @@ const ClientOnboardingStep1 = () => {
                 </div>
 
                 <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate("/client-profile-setup/step-2");
+                  }}
                   type="submit"
                   className="w-8/12 text-white bg-ftvwine-500  hover:bg-ftvwine-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvwine-500  dark:hover:bg-ftvwine-400 dark:focus:ring-primary-800 cursor-pointer s">
                   Next <span className=" fa fa-arrow-right-long ms-5"></span>

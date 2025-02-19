@@ -1,4 +1,7 @@
-const ClientOnboardingStep1 = () => {
+import { useNavigate } from "react-router-dom";
+import BudgetDropdown from "../../UI/BudgetDropdown";
+const ClientOnboardingStep2 = () => {
+  const navigate = useNavigate();
   return (
     <>
       <section className="min-h-[100vh] bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-25 ">
@@ -17,26 +20,27 @@ const ClientOnboardingStep1 = () => {
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <div className="flex justify-between items-center">
                 <div className="flex flex-col justify-center items-center w-3/12">
-                  <span className="text-2xl font-semibold text-ftvwine-500">
+                  <span className="text-2xl font-semibold text-ftvblue-500">
                     1
                   </span>
-                  <h6 className="text-ftvwine-500 font-semibold">
+                  <h6 className="text-ftvblue-500 font-semibold">
                     Personal Info
                   </h6>
                 </div>
-                <hr className="border-ftvwine-500  w-1/12" />
+                {/* <hr className="border-ftvblue-500  w-1/12" /> */}
+                <span className="fa fa-check-circle text-2xl text-ftvblue-500 "></span>
                 <div className="flex flex-col justify-center items-center w-3/12">
-                  <span className="text-2xl font-semibold text-ftvwine-500">
+                  <span className="text-2xl font-semibold text-ftvblue-500">
                     2
                   </span>
-                  <h6 className="text-ftvwine-500"> Matching</h6>
+                  <h6 className="text-ftvblue-500"> Matching</h6>
                 </div>
-                <hr className="border-ftvgrey-200 w-1/12" />
+                <hr className="border-ftvblue-500 w-1/12" />
                 <div className="flex flex-col justify-center items-center w-3/12">
                   <span className="text-2xl font-semibold text-ftvgrey-400">
                     3
                   </span>
-                  <h6 className="text-ftvgrey-400"> Suggestions</h6>
+                  <h6 className="text-ftvgrey-400"> Book Meeting</h6>
                 </div>
               </div>
 
@@ -45,52 +49,19 @@ const ClientOnboardingStep1 = () => {
                 action="#">
                 <div className="w-8/12">
                   <label
-                    htmlFor="company"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                    What is the name of your current company?
-                  </label>
-                  <input
-                    type="text"
-                    name="company"
-                    id="company"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
-                    placeholder="Google"
-                    required=""
-                  />
-                </div>
-                <div className="w-8/12">
-                  <label
                     htmlFor="industry"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                    What industry best describe your company?
+                    What tasks do you need help with?
                   </label>
 
                   <select
                     id="industry"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 ">
-                    <option selected>Choose applicable industry</option>
-                    <option value="US">IT and Computer</option>
-                    <option value="CA">Banking and Finance</option>
-                    <option value="FR">HR and Recruiting</option>
-                    <option value="DE">Maritime and Shipping</option>
-                  </select>
-                </div>
-
-                <div className="w-8/12">
-                  <label
-                    htmlFor="industry"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                    What is your preferred work hours & time zones?
-                  </label>
-
-                  <select
-                    id="industry"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 ">
-                    <option selected>Choose a suitable work timezone</option>
-                    <option value="US">WAT</option>
-                    <option value="CA">WAT</option>
-                    <option value="FR">HR and Recruiting</option>
-                    <option value="DE">Maritime and Shipping</option>
+                    <option value="ENT">Admin Support</option>
+                    <option value="MID">Finance & Accounting</option>
+                    <option value="EXP">Customer Service</option>
+                    <option value="EXP">Data Entry & Research</option>
+                    <option value="EXP">Other</option>
                   </select>
                 </div>
                 <div className="w-8/12">
@@ -109,17 +80,44 @@ const ClientOnboardingStep1 = () => {
                   </select>
                 </div>
 
-                <div className="flex justify-center w-full space-x-4">
+                <BudgetDropdown />
+                <div className="w-8/12">
+                  <label
+                    htmlFor="industry"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    What is your preferred work hours & time zones?
+                  </label>
+
+                  <select
+                    id="industry"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 ">
+                    <option selected>Choose a suitable work timezone</option>
+                    <option value="US">WAT</option>
+                    <option value="CA">WAT</option>
+                    <option value="FR">HR and Recruiting</option>
+                    <option value="DE">Maritime and Shipping</option>
+                  </select>
+                </div>
+
+                <div className="flex justify-center w-9/12 space-x-4">
                   <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/client-profile-setup/step-1");
+                    }}
                     type="submit"
                     className="w-4/12 text-ftvwine-500 hover:text-white bg-transparent ring-1 ring-ftvwine-500  hover:bg-ftvwine-500 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-transparent dark:ring-ftvwine-500  dark:hover:bg-ftvwine-500 dark:focus:ring-primary-800 cursor-pointer">
                     <span className=" fa fa-arrow-left-long me-3"></span>
-                    Prev: Personal Info{" "}
+                    Prev
                   </button>
                   <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      navigate("/book-meeting");
+                    }}
                     type="submit"
-                    className="w-4/12 text-white bg-ftvwine-500  hover:bg-ftvwine-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvwine-500  dark:hover:bg-ftvwine-400 dark:focus:ring-primary-800 cursor-pointer">
-                    Next: Recommendations{" "}
+                    className="w-6/12 text-white bg-ftvwine-500  hover:bg-ftvwine-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvwine-500  dark:hover:bg-ftvwine-400 dark:focus:ring-primary-800 cursor-pointer">
+                    Next: Book Meeting{" "}
                     <span className=" fa fa-arrow-right-long ms-3"></span>
                   </button>
                 </div>
@@ -132,4 +130,4 @@ const ClientOnboardingStep1 = () => {
   );
 };
 
-export default ClientOnboardingStep1;
+export default ClientOnboardingStep2;
