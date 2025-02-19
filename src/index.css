@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@theme {
+  --color-ftvwine-500: #690031;
+  --color-ftvwine-400: #87204f;
+  --color-ftvwine-300: #a94c72;
+  --color-ftvwine-200: #cc7997;
+  --color-ftvwine-100: #e6afc0;
+  --color-ftvwine-50: #f4d8e0;
+  --color-ftvwine-25: #faecf0;
+  --color-ftvblue-600: #1e2368;
+  --color-ftvblue-500: #222875;
+  --color-ftvblue-400: #3e4490;
+  --color-ftvblue-300: #5f66ac;
+  --color-ftvblue-200: #8990ca;
+  --color-ftvblue-100: #b5bae6;
+  --color-ftvblue-50: #dee1f5;
+  --color-ftvblue-25: #f1f3fb;
+  --color-ftvgrey-500: #6b7280;
+  --color-ftvgrey-400: #878c98;
+  --color-ftvgrey-300: #a3a7b0;
+  --color-ftvgrey-200: #c0c3c9;
+  --color-ftvgrey-50: #eceef1;
+  --color-ftvgrey-25: #f5f6f8;
+  --color-ftvsky-500: #cbefff;
+  --color-ftvsky-400: #d6f3ff;
+  --color-ftvsky-300: #e1f6ff;
+  --color-ftvsky-200: #ebfaff;
+  --color-ftvsky-100: #f4fdff;
+  --color-ftvsky-50: #fafeff;
+  --color-ftvsky-25: #faf8ff;
+  --color-ftvblack-600: #18212b;
+  --color-ftvblack-500: #1e2935;
+  --color-ftvblack-400: #293544;
+  --color-ftvblack-300: #3a4a5d;
+  --color-ftvblack-200: #5a6a7e;
+  --color-ftvblack-100: #8696a4;
+  --color-ftvblack-50: #c3cad2;
+  --color-ftvblack-25: #e6eaed;
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Outfit", "Poppins", "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navlinks {
+  display: flex;
+  gap: 1rem;
+}
