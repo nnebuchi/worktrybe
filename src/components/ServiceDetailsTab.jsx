@@ -45,28 +45,28 @@ const ServiceDetailsTab = () => {
   ];
 
   return (
-    <section className="dark:bg-ftvwine-500 bg-ftvwine-500 min-h-[400px] flex flex-col gap-5 justify-between items-center px-10 py-15 w-full">
+    <section className="dark:bg-ftvblue-500 bg-ftvblue-500 min-h-[400px] flex flex-col gap-5 justify-between items-center px-10 py-15 w-full">
       <div>
-        <h1 className="mb-4 text-4xl tracking-tight font-bold text-white dark:text-white text-center">
+        <h1 className="mb-4 text-4xl tracking-tight font-bold text-ftvsky-500 dark:text-ftvsky-500 text-center">
           See how much Fasttrack VA can help you with
         </h1>
-        <p className="mb-4 dark:text-white text-white  text-lg w-9/12 text-center mx-auto">
+        <p className="mb-4 dark:text-ftvsky-500 text-ftvsky-500  text-lg w-9/12 text-center mx-auto">
           Fasttrack Virtuals combines practical innovations with proven
           expertise⁠—so you’re guaranteed top-tier assistance, for top-tier
           results.
         </p>
       </div>
       <div className="w-full ">
-        <div className="md:flex md:flex-col gap-10 w-full dark:bg-ftvwine-25 p-10 rounded-lg ring-1 ring-ftvgrey-400">
+        <div className="md:flex md:flex-col gap-10 w-full dark:bg-ftvblue-50 p-10 rounded-lg ring-1 ring-ftvgrey-400">
           <ul className="flex justify-evenly  space-y space-y-4 text-sm font-medium text-ftvgrey-500 dark:text-ftvgrey-400 md:me-4 mb-4 md:mb-0 w-full space-x-4">
             {helps.map((tab, index) => (
               <li key={index} className="w-4/12 ">
                 <button
                   onClick={() => handleTabClick(index)}
-                  className={`inline-flex items-center  rounded-lg w-full flex-col justify-center text-base bg-blue-700 dark:bg-white border-t-4 border-ftvgrey-500  dark:border-t-4 cursor-pointer dark:border-ftvgrey-400 gap-4 ring-1 dark:ring-ftvgrey-400 ring-ftvgrey-400  ${
+                  className={`inline-flex items-center  rounded-lg w-full flex-col justify-center text-base border-t-4  dark:border-t-4 cursor-pointer gap-4 ring-1   ${
                     activeTab === index
-                      ? "text-ftvwine-400 bg-blue-700 dark:bg-ftvwine-50 h-fit  border-t-4 dark:border-ftvwine-400 gark:border-t-4 ring-1 ring-ftvwine-400 dark:ring-ftvwine-400"
-                      : "hover:text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-ftvgrey-50 dark:hover:bg-gray-700 dark:hover:text-ftvwine-400"
+                      ? "text-ftvblue-400  h-fit   dark:border-ftvblue-500 ring-1 ring-ftvblue-400 dark:ring-ftvblue-400"
+                      : "hover:text-gray-900 bg-gray-50 hover:bg-ftvsky-300 border-ftvgrey-500  dark:bg-ftvgrey-50 dark:hover:bg-gray-700 dark:hover:text-ftvblue-400"
                   }`}
                   aria-current={activeTab === index ? "page" : undefined}>
                   <span className=" dark:bg-ftvblue-25 bg-ftvblue-25 w-full px-4 py-3 rounded-lg">
@@ -88,21 +88,21 @@ const ServiceDetailsTab = () => {
                     <li
                       key={ii}
                       className="flex gap-3 items-center text-lg text-ftvblack-400 dark:text-ftvblack-400 ">
-                      <span className="fa fa-check text-2xl text-ftvwine-500 dark:text-ftvwine-500 "></span>
+                      <span className="fa fa-check text-2xl text-ftvblue-500 dark:text-ftvblue-500 "></span>
                       {item}
                     </li>
                   ))}
                 </ul>
                 <button
                   type="button"
-                  className="text-white dark:text-white hover:text-ftvwine-500 rounded-lg hover:ring-1 hover:border-ftvwine-500 bg-ftvwine-500 hover:bg-transparent cursor-pointer py-3 px-5 w-5/12 ">
+                  className="text-white dark:text-white hover:text-ftvblue-500 rounded-lg hover:ring-1 hover:border-ftvblue-500 bg-ftvblue-500 hover:bg-transparent cursor-pointer py-3 px-5 w-5/12 ">
                   Get started
                 </button>
               </div>
               <div className="w-5/12 h-full">
                 <img
                   src="/work.svg"
-                  className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full shadow-lg shadow-ftvwine-200"
+                  className="ring-1 ring-ftvgrey-400 rounded-lg w-full h-full shadow-lg shadow-ftvblue-200"
                   alt="administrative tasks"
                 />
               </div>
