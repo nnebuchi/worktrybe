@@ -67,3 +67,29 @@ api.interceptors.response.use(
         return err.response?.data;
       });
   };
+
+
+
+  export const loginUser = async (email, password) => {
+    return await api
+      .post(
+        "/auth/login", 
+        {
+          email: email,
+          password: password,
+        },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          //   Authorization: `Bearer ${import.meta.env.VITE_APP_TOKEN}`,
+          },
+        }
+      )
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };

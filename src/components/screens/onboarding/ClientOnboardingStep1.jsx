@@ -47,14 +47,14 @@ const ClientOnboardingStep1 = () => {
                 action="#">
                 <div className="w-8/12">
                   <label
-                    htmlFor="fullname"
+                    htmlFor="firstname"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                    What is your official name?
+                    First Name
                   </label>
                   <input
                     type="text"
-                    name="fullname"
-                    id="fullname"
+                    name="firstname"
+                    id="firstname"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
                     placeholder="Brian Oluoch"
                     required=""
