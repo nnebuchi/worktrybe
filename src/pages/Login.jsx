@@ -48,7 +48,8 @@ const Login = () => {
       if(log.data.first_name){
         navigate("/dashboard")
       }else{
-        navigate("/client-profile-setup/step-1");
+        location.href = '/client-profile-setup/step-1';
+        // navigate("/client-profile-setup/step-1");
       }
       
       // setIsLoginModalOpen(false);

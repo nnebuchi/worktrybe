@@ -44,7 +44,7 @@ const Navbar = () => {
             </form>
             <Link
               to={"register"}
-              className="ddaark:text-white text-white hover:bg-ftvblack-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 text-center dark:bg-ftvblack-500 dark:focus:ring-ftvblack-500 cursor-pointer ">
+              className="dark:text-white text-white hover:bg-ftvblue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 text-center dark:bg-ftvblack-500 dark:focus:ring-ftvblack-500 cursor-pointer ">
               Get started
             </Link>
             <button
