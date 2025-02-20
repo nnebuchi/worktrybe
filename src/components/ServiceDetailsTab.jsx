@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ServiceDetailsTab = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index) => {
@@ -94,6 +96,7 @@ const ServiceDetailsTab = () => {
                   ))}
                 </ul>
                 <button
+                  onClick={() => navigate("/register")}
                   type="button"
                   className="text-white dark:text-white hover:text-ftvblue-500 rounded-lg hover:ring-1 hover:border-ftvblue-500 bg-ftvblue-500 hover:bg-transparent cursor-pointer py-3 px-5 w-5/12 ">
                   Get started

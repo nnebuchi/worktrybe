@@ -2,8 +2,10 @@ import Navbar from "../components/Navbar";
 import RatingCard from "../components/RatingCard";
 import BenefitTabs from "../components/BenefitTabs";
 import ServiceDetailsTab from "../components/ServiceDetailsTab";
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -19,7 +21,7 @@ const Landing = () => {
           </p>
           <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
             <a
-              href="#"
+              href="/register"
               className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center dark:text-ftvwine-25 text-ftvwine-25  rounded-lg bg-primary-700 focus:ring-4 focus:ring-ftvwine-400 dark:focus:ring-ftvwine-400 bg-ftvwine-500 hover:bg-ftvwine-400 ">
               Find a VA
               <svg
@@ -92,6 +94,7 @@ const Landing = () => {
               alone
             </p>
             <button
+              onClick={() => navigate("/register")}
               type="button"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvblack-600 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvgrey-400 cursor-pointer w-4/12 mt-5 text-xl">
               Hire assistant
@@ -183,7 +186,7 @@ const Landing = () => {
             </div>
           </div>
           <a
-            href="#"
+            href="/register"
             className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvwine-300 bg-ftvwine-500 text-ftvwine-2  dark:text-white dark:border-ftvwine-500 dark:hover:bg-ftvwine-400 dark:focus:ring-ftvwine-500 hover:text-ftvwine-25">
             Schedule a Call
             <span className="fa fa-calendar-plus ms-2"></span>
@@ -198,6 +201,7 @@ const Landing = () => {
             per week.
           </h1>
           <button
+            onClick={() => navigate("/register")}
             type="button"
             className="text-ftvsky-500 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center bg-light hover:bg-ftvblue-600  dark:bg-ftvblue-500 border-1 border-ftvsky-500 dark:ring-ftvsky-500 ring-ftvsky-500 dark:focus:ring-ftvgrey-400 cursor-pointer w-4/12 mt-5 text-xl">
             Book a Call

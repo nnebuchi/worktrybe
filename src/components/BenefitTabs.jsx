@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const BenefitTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
+
+  const navigate = useNavigate();
 
   const handleTabClick = (index) => {
     setActiveTab(index);
@@ -80,6 +83,7 @@ const BenefitTabs = () => {
         </div>
       </div>
       <button
+        onClick={() => navigate("/register")}
         type="button"
         className="text-white bg-ftvblack-500 hover:bg-ftvblack-300 focus:ring-1 focus:outline-none focus:ring-ftvgrey-400 font-medium rounded-lg py-3 px-5 text-center text-xl dark:bg-ftvblack-500 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvgrey-400 cursor-pointer w-2/12 ">
         Get started
