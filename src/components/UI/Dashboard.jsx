@@ -87,7 +87,7 @@ const Dashboard = () => {
                     type="text"
                     name="email"
                     id="topbar-search"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-white-25 dark:border-ftvgrey-500 dark:placeholder-gray-400 dark:text-ftvwine-500 dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-white-25 dark:border-ftvgrey-500 dark:placeholder-gray-400 focus:outline-none dark:text-ftvwine-500 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     placeholder="Search"
                   />
                 </div>
@@ -320,7 +320,7 @@ const Dashboard = () => {
                 </div>
                 <a
                   href="#"
-                  className="block py-2 text-md font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-ftvwine-100 dark:text-ftvwine-500 dark:hover:underline">
+                  className="block py-2 text-md font-medium text-center text-gray-900 bg-gray-50 hover:bg-ftvwine-50 dark:bg-ftvwine-100 dark:text-ftvwine-500 dark:hover:underline">
                   <div className="inline-flex items-center">
                     <svg
                       aria-hidden="true"
@@ -366,7 +366,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -384,7 +384,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -399,7 +399,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -417,7 +417,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -435,7 +435,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -453,7 +453,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -472,7 +472,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -491,7 +491,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -509,7 +509,7 @@ const Dashboard = () => {
                     className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-ftvwine-25 group">
                     <svg
                       aria-hidden="true"
-                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-gray-400"
+                      className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-ftvwine-400 dark:group-hover:text-ftvwine-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -541,10 +541,10 @@ const Dashboard = () => {
               </button>
               {/* <!-- Dropdown menu --> */}
               <div
-                className="hidden z-50 my-4 w-56 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-white-25 dark:divide-ftvwine-400 rounded-xl"
+                className="hidden z-50 my-4 w-56 text-base list-none bg-white divide-y divide-gray-100 shadow dark:bg-white-25 dark:divide-ftvwine-400 rounded-xl ring-1 ring-ftvwine-100"
                 id="dropdown">
-                <div className="py-3 px-4">
-                  <span className="block text-sm font-semibold text-gray-900 dark:text-ftvwine-500">
+                <div className="py-3 px-4 bg-ftvwine-100 rounded-t-lg">
+                  <span className="block text-sm font-semibold text-gray-900 dark:text-ftvwine-500 dark">
                     Neil Sims
                   </span>
                   <span className="block text-sm text-gray-900 truncate dark:text-ftvwine-500">
@@ -557,14 +557,14 @@ const Dashboard = () => {
                   <li>
                     <a
                       href="#"
-                      className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:text-ftvwine-400 dark:hover:text-white">
+                      className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:text-ftvwine-400 dark:hover:text-ftvwine-400">
                       My profile
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
-                      className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:text-ftvwine-400 dark:hover:text-white">
+                      className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:text-ftvwine-400 dark:hover:text-ftvwine-400">
                       Account settings
                     </a>
                   </li>
@@ -575,9 +575,9 @@ const Dashboard = () => {
                   <li>
                     <a
                       href="#"
-                      className="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:hover:text-white">
+                      className="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:hover:text-ftvwine-400">
                       <svg
-                        className="mr-2 w-5 h-5 text-gray-400"
+                        className="mr-2 w-5 h-5 "
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -592,9 +592,9 @@ const Dashboard = () => {
                   <li>
                     <a
                       href="#"
-                      className="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:hover:text-white">
+                      className="flex items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:hover:text-ftvwine-400">
                       <svg
-                        className="mr-2 w-5 h-5 text-gray-400"
+                        className="mr-2 w-5 h-5 "
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -606,7 +606,7 @@ const Dashboard = () => {
                   <li>
                     <a
                       href="#"
-                      className="flex justify-between items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:hover:text-white">
+                      className="flex justify-between items-center py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:hover:text-ftvwine-400">
                       <span className="flex items-center">
                         <svg
                           aria-hidden="true"
@@ -636,12 +636,12 @@ const Dashboard = () => {
                   </li>
                 </ul>
                 <ul
-                  className="py-1 text-gray-700 dark:text-ftvwine-500"
+                  className="py-1 text-gray-700 dark:text-ftvblack-500"
                   aria-labelledby="dropdown">
                   <li>
                     <a
                       href="#"
-                      className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:hover:text-white">
+                      className="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-ftvwine-25 dark:hover:text-ftvblack-300">
                       Sign out
                     </a>
                   </li>
@@ -653,7 +653,7 @@ const Dashboard = () => {
         {/* Sidebar */}
         <aside
           id="default-sidebar"
-          className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+          className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 pt-14"
           aria-label="Sidenav">
           <div className="overflow-y-auto py-5 px-3 h-full bg-white border-r border-gray-200 dark:bg-ftvwine-50 dark:border-gray-700">
             <ul className="space-y-2">
@@ -693,7 +693,7 @@ const Dashboard = () => {
                       clip-rule="evenodd"></path>
                   </svg>
                   <span className="flex-1 ml-3 dark:group-hover:text-white text-left whitespace-nowrap">
-                    Pages
+                    Projects
                   </span>
                   <svg
                     aria-hidden="true"
@@ -712,21 +712,21 @@ const Dashboard = () => {
                     <a
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-ftvwine-400 dark:hover:bg-ftvwine-200 dark:hover:text-white">
-                      Settings
+                      Ongoing
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-ftvwine-400 dark:hover:bg-ftvwine-200 dark:hover:text-white">
-                      Kanban
+                      Completed
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-ftvwine-400 dark:hover:bg-ftvwine-200 dark:hover:text-white">
-                      Calendar
+                      Terminated
                     </a>
                   </li>
                 </ul>
@@ -1004,13 +1004,13 @@ const Dashboard = () => {
             </button>
             {/* <!-- Dropdown --> */}
             <div
-              className="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700"
+              className="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-white"
               id="language-dropdown">
               <ul className="py-1" role="none">
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-ftvwine-500 dark:hover:bg-ftvwine-300"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-ftvwine-500 dark:hover:bg-ftvwine-100"
                     role="menuitem">
                     <div className="inline-flex items-center">
                       <svg
@@ -1051,7 +1051,7 @@ const Dashboard = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-ftvwine-500 dark:hover:text-white dark:hover:bg-ftvwine-300"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-ftvwine-500 dark:hover:text-white dark:hover:bg-ftvwine-100"
                     role="menuitem">
                     <div className="inline-flex items-center">
                       <svg
@@ -1071,7 +1071,7 @@ const Dashboard = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-ftvwine-500 dark:hover:text-white dark:hover:bg-ftvwine-300"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-ftvwine-500 dark:hover:text-white dark:hover:bg-ftvwine-100"
                     role="menuitem">
                     <div className="inline-flex items-center">
                       <svg
@@ -1093,7 +1093,7 @@ const Dashboard = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-ftvwine-500 dark:hover:bg-ftvwine-300"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-ftvwine-500 dark:hover:bg-ftvwine-100"
                     role="menuitem">
                     <div className="inline-flex items-center">
                       <svg
@@ -1152,10 +1152,172 @@ const Dashboard = () => {
         </aside>
         <main className="p-4 md:ml-64 h-auto pt-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-            <div className="border-2 border-dashed border-gray-300 rounded-lg dark:border-ftvgrey-500 h-32 md:h-64"></div>
-            <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-ftvgrey-500 h-32 md:h-64"></div>
-            <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-ftvgrey-500 h-32 md:h-64"></div>
-            <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-ftvgrey-500 h-32 md:h-64"></div>
+            <div className="ring-1 hover:bg-ftvblue-25 dark:bg-ftvblue-50 border-gray-300 rounded-lg dark:ring-ftvblue-500 h-32 md:h-64 flex flex-col items-center justify-evenly px-3">
+              <div className="text-center">
+                <h5>Number of Active VAs</h5>
+                <span className="text-ftvblack-600 font-bold text-2xl">12</span>
+              </div>
+              <div className="flex flex-col items-center justify-center mt-2 w-full space-y-2">
+                <div className="ring-1 ring-ftvgrey-100 rounded-lg p-2 h-10 bg-ftvsky-50  flex justify-between items-center w-full">
+                  <div className="flex justify-content-center items-center space-x-2 ">
+                    <img
+                      src=""
+                      className="w-7 h-7 ring-1 ring-ftvblue-500 rounded-full"
+                      alt=""
+                    />{" "}
+                    <span className="text-sm font-normal texxt-ftvgrey-200">
+                      Jason Belema
+                    </span>
+                  </div>
+                  <span className="text-[0.7rem] font-normal texxt-ftvgrey-200">
+                    A.A
+                  </span>
+                  <span className="  bg-ftvblue-500 w-3 h-3 rounded-full"></span>
+                </div>
+                <div className="ring-1 ring-ftvgrey-100 rounded-lg p-2 h-10 bg-ftvsky-50  flex justify-between items-center w-full">
+                  <div className="flex justify-content-center items-center space-x-2 ">
+                    <img
+                      src=""
+                      className="w-7 h-7 ring-1 ring-ftvblue-500 rounded-full"
+                      alt=""
+                    />{" "}
+                    <span className="text-sm font-normal texxt-ftvgrey-200">
+                      Jason Belema
+                    </span>
+                  </div>
+                  <span className="text-[0.7rem] font-normal texxt-ftvgrey-200">
+                    A.A
+                  </span>
+                  <span className="  bg-ftvblue-100 w-3 h-3 rounded-full"></span>
+                </div>
+                <button className="bg-transparent ring-1 ring-ftvblue-500 text-ftvblue-500 rounded-lg p-2 w-8/12 space-x-3 hover:bg-ftvblue-100 ">
+                  <span className="fa fa-eye"></span>
+                  <span className="text-sm ">View All</span>
+                </button>
+              </div>
+            </div>
+            <div className="ring-1 hover:bg-ftvwine-25 dark:bg-ftvwine-50 border-gray-300 rounded-lg dark:ring-ftvwine-500 h-32 md:h-64 flex flex-col items-center justify-evenly px-3">
+              <div className="text-center">
+                <h5>Tasks in Progress</h5>
+                <span className="text-ftvblack-600 font-bold text-2xl">12</span>
+              </div>
+              <div className="flex flex-col items-center justify-center mt-2 w-full space-y-2">
+                <div className="ring-1 ring-ftvgrey-100 rounded-lg p-2 h-10 bg-ftvsky-50  flex justify-between items-center w-full">
+                  <div className="flex justify-content-center items-center space-x-2 ">
+                    <span className="text-sm font-normal texxt-ftvgrey-200">
+                      Book Keeping
+                    </span>
+                  </div>
+                  <span className="text-[0.7rem] font-normal texxt-ftvgrey-200">
+                    review in hours
+                  </span>
+                  {/* <span className="  bg-ftvwine-500 w-3 h-3 rounded-full"></span> */}
+                </div>
+                <div className="ring-1 ring-ftvgrey-100 rounded-lg p-2 h-10 bg-ftvsky-50  flex justify-between items-center w-full">
+                  <div className="flex justify-content-center items-center space-x-2 ">
+                    <span className="text-sm font-normal texxt-ftvgrey-200">
+                      Email Magt.
+                    </span>
+                  </div>
+                  <span className="text-[0.7rem] font-normal texxt-ftvgrey-200">
+                    review in 1 day
+                  </span>
+                  {/* <span className="  bg-ftvwine-500 w-3 h-3 rounded-full"></span> */}
+                </div>
+                <button className="bg-transparent ring-1 ring-ftvwine-500 text-ftvwine-500 rounded-lg p-2 w-8/12 space-x-3 hover:bg-ftvwine-100 ">
+                  <span className="fa fa-eye"></span>
+                  <span className="text-sm ">View All</span>
+                </button>
+              </div>
+            </div>
+            <div className="ring-1 hover:bg-ftvblue-25 dark:bg-ftvblue-50 border-gray-300 rounded-lg dark:ring-ftvblue-500 h-32 md:h-64 flex flex-col items-center justify-evenly px-3">
+              <div className="text-center">
+                <h5>Number of Active VAs</h5>
+                <span className="text-ftvblack-600 font-bold text-2xl">12</span>
+              </div>
+              <div className="flex flex-col items-center justify-center mt-2 w-full space-y-2">
+                <div className="ring-1 ring-ftvgrey-100 rounded-lg p-2 h-10 bg-ftvsky-50  flex justify-between items-center w-full">
+                  <div className="flex justify-content-center items-center space-x-2 ">
+                    <img
+                      src=""
+                      className="w-7 h-7 ring-1 ring-ftvblue-500 rounded-full"
+                      alt=""
+                    />{" "}
+                    <span className="text-sm font-normal texxt-ftvgrey-200">
+                      Jason Belema
+                    </span>
+                  </div>
+                  <span className="text-[0.7rem] font-normal texxt-ftvgrey-200">
+                    A.A
+                  </span>
+                  <span className="  bg-ftvblue-500 w-3 h-3 rounded-full"></span>
+                </div>
+                <div className="ring-1 ring-ftvgrey-100 rounded-lg p-2 h-10 bg-ftvsky-50  flex justify-between items-center w-full">
+                  <div className="flex justify-content-center items-center space-x-2 ">
+                    <img
+                      src=""
+                      className="w-7 h-7 ring-1 ring-ftvblue-500 rounded-full"
+                      alt=""
+                    />{" "}
+                    <span className="text-sm font-normal texxt-ftvgrey-200">
+                      Jason Belema
+                    </span>
+                  </div>
+                  <span className="text-[0.7rem] font-normal texxt-ftvgrey-200">
+                    A.A
+                  </span>
+                  <span className="  bg-ftvblue-100 w-3 h-3 rounded-full"></span>
+                </div>
+                <button className="bg-transparent ring-1 ring-ftvblue-500 text-ftvblue-500 rounded-lg p-2 w-8/12 space-x-3 hover:bg-ftvblue-100 ">
+                  <span className="fa fa-eye"></span>
+                  <span className="text-sm ">View All</span>
+                </button>
+              </div>
+            </div>
+            <div className="ring-1 hover:bg-ftvblue-25 dark:bg-ftvblue-50 border-gray-300 rounded-lg dark:ring-ftvblue-500 h-32 md:h-64 flex flex-col items-center justify-evenly px-3">
+              <div className="text-center">
+                <h5>Number of Active VAs</h5>
+                <span className="text-ftvblack-600 font-bold text-2xl">12</span>
+              </div>
+              <div className="flex flex-col items-center justify-center mt-2 w-full space-y-2">
+                <div className="ring-1 ring-ftvgrey-100 rounded-lg p-2 h-10 bg-ftvsky-50  flex justify-between items-center w-full">
+                  <div className="flex justify-content-center items-center space-x-2 ">
+                    <img
+                      src=""
+                      className="w-7 h-7 ring-1 ring-ftvblue-500 rounded-full"
+                      alt=""
+                    />{" "}
+                    <span className="text-sm font-normal texxt-ftvgrey-200">
+                      Jason Belema
+                    </span>
+                  </div>
+                  <span className="text-[0.7rem] font-normal texxt-ftvgrey-200">
+                    A.A
+                  </span>
+                  <span className="  bg-ftvblue-500 w-3 h-3 rounded-full"></span>
+                </div>
+                <div className="ring-1 ring-ftvgrey-100 rounded-lg p-2 h-10 bg-ftvsky-50  flex justify-between items-center w-full">
+                  <div className="flex justify-content-center items-center space-x-2 ">
+                    <img
+                      src=""
+                      className="w-7 h-7 ring-1 ring-ftvblue-500 rounded-full"
+                      alt=""
+                    />{" "}
+                    <span className="text-sm font-normal texxt-ftvgrey-200">
+                      Jason Belema
+                    </span>
+                  </div>
+                  <span className="text-[0.7rem] font-normal texxt-ftvgrey-200">
+                    A.A
+                  </span>
+                  <span className="  bg-ftvblue-100 w-3 h-3 rounded-full"></span>
+                </div>
+                <button className="bg-transparent ring-1 ring-ftvblue-500 text-ftvblue-500 rounded-lg p-2 w-8/12 space-x-3 hover:bg-ftvblue-100 ">
+                  <span className="fa fa-eye"></span>
+                  <span className="text-sm ">View All</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div className="border-2 border-dashed rounded-lg border-gray-300 dark:border-ftvgrey-500 h-96 mb-4"></div>
           <div className="grid grid-cols-2 gap-4 mb-4">
