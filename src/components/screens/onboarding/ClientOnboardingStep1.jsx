@@ -1,6 +1,82 @@
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from 'react';
+import ValidationError from "../../UI/ValidaionError";
+import { toast } from 'react-toastify';
+import { updateProfile } from "../../../services/api";
+import { runValidation } from "../../../utils/buchi";
+import { UserContext } from "../../../contexts/UserContext";
+
 const ClientOnboardingStep1 = () => {
+  const {user, fetchUserData} = useContext(UserContext); 
+  const [first_name, setFirstName] = useState(user.first_name? user.first_name:'');
+  const [last_name, setLastName] = useState(user.last_name? user.last_name:'');
+  const [organization, setOrganization] = useState(user.organization? user.organization:'');
+  const [phone, setPhone] = useState(user.phone? user.phone:'');
+
+
+  const [validationErrors, setValidationErrors] = useState();
   const navigate = useNavigate();
+
+
+  const validateProfileForm = async () => {
+    const validate = await runValidation([
+            
+      {
+          input: { value: first_name, field: "first_name", type: "text" },
+          rules: { required: true, first_name: true },
+      },
+      {
+        input: { value: last_name, field: "last_name", type: "text" },
+        rules: { required: true, last_name: true },
+      },
+      {
+        input: { value: organization, field: "organization", type: "text" },
+        rules: { required: true, organization: true },
+      },
+      {
+        input: { value: phone, field: "phone", type: "text" },
+        rules: { required: true, phone: true },
+      },
+    ]);
+    
+    if (validate?.status === false) {
+        
+        setValidationErrors(validate.errors);
+    } else {
+      // alert("kkkkkk")
+      profileUpdate();
+    }
+  }
+
+  const profileUpdate = async () => {
+    const update = await updateProfile(user?.token, {
+      first_name, last_name, organization, phone
+    });
+          if(update?.status === "success") {
+            
+            fetchUserData()
+            
+            toast.success(update?.message);
+            navigate('/client-profile-setup/step-2')
+          }else{
+            /*setDisableBtn(false)
+            setLoading(false)
+            toast.error(loginUser?.error);*/
+            if(update.error){
+              toast.error(update.error)
+              setValidationErrors(update.error)
+            }
+            
+            
+        }
+  }
+
+  useEffect(() => {
+    console.log(user);
+    
+
+  }, [user]);
+  
   return (
     <>
       <section className="min-h-[100vh] bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-25 ">
@@ -47,36 +123,89 @@ const ClientOnboardingStep1 = () => {
                 action="#">
                 <div className="w-8/12">
                   <label
-                    htmlFor="fullname"
+                    htmlFor="firstname"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                    What is your official name?
+                    First Name
                   </label>
                   <input
                     type="text"
-                    name="fullname"
-                    id="fullname"
+                    name="first_name"
+                    id="firstname"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
-                    placeholder="Brian Oluoch"
-                    required=""
+                    placeholder="Brian"
+                    onChange={(e) => {
+                      setFirstName( e.target.value)
+                    }}
+                    value={first_name}
+                 
                   />
-                </div>
-                <div className="w-8/12">
-                  <label
-                    htmlFor="profession"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                    What is your profession?
-                  </label>
-                  <input
-                    type="text"
-                    name="profession"
-                    id="profession"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
-                    placeholder="I am a developer"
-                    required=""
-                  />
+
+                  <ValidationError validationErrors={validationErrors} field='first_name' />
                 </div>
 
                 <div className="w-8/12">
+                  <label
+                    htmlFor="lastname"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    name="last_name"
+                    id="lastname"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                    placeholder="Oluoch"
+                    onChange={(e) => {
+                      setLastName( e.target.value)
+                    }}
+                    value={last_name}
+                 
+                  />
+                  <ValidationError validationErrors={validationErrors} field='last_name' />
+                </div>
+                <div className="w-8/12">
+                  <label
+                    htmlFor="organization"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    Organization
+                  </label>
+                  <input
+                    type="text"
+                    name="organization"
+                    id="organization"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                    placeholder="Which organisation do you work for?"
+                    onChange={(e) => {
+                      setOrganization( e.target.value)
+                    }}
+                    value={organization}
+                 
+                  />
+                  <ValidationError validationErrors={validationErrors} field='organization' />
+                </div>
+
+                <div className="w-8/12">
+                  <label
+                    htmlFor="phone"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    phone
+                  </label>
+                  <input
+                    type="text"
+                    name="phone"
+                    id="phone"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                    placeholder="Which organisation do you work for?"
+                    onChange={(e) => {
+                      setPhone( e.target.value)
+                    }}
+                    value={phone}
+                 
+                  />
+                  <ValidationError validationErrors={validationErrors} field='phone' />
+                </div>
+
+                {/* <div className="w-8/12">
                   <label
                     htmlFor="industry"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
@@ -109,14 +238,11 @@ const ClientOnboardingStep1 = () => {
                     <option value="FR">Indianapolis</option>
                     <option value="DE">California</option>
                   </select>
-                </div>
+                </div> */}
 
                 <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate("/client-profile-setup/step-2");
-                  }}
-                  type="submit"
+                  onClick={validateProfileForm}
+                  type="button"
                   className="w-8/12 text-white bg-ftvwine-500  hover:bg-ftvwine-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvwine-500  dark:hover:bg-ftvwine-400 dark:focus:ring-primary-800 cursor-pointer s">
                   Next <span className=" fa fa-arrow-right-long ms-5"></span>
                 </button>

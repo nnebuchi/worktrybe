@@ -67,3 +67,85 @@ api.interceptors.response.use(
         return err.response?.data;
       });
   };
+
+
+
+  export const loginUser = async (email, password) => {
+    return await api
+      .post(
+        "/auth/login", 
+        {
+          email: email,
+          password: password,
+        },
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          //   Authorization: `Bearer ${import.meta.env.VITE_APP_TOKEN}`,
+          },
+        }
+      )
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
+
+  export const updateProfile = async (token, data) => {
+    return await api
+      .post(
+        "/profile/update", 
+        data,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
+
+
+  
+export const getUserProfile = async (token) => {
+  return await api
+    .get(`profile/get`, {
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => {
+      return res?.data;
+    })
+    .catch((err) => {
+      return err.response?.data;
+    });
+};
+
+export const logout = async (token) => {
+  return await api
+    .post(`auth/logout`, {}, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => {
+      return res?.data;
+    })
+    .catch((err) => {
+      return err.response?.data;
+    });
+};

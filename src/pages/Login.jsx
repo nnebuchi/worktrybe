@@ -1,4 +1,66 @@
+import {loginUser} from '../services/api';
+import { useState } from 'react';
+import ValidationError from '../components/UI/ValidaionError';
+import {runValidation} from '../utils/buchi';
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+
 const Login = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+    
+  const [validationErrors, setValidationErrors] = useState();
+  const navigate = useNavigate();
+
+  const validateLoginForm = async () => {
+    
+    const validate = await runValidation([
+        
+        {
+            input: { value: email, field: "email", type: "text" },
+            rules: { required: true },
+        },
+        {
+            input: { value: password, field: "password", type: "text" },
+            rules: { required: true },
+        }
+    ]);
+
+    if (validate?.status === false) {
+        
+        setValidationErrors(validate.errors);
+    } else {
+      // alert("kkkkkk")
+      signIn();
+    }
+    
+  }
+
+  const signIn = async () => {
+      
+    const log = await loginUser(email, password);
+    if(log?.status === "success") {
+      // toast.success(loginUser?.message);
+      // const { token, is_verified } = loginUser;
+      // setUser({ token, is_verified });
+      localStorage.setItem("fasttrack_user", JSON.stringify(log.data));
+      if(log.data.first_name){
+        navigate("/dashboard")
+      }else{
+        location.href = '/client-profile-setup/step-1';
+        // navigate("/client-profile-setup/step-1");
+      }
+      
+      // setIsLoginModalOpen(false);
+    }else{
+      /*setDisableBtn(false)
+      setLoading(false)*/
+      toast.error(log?.error);
+      setValidationErrors(log.error)
+      
+    }
+  }
   return (
     <>
       <section className="bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-255">
@@ -19,7 +81,7 @@ const Login = () => {
                 Login
               </h1>
 
-              <div className="gap-4 space-y-4 sm:flex sm:space-y-0 justify-between w-full">
+              <div className="gap-4 space-y-4 sm:flex sm:space-y-0 justify-center w-full">
                 <a
                   href="#"
                   className="inline-flex w-full items-center rounded-lg bg-gray-800 px-4 py-2.5 text-ftvwine-500 ring-1 dark:ring-ftvwine-500 ring-ftvblack-500 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-ftvwine-25 dark:hover:bg-ftvwine-500 dark:focus:ring-gray-800 sm:w-auto space-x-2 hover:text-white ">
@@ -43,7 +105,7 @@ const Login = () => {
                   </div>
                 </a>
 
-                <a
+                {/* <a
                   href="#"
                   className="inline-flex w-full items-center justify-center rounded-lg bg-gray-800 px-4 py-2.5 text-ftvwine-500 ring-1 dark:ring-ftvwine-500 ring-ftvblack-500 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300 dark:bg-ftvwine-25 dark:hover:bg-ftvwine-500 dark:focus:ring-gray-800 sm:w-auto hover:text-white ">
                   <svg
@@ -62,7 +124,7 @@ const Login = () => {
                   <div className="text-left">
                     <div className="mb-1 text-xs">Log in with Apple</div>
                   </div>
-                </a>
+                </a> */}
               </div>
               <form className="space-y-3 md:space-y-5" action="#">
                 <div>
@@ -77,8 +139,12 @@ const Login = () => {
                     id="email"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
                     placeholder="name@company.com"
-                    required=""
+                    onChange={(e) => {
+                      setEmail( e.target.value)
+                    }}
+                    value={email}
                   />
+                  <ValidationError validationErrors={validationErrors} field='email' />
                 </div>
                 <div>
                   <label
@@ -92,8 +158,12 @@ const Login = () => {
                     id="password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200 dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
-                    required=""
+                    onChange={(e) => {
+                      setPassword( e.target.value)
+                    }}
+                    value={password}
                   />
+                   <ValidationError validationErrors={validationErrors} field='password' />
                 </div>
 
                 <div className="flex items-start">
@@ -120,7 +190,8 @@ const Login = () => {
                   </div>
                 </div>
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={validateLoginForm}
                   className="w-full text-white bg-ftvwine-500  hover:bg-ftvwine-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvwine-500  dark:hover:bg-ftvwine-400 dark:focus:ring-primary-800 cursor-pointer">
                   Sign In
                 </button>

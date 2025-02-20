@@ -93,9 +93,8 @@ const ClientOnboardingStep2 = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 ">
                     <option selected>Choose a suitable work timezone</option>
                     <option value="US">WAT</option>
-                    <option value="CA">WAT</option>
-                    <option value="FR">HR and Recruiting</option>
-                    <option value="DE">Maritime and Shipping</option>
+                    <option value="CA">EST</option>
+                    <option value="FR">UTC</option>
                   </select>
                 </div>
 

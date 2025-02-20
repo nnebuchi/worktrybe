@@ -60,7 +60,7 @@ const BenefitTabs = () => {
                   </span>
                   {activeTab === index && (
                     <p className="text-ftvblack-400 text-sm text-center px-4">
-                      {tab.title}
+                      {tab.desc}
                     </p>
                   )}
                 </button>

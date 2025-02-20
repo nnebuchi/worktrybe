@@ -35,7 +35,7 @@ const Landing = () => {
             </a>
             <a
               href="#"
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-ftvblack-400 dark:border-ftvblack-500 dark:hover:bg-ftvblue-500 dark:focus:ring-ftvwine-500 hover:text-white">
+              className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-ftvblack-400 dark:border-ftvblack-500 dark:hover:bg-ftvblack-500 dark:focus:ring-ftvwine-500 hover:text-white">
               <svg
                 className="mr-2 -ml-1 w-5 h-5"
                 fill="currentColor"
