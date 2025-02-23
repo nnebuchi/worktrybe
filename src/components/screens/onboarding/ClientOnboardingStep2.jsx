@@ -4,7 +4,7 @@ const ClientOnboardingStep2 = () => {
   const navigate = useNavigate();
   return (
     <>
-      <section className="min-h-[100vh] bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-25 ">
+      <section className="min-h-[500px] bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-25 ">
         <div className="h-fit flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 ">
           <a
             href="#"
