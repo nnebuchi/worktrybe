@@ -6,8 +6,8 @@ const ForgotPassword = () => {
           href="#"
           className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-ftvblack-400">
           <img
-            className="w-8 h-8 mr-2"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+            className="w-full h-12 mr-2"
+            src="/fasttrack-logo.png"
             alt="logo"
           />
           Flowbite
@@ -46,7 +46,7 @@ const ForgotPassword = () => {
               <p className="text-sm font-light text-ftvblack-400 dark:text-ftvblack-400">
                 I don't want to proceed,
                 <a
-                  href="/register"
+                  href="/login"
                   className="font-medium text-ftvwine-500 hover:underline dark:text-ftvwine-500">
                   {""}
                   take me back

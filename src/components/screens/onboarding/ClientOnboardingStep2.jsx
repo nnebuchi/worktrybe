@@ -10,11 +10,10 @@ const ClientOnboardingStep2 = () => {
             href="#"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-ftvblack-400">
             <img
-              className="w-8 h-8 mr-2"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+              className="w-full h-12 mr-2"
+              src="/fasttrack-logo.png"
               alt="logo"
             />
-            Flowbite
           </a>
           <div className=" h-fit w-7/12 bg-ftvsky-50 rounded-lg shadow dark:border md:mt-0  xl:p-0 dark:bg-ftvsky-50 dark:border-ftvwine-200 ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">

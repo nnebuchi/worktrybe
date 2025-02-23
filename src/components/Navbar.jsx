@@ -9,13 +9,13 @@ const Navbar = () => {
             href="#"
             className="flex items-center space-x-3 rtl:space-x-reverse">
             <img
-              src="https://flowbite.com/docs/images/logo.svg"
-              className="h-8"
+              src="/fasttrack-logo.png"
+              className="h-12  w-full"
               alt="Fasttrack VA Logo"
             />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-ftvblack-300">
+            {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-ftvblack-300">
               Fasttrack VA
-            </span>
+            </span> */}
           </a>
 
           <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">

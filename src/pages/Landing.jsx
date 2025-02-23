@@ -458,13 +458,13 @@ const Landing = () => {
             <div className="gap-4 space-y-5 xl:flex xl:items-center xl:justify-between xl:space-y-0">
               <a href="#" title="" className="block">
                 <img
-                  className="block h-8 w-auto dark:hidden"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg"
+                  className="block h-12 rounded-full w-full dark:hidden"
+                  src="/fasttrackvirtuals-logo-footer.png"
                   alt=""
                 />
                 <img
-                  className="hidden h-8 w-auto dark:block"
-                  src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg"
+                  className="hidden h-12 dark:block w-full rounded-full"
+                  src="/fasttrackvirtuals-logo-footer.png"
                   alt=""
                 />
               </a>

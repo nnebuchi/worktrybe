@@ -1,84 +1,82 @@
-import {runValidation} from '../utils/buchi';
-import { useState } from 'react';
-import ValidationError from '../components/UI/ValidaionError';
-import { registerUser } from '../services/api';
+import { runValidation } from "../utils/buchi";
+import { useState } from "react";
+import ValidationError from "../components/UI/ValidaionError";
+import { registerUser } from "../services/api";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Register = () => {
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirm_password, setConfirmPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm_password, setConfirmPassword] = useState("");
   const [validationErrors, setValidationErrors] = useState();
-  
-  const navigate = useNavigate()
+
+  const navigate = useNavigate();
 
   const validateSignupForm = async () => {
-    
     const validate = await runValidation([
-        
-        {
-            input: { value: email, field: "email", type: "text" },
-            rules: { required: true, email: true },
+      {
+        input: { value: email, field: "email", type: "text" },
+        rules: { required: true, email: true },
+      },
+      {
+        input: { value: password, field: "password", type: "text" },
+        rules: {
+          required: true,
+          min_length: 6,
+          must_have_number: true,
+          has_special_character: true,
         },
-        {
-            input: { value: password, field: "password", type: "text" },
-            rules: { required: true, min_length:6, must_have_number:true, has_special_character:true },
+      },
+      {
+        input: {
+          value: confirm_password,
+          field: "confirm_password",
+          type: "text",
         },
-        {
-          input: { value: confirm_password, field: "confirm_password", type: "text" },
-          rules: { required: true, must_match:'password' },
+        rules: { required: true, must_match: "password" },
       },
     ]);
 
     if (validate?.status === false) {
-        
-        setValidationErrors(validate.errors);
+      setValidationErrors(validate.errors);
     } else {
       // alert("kkkkkk")
       signUp();
     }
-  }
-    const signUp = async () => {
-      
-      
-      const reg = await registerUser(email, password);
-      if(reg?.status === "success") {
-        toast.success(reg?.message);
-        // const { token, is_verified } = loginUser;
-        // setUser({ token, is_verified });
-        // localStorage.setItem("fasttrack_user", JSON.stringify({ token, is_verified }));
-        navigate("/login")
-        // setIsLoginModalOpen(false);
-      }else{
-        /*setDisableBtn(false)
+  };
+  const signUp = async () => {
+    const reg = await registerUser(email, password);
+    if (reg?.status === "success") {
+      toast.success(reg?.message);
+      // const { token, is_verified } = loginUser;
+      // setUser({ token, is_verified });
+      // localStorage.setItem("fasttrack_user", JSON.stringify({ token, is_verified }));
+      navigate("/login");
+      // setIsLoginModalOpen(false);
+    } else {
+      /*setDisableBtn(false)
         setLoading(false)
         toast.error(loginUser?.error);*/
-        if(reg.error){
-          toast.error(reg.error)
-          setValidationErrors(reg.error)
-        }
-        
-        
+      if (reg.error) {
+        toast.error(reg.error);
+        setValidationErrors(reg.error);
+      }
     }
-  }
-   
-    
+  };
 
   return (
     <>
       <section className="bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-255">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <a
-            href="#"
+            href="/"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-ftvblack-400">
             <img
-              className="w-8 h-8 mr-2"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+              className=" h-12 w-full mr-2"
+              src="/fasttrack-logo.png"
               alt="logo"
             />
-            Flowbite
           </a>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:border-ftvwine-200 ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -146,14 +144,15 @@ const Register = () => {
                     placeholder="name@company.com"
                     required=""
                     onChange={(e) => {
-                      setEmail( e.target.value)
+                      setEmail(e.target.value);
                     }}
                     value={email}
-                 
                   />
 
-                  <ValidationError validationErrors={validationErrors} field='email' />
-
+                  <ValidationError
+                    validationErrors={validationErrors}
+                    field="email"
+                  />
                 </div>
                 <div>
                   <label
@@ -168,11 +167,14 @@ const Register = () => {
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200 dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
                     onChange={(e) => {
-                      setPassword( e.target.value)
+                      setPassword(e.target.value);
                     }}
                     value={password}
                   />
-                   <ValidationError validationErrors={validationErrors} field='password' />
+                  <ValidationError
+                    validationErrors={validationErrors}
+                    field="password"
+                  />
                 </div>
                 <div>
                   <label
@@ -186,13 +188,15 @@ const Register = () => {
                     id="confirm-password"
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200 dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
-                    
                     onChange={(e) => {
-                      setConfirmPassword( e.target.value)
+                      setConfirmPassword(e.target.value);
                     }}
                     value={confirm_password}
                   />
-                   <ValidationError validationErrors={validationErrors} field='confirm_password' />
+                  <ValidationError
+                    validationErrors={validationErrors}
+                    field="confirm_password"
+                  />
                 </div>
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
@@ -219,7 +223,7 @@ const Register = () => {
                 </div>
                 <button
                   onClick={validateSignupForm}
-                  type='button'
+                  type="button"
                   className="w-full text-white bg-ftvwine-500  hover:bg-ftvwine-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvwine-500  dark:hover:bg-ftvwine-400 dark:focus:ring-primary-800 cursor-pointer">
                   Create an account
                 </button>

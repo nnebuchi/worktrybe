@@ -1,66 +1,59 @@
-import {loginUser} from '../services/api';
-import { useState } from 'react';
-import ValidationError from '../components/UI/ValidaionError';
-import {runValidation} from '../utils/buchi';
+import { loginUser } from "../services/api";
+import { useState } from "react";
+import ValidationError from "../components/UI/ValidaionError";
+import { runValidation } from "../utils/buchi";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-    
   const [validationErrors, setValidationErrors] = useState();
   const navigate = useNavigate();
 
   const validateLoginForm = async () => {
-    
     const validate = await runValidation([
-        
-        {
-            input: { value: email, field: "email", type: "text" },
-            rules: { required: true },
-        },
-        {
-            input: { value: password, field: "password", type: "text" },
-            rules: { required: true },
-        }
+      {
+        input: { value: email, field: "email", type: "text" },
+        rules: { required: true },
+      },
+      {
+        input: { value: password, field: "password", type: "text" },
+        rules: { required: true },
+      },
     ]);
 
     if (validate?.status === false) {
-        
-        setValidationErrors(validate.errors);
+      setValidationErrors(validate.errors);
     } else {
       // alert("kkkkkk")
       signIn();
     }
-    
-  }
+  };
 
   const signIn = async () => {
-      
     const log = await loginUser(email, password);
-    if(log?.status === "success") {
+    if (log?.status === "success") {
       // toast.success(loginUser?.message);
       // const { token, is_verified } = loginUser;
       // setUser({ token, is_verified });
       localStorage.setItem("fasttrack_user", JSON.stringify(log.data));
-      if(log.data.first_name){
-        navigate("/dashboard")
-      }else{
-        location.href = '/client-profile-setup/step-1';
+      if (log.data.first_name) {
+        navigate("/dashboard");
+      } else {
+        location.href = "/client-profile-setup/step-1";
         // navigate("/client-profile-setup/step-1");
       }
-      
+
       // setIsLoginModalOpen(false);
-    }else{
+    } else {
       /*setDisableBtn(false)
       setLoading(false)*/
       toast.error(log?.error);
-      setValidationErrors(log.error)
-      
+      setValidationErrors(log.error);
     }
-  }
+  };
   return (
     <>
       <section className="bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-255">
@@ -69,11 +62,10 @@ const Login = () => {
             href="#"
             className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-ftvblack-400">
             <img
-              className="w-8 h-8 mr-2"
-              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg"
+              className="w-full h-12 mr-2"
+              src="/fasttrack-logo.png"
               alt="logo"
             />
-            Flowbite
           </a>
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:border-ftvwine-200 ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -140,11 +132,14 @@ const Login = () => {
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
                     placeholder="name@company.com"
                     onChange={(e) => {
-                      setEmail( e.target.value)
+                      setEmail(e.target.value);
                     }}
                     value={email}
                   />
-                  <ValidationError validationErrors={validationErrors} field='email' />
+                  <ValidationError
+                    validationErrors={validationErrors}
+                    field="email"
+                  />
                 </div>
                 <div>
                   <label
@@ -159,11 +154,14 @@ const Login = () => {
                     placeholder="••••••••"
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200 dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
                     onChange={(e) => {
-                      setPassword( e.target.value)
+                      setPassword(e.target.value);
                     }}
                     value={password}
                   />
-                   <ValidationError validationErrors={validationErrors} field='password' />
+                  <ValidationError
+                    validationErrors={validationErrors}
+                    field="password"
+                  />
                 </div>
 
                 <div className="flex items-start">
@@ -183,7 +181,7 @@ const Login = () => {
                       Remember me{" "}
                     </label>
                     <a
-                      href=""
+                      href="/forgot-password"
                       className="font-medium text-primary-600 hover:underline dark:text-ftvwine-500">
                       Forgot Password?
                     </a>
