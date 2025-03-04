@@ -6,8 +6,8 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import AlertModal from "./components/UI/AlertModal";
-import ClientOnboardingStep1 from "./components/screens/onboarding/ClientOnboardingStep1";
-import ClientOnboardingStep2 from "./components/screens/onboarding/ClientOnboardingStep2";
+import EmployerCompanyInfo from "./components/screens/onboarding/EmployerCompanyInfo";
+import SelectRequiredService from "./components/screens/onboarding/SelectRequiredService";
 import BookMeeeting from "./components/screens/onboarding/BookMeeting";
 import Dashboard from "./components/UI/Dashboard";
 
@@ -22,14 +22,8 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/successful" element={<AlertModal />} />
-          <Route
-            path="/client-profile-setup/step-1"
-            element={<ClientOnboardingStep1 />}
-          />
-          <Route
-            path="/client-profile-setup/step-2"
-            element={<ClientOnboardingStep2 />}
-          />
+          <Route path="/company-info" element={<EmployerCompanyInfo />} />
+          <Route path="/select-service" element={<SelectRequiredService />} />
           <Route path="/book-meeting" element={<BookMeeeting />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
