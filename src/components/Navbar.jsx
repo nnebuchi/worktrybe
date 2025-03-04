@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+
+  useEffect(() => {
+    if (!showMobileMenu) {
+      setIsAnimatingOut(true);
+      const timeoutId = setTimeout(() => {
+        setIsAnimatingOut(false);
+      }, 300); // adjust the delay to match the animation duration
+      return () => clearTimeout(timeoutId);
+    }
+  }, [showMobileMenu]);
   return (
     <header>
       <nav className="bg-transparent fixed w-full z-20 top-0 start-0  backdrop-blur navbar">
@@ -21,9 +32,11 @@ const Navbar = () => {
           </a>
 
           <div className="flex md:order-2 flex-row-reverse justify-start gap-x-7 items-center space-x-3 md:space-x-0 rtl:space-x-reverse tabletlg:w-6/12 mobilelg:w-7/12 ">
-            {showMobileMenu && (
+            {showMobileMenu || isAnimatingOut ? (
               <div
-                className=" justify-between  absolute inset-0 h-[100vh] dark:bg-linear-45 dark:bg-opacity-4 from-ftvgradient-via   to-ftvgradient-to w-full md:flex md:w-auto md:order-1 z-30 flex-col items-start space-y-6 "
+                className={`justify-between absolute inset-0 h-[100vh] dark:bg-linear-45 dark:bg-opacity-4 from-ftvgradient-via to-ftvgradient-to w-full md:flex md:w-auto md:order-1 z-30 flex-col items-start space-y-6 ${
+                  showMobileMenu ? "animate-slide-in" : "animate-slide-out"
+                }`}
                 // id="navbar-sticky"
               >
                 <div className="absolute bg-white w-full h-fit opacity-80 z-5 inset-0"></div>
@@ -85,7 +98,7 @@ const Navbar = () => {
             </span> */}
                 </a>
               </div>
-            )}
+            ) : null}
             <Link
               to={"register"}
               className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase">

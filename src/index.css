@@ -79,6 +79,32 @@ body {
   background-repeat: no-repeat;
   height: 600px;
 }
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-in-out;
+}
+
+.animate-slide-out {
+  animation: slide-out 0.3s ease-in-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 /* @media screen and (max-width:640px) {
   .partners img {
   width: 150px;
