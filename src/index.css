@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@theme {
+  /* Colors */
+  --color-ftvprimary: #37ba58;
+  --color-ftvprimary-400: #40c461;
+  --color-ftvsecondary: #6360f1;
+  --color-ftvoffwhite: #f3f7f4;
+  --color-ftvblack: #171a1f;
+  --color-ftvblue: #122b47;
+  --color-ftvpurple-100: #6360f11a;
+  --color-ftvgradient-from: #615ef8;
+  --color-ftvgradient-via: #e4f3bf;
+  --color-ftvgradient-to: #99ffff;
+  --color-ftvgrey: #303437;
+
+  /* Custom Breakpoints */
+  --breakpoint-tabletlg: 62rem;
+  --breakpoint-tabletmd: 55rem;
+  --breakpoint-mobilelandscape: 47rem;
+  --breakpoint-mobilelg: 35.43rem;
+  --breakpoint-mobilemd: 30rem;
+  --breakpoint-mobilesm: 23.4rem;
+  --breakpoint-mobilexs: 21.56rem;
+  --breakpoint-mobilexxs: 20rem;
+}
+
+#root {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Plus Jakarta Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.plusjakartasans {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.navlinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.partners img {
+  width: 150px;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 5px;
+  filter: grayscale(100%);
+  border-radius: 10px;
+  object-fit: contain;
+  cursor: pointer;
+}
+.partners img:hover {
+  filter: none;
+}
+
+.services {
+  background-image: url("/service-line-bg.svg");
+  background-size: contain;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+}
+.cta {
+  background-image: url("/cta-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.left-col {
+  background-image: url("/right-column.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+/* @media screen and (max-width:640px) {
+  .partners img {
+  width: 150px;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 5px;
+  filter: grayscale(100%);
+  border-radius: 10px;
+  object-fit: contain;
+  cursor: pointer;
+}
+} */
