@@ -8,6 +8,7 @@ import ResetPassword from "./pages/ResetPassword";
 import AlertModal from "./components/UI/AlertModal";
 import EmployerCompanyInfo from "./components/screens/onboarding/EmployerCompanyInfo";
 import SelectRequiredService from "./components/screens/onboarding/SelectRequiredService";
+import JobRoleRequirement from "./components/screens/onboarding/JobRoleRequirement";
 import BookMeeeting from "./components/screens/onboarding/BookMeeting";
 import Dashboard from "./components/UI/Dashboard";
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/successful" element={<AlertModal />} />
           <Route path="/company-info" element={<EmployerCompanyInfo />} />
           <Route path="/select-service" element={<SelectRequiredService />} />
+          <Route path="/role-requirement" element={<JobRoleRequirement />} />
           <Route path="/book-meeting" element={<BookMeeeting />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>

@@ -83,7 +83,7 @@ const EmployerCompanyInfo = () => {
 
   return (
     <>
-      <section className="mx-auto px-0">
+      <section className="mx-auto px-0 mobilelg:py-0 py-8">
         <div className="flex items-center justify-center min-h-[680px] mobilelandscape:flex-nowrap flex-wrap">
           <div className="xl:w-6/12 lg:w-5/12 mobilelandscape:w-5/12 mobilelandscape:inline-flex hidden ">
             <img

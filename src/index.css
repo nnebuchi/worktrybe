@@ -37,6 +37,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input {
+  accent-color: var(--color-ftvprimary);
+}
+
 .plusjakartasans {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
@@ -71,6 +75,15 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+.right-img {
+  background-image: url("/va.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 40%;
+  margin-left: auto;
 }
 
 .animate-slide-in {
