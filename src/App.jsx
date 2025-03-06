@@ -11,6 +11,7 @@ import SelectRequiredService from "./components/screens/onboarding/SelectRequire
 import JobRoleRequirement from "./components/screens/onboarding/JobRoleRequirement";
 import BookMeeeting from "./components/screens/onboarding/BookMeeting";
 import Dashboard from "./components/UI/Dashboard";
+import Completed from "./components/screens/onboarding/Completed";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/select-service" element={<SelectRequiredService />} />
           <Route path="/role-requirement" element={<JobRoleRequirement />} />
           <Route path="/book-meeting" element={<BookMeeeting />} />
+          <Route path="/completed" element={<Completed />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>

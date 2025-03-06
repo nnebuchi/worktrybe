@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
-import BudgetDropdown from "../../UI/BudgetDropdown";
 import { UserContext } from "../../../contexts/UserContext";
 
 const SelectRequiredService = () => {
@@ -31,13 +30,13 @@ const SelectRequiredService = () => {
               </h1>
 
               <form className="space-y-3 md:space-y-5 mt-4 " action="#">
-                <div className="flex flex-wrap gap-x-0 gap-y-5 justify-between">
+                <div className="flex flex-wrap gap-x-0 gap-y-5 justify-between max-h-[400px] overflow-y-auto p-3 ring-1 ring-gray-300 rounded-lg services-container ">
                   <div
                     onClick={() => setIsChecked(!isChecked)}
-                    className={`flex justify-content-between items-center w-full relative ring-1 rounded-lg ps-5 min-h-[150px] cursor-pointer ${
+                    className={`flex justify-content-between items-center mobilelg:w-[48%] w-full relative ring-1 rounded-lg ps-5 min-h-[150px] cursor-pointer ${
                       isChecked ? "ring-ftvprimary " : "ring-gray-300 "
                     }`}>
-                    <div className="space-y-2 mobilelg:w-6/12 w-full">
+                    <div className="space-y-2 mobilelg:w-10/12 w-full">
                       <div
                         className={`w-10 h-10   flex justify-center items-center rounded-full ${
                           isChecked ? "bg-[#F0FDF4] " : "bg-[#F8FAFC] "
@@ -51,12 +50,12 @@ const SelectRequiredService = () => {
                         Administration and operations
                       </p>
                     </div>
-                    <div className="w-6/12 right-img  rounded-br-lg mobilelg:inline-flex hidden">
-                      {/* <img
+                    <div className="w-4/12 right-img self-end  rounded-br-lg mobilelg:inline-flex hidden">
+                      <img
                         src="/va.png"
                         alt=""
-                        className="ms-auto w-9/12 h-full object-cover "
-                      /> */}
+                        className="ms-auto w-full h-full object-cover "
+                      />
                     </div>
                     <input
                       id="va"
@@ -85,6 +84,66 @@ const SelectRequiredService = () => {
                       </h6>
                       <p className="text-sm text-[#475569]">
                         Design my business or company website
+                      </p>
+                    </div>
+
+                    <input
+                      id="va"
+                      type="checkbox"
+                      checked={isChecked}
+                      name="va"
+                      className={`outline-none absolute rounded-full border-0 top-3 ring-1 focus:border-0 bg-[#F8FAFC] right-3 ${
+                        isChecked ? "ring-ftvprimary " : "ring-gray-300"
+                      } `}
+                    />
+                  </div>
+                  <div
+                    onClick={() => setIsChecked(!isChecked)}
+                    className={`flex justify-content-between items-center mobilelg:w-[48%] w-full relative ring-1 rounded-lg p-5 min-h-[150px] cursor-pointer ${
+                      isChecked ? "ring-ftvprimary " : "ring-gray-300 "
+                    }`}>
+                    <div className="space-y-2 w-full">
+                      <div
+                        className={`w-10 h-10   flex justify-center items-center rounded-full ${
+                          isChecked ? "bg-[#F0FDF4] " : "bg-[#F8FAFC] "
+                        }`}>
+                        <img src="/video-01.svg" alt="" className="w-6/12" />
+                      </div>
+                      <h6 className="text-base font-semibold text-ftvblack">
+                        Hire a Virtual Assistant
+                      </h6>
+                      <p className="text-sm text-[#475569]">
+                        Administration and operations
+                      </p>
+                    </div>
+
+                    <input
+                      id="va"
+                      type="checkbox"
+                      checked={isChecked}
+                      name="va"
+                      className={`outline-none absolute rounded-full border-0 top-3 ring-1 focus:border-0 bg-[#F8FAFC] right-3 ${
+                        isChecked ? "ring-ftvprimary " : "ring-gray-300"
+                      } `}
+                    />
+                  </div>
+                  <div
+                    onClick={() => setIsChecked(!isChecked)}
+                    className={`flex justify-content-between items-center mobilelg:w-[48%] w-full relative ring-1 rounded-lg p-5 min-h-[150px] cursor-pointer ${
+                      isChecked ? "ring-ftvprimary " : "ring-gray-300 "
+                    }`}>
+                    <div className="space-y-2 w-full">
+                      <div
+                        className={`w-10 h-10   flex justify-center items-center rounded-full ${
+                          isChecked ? "bg-[#F0FDF4] " : "bg-[#F8FAFC] "
+                        }`}>
+                        <img src="/video-01.svg" alt="" className="w-6/12" />
+                      </div>
+                      <h6 className="text-base font-semibold text-ftvblack">
+                        Hire a Virtual Assistant
+                      </h6>
+                      <p className="text-sm text-[#475569]">
+                        Administration and operations
                       </p>
                     </div>
 
