@@ -1,61 +1,130 @@
+import ValidationError from "../components/UI/ValidaionError";
+import { useState } from "react";
 const ResetPassword = () => {
+  const [password, setPassword] = useState("");
+  const [confirm_password, setConfirmPassword] = useState("");
+  const [passwordReveal, setPasswordReveal] = useState("password");
+  const [validationErrors, setValidationErrors] = useState();
+
+  const handlePasswordReveal = () => {
+    if (passwordReveal === "password") {
+      setPasswordReveal("text");
+    } else {
+      setPasswordReveal("password");
+    }
+  };
+
+  const validateResetForm = async () => {
+    const validate = await runValidation([
+      {
+        input: { value: password, field: "password", type: "password" },
+        rules: { required: true, email: true },
+      },
+      {
+        input: {
+          value: confirm_password,
+          field: "confirm_password",
+          type: "password",
+        },
+        rules: {
+          required: true,
+          min_length: 6,
+          must_have_number: true,
+          has_special_character: true,
+        },
+      },
+    ]);
+
+    if (validate?.status === false) {
+      setValidationErrors(validate.errors);
+    } else {
+      // alert("kkkkkk")
+      signUp();
+    }
+  };
   return (
-    <section className="bg-ftvwine-25 shadow-3xl dark:bg-linear-65 from-ftvwine-100 via-ftvwine-50 to-ftvwine-25  dark:shadow-ftvwine-200 shadow-ftvwine-200  dark:bg-ftvwine-255">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <a
-          href="#"
-          className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-ftvblack-400">
+    <section className="mx-auto px-0">
+      <div className="flex items-center justify-center min-h-[680px] mobilelandscape:flex-nowrap flex-wrap">
+        <div className="tabletmd:w-6/12 mobilelandscape:w-5/12 mobilelandscape:inline-flex hidden ">
           <img
-            className="w-full h-12 mr-2"
-            src="/fasttrack-logo.png"
-            alt="logo"
+            src="/right-column.png"
+            alt=""
+            className=" h-[680px] w-full tabletmd:object-none object-cover"
           />
-          Flowbite
-        </a>
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-white dark:border-ftvwine-200 ">
-          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-ftvblack-400 md:text-2xl dark:text-ftvblack-400">
-              Reset Password
+        </div>
+        <div className="tabletmd:w-6/12 mobilelandscape:w-7/12 mobilelg:w-9/12 w-full bg-white tabletmd:px-8 px-4  ">
+          <div className="mobilesm:p-6 p-0    w-full">
+            <img src="/fasttrack-logo.svg" alt="" className="mb-10 " />
+            <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
+              Reset Your<span className="text-[#6360F1]"> Password </span>
             </h1>
-            <p className=" mb-4 text-sm text-text-center font-medium text-gray-900 dark:text-ftvblack-400">
-              Enter a new password for your account
+            <p className="text-base text-text-center font-normal text-[#3B4752] dark:text-[#3B4752]">
+              Enter your a new password
             </p>
 
-            <form className="space-y-3 md:space-y-5" action="#">
-              <div>
+            <form className="space-y-3 md:space-y-5 mt-4" action="#">
+              <div className="relative">
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                  New password
+                  Password
                 </label>
                 <input
-                  type="password"
+                  type={passwordReveal}
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200 dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
-                  required=""
+                  className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none dark:bg-[#F9FAFB] focus:bg-[#F9FAFB] dark:placeholder-gray-400 dark:text-ftvblack  dark:focus:ring-ftvsecondary ring-1 ring-gray-200"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    handlePasswordChange;
+                  }}
+                  value={password}
+                />
+                <span
+                  onClick={handlePasswordReveal}
+                  className={` absolute xl:inset-x-120 lg:inset-x-80 tabletmd:inset-x-60 inset-x-50 inset-y-10 text-[#6D7B88] fa ${
+                    passwordReveal === "password" ? "fa-eye-slash " : "fa-eye"
+                  }`}></span>{" "}
+                <ValidationError
+                  validationErrors={validationErrors}
+                  field="password"
                 />
               </div>
-              <div>
+              <div className="relative">
                 <label
-                  for="confirm-password"
+                  htmlFor="confirm_password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                  Confirm password
+                  Confirm Password
                 </label>
                 <input
-                  type="confirm-password"
-                  name="confirm-password"
-                  id="confirm-password"
+                  type={passwordReveal}
+                  name="confirm_password"
+                  id="confirm_password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200 dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
-                  required=""
+                  className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none dark:bg-[#F9FAFB] focus:bg-[#F9FAFB] dark:placeholder-gray-400 dark:text-ftvblack  dark:focus:ring-ftvsecondary ring-1 ring-gray-200"
+                  onChange={(e) => {
+                    setConfirmPassword(e.target.value);
+                    handlePasswordChange;
+                  }}
+                  value={confirm_password}
+                />
+                <span
+                  onClick={handlePasswordReveal}
+                  className={` absolute xl:inset-x-120 lg:inset-x-80 tabletmd:inset-x-60 inset-x-50 inset-y-10 text-[#6D7B88] fa ${
+                    passwordReveal === "password" ? "fa-eye-slash " : "fa-eye"
+                  }`}></span>{" "}
+                <ValidationError
+                  validationErrors={validationErrors}
+                  field="password"
                 />
               </div>
+
               <button
-                type="submit"
-                className="w-full text-white bg-ftvwine-500  hover:bg-ftvwine-300 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvwine-500  dark:hover:bg-ftvwine-400 dark:focus:ring-primary-800 cursor-pointer">
-                Reset Password
+                onClick={validateResetForm}
+                type="button"
+                className="w-full text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvprimary  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
+                Proceed
               </button>
             </form>
           </div>
