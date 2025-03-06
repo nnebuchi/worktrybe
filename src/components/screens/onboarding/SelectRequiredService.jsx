@@ -27,10 +27,10 @@ const SelectRequiredService = () => {
                 <div className="flex flex-wrap gap-x-0 gap-y-5 justify-between">
                   <div
                     onClick={() => setIsChecked(!isChecked)}
-                    className={`flex justify-content-between items-center w-full relative ring-1 rounded-lg ps-5 min-h-[150px] cursor-pointer ${
+                    className={`flex justify-content-between items-center mobilelg:w-[48%] w-full relative ring-1 rounded-lg ps-5 min-h-[150px] cursor-pointer ${
                       isChecked ? "ring-ftvprimary " : "ring-gray-300 "
                     }`}>
-                    <div className="space-y-2 mobilelg:w-6/12 w-full">
+                    <div className="space-y-2 mobilelg:w-10/12 w-full">
                       <div
                         className={`w-10 h-10   flex justify-center items-center rounded-full ${
                           isChecked ? "bg-[#F0FDF4] " : "bg-[#F8FAFC] "
@@ -44,12 +44,12 @@ const SelectRequiredService = () => {
                         Administration and operations
                       </p>
                     </div>
-                    <div className="w-6/12 right-img  rounded-br-lg mobilelg:inline-flex hidden">
-                      {/* <img
+                    <div className="w-4/12 right-img self-end  rounded-br-lg mobilelg:inline-flex hidden">
+                      <img
                         src="/va.png"
                         alt=""
-                        className="ms-auto w-9/12 h-full object-cover "
-                      /> */}
+                        className="ms-auto w-full h-full object-cover "
+                      />
                     </div>
                     <input
                       id="va"

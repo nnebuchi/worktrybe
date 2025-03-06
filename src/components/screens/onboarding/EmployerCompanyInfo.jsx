@@ -174,7 +174,7 @@ const EmployerCompanyInfo = () => {
                       field="industry"
                     />
                   </div>
-                  <div className="w-6/12">
+                  <div className="mobilelg:w-6/12 w-full">
                     <label
                       htmlFor="industry"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
