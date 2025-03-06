@@ -1,10 +1,17 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
 import BudgetDropdown from "../../UI/BudgetDropdown";
+import { UserContext } from "../../../contexts/UserContext";
+
 const SelectRequiredService = () => {
+  const { user, fetchUserData } = useContext(UserContext);
   const navigate = useNavigate();
 
   const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(()=>{
+    fetchUserData(user?.token);
+  }, []);
   return (
     <>
       <section className="mx-auto px-0 mobilelg:py-0 py-8">
@@ -140,12 +147,13 @@ const SelectRequiredService = () => {
                     </small>
                   </div>
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
-                    <button
-                      // onClick={validateSignupForm}
+                  <Link to="/company-info"
                       type="button"
                       className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-[#DBDBDB]  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
-                      <span className="fa fa-arrow-left"></span>
-                    </button>
+                      
+                      <span className="fa fa-arrow-left" ></span>
+                      
+                    </Link>
                     <button
                       // onClick={validateSignupForm}
                       type="button"

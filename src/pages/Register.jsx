@@ -52,8 +52,9 @@ const Register = () => {
       toast.success(reg?.message);
       // const { token, is_verified } = loginUser;
       // setUser({ token, is_verified });
-      // localStorage.setItem("fasttrack_user", JSON.stringify({ token, is_verified }));
-      navigate("/login");
+      localStorage.setItem("fasttrack_user", JSON.stringify(reg?.data));
+      navigate("/company-info");
+      
       // setIsLoginModalOpen(false);
     } else {
       /*setDisableBtn(false)
@@ -126,7 +127,7 @@ const Register = () => {
                     className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none dark:bg-[#F9FAFB] focus:bg-[#F9FAFB] dark:placeholder-gray-400 dark:text-ftvblack  dark:focus:ring-ftvsecondary ring-1 ring-gray-200"
                     onChange={(e) => {
                       setPassword(e.target.value);
-                      handlePasswordChange;
+                      // handlePasswordChange;
                     }}
                     value={password}
                   />

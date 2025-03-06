@@ -115,7 +115,26 @@ api.interceptors.response.use(
       });
   };
 
-
+  export const updateOrganizationProfile = async (token, data) => {
+    return await api
+      .post(
+        "/profile/update-organization", 
+        data,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
   
 export const getUserProfile = async (token) => {
   return await api
@@ -139,6 +158,22 @@ export const logout = async (token) => {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => {
+      return res?.data;
+    })
+    .catch((err) => {
+      return err.response?.data;
+    });
+};
+
+export const getIndustries = async (token) => {
+  return await api
+    .get(`industries/get`, {
+      headers: {
+        Accept: "application/json",
         Authorization: `Bearer ${token}`,
       },
     })
