@@ -3,6 +3,7 @@ import { useState } from "react";
 import ValidationError from "../components/UI/ValidaionError";
 import { registerUser } from "../services/api";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -70,7 +71,10 @@ const Register = () => {
           </div>
           <div className="tabletmd:w-6/12 mobilelandscape:w-7/12 mobilelg:w-9/12 w-full bg-white tabletmd:px-8 px-4  ">
             <div className="mobilesm:p-6 p-0    w-full">
+              <Link to="/">
               <img src="/fasttrack-logo.svg" alt="" className="mb-10 " />
+              </Link>
+              
               <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
                 Welcome to <span className="text-[#6360F1]">FastTrack </span>
               </h1>

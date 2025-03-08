@@ -1,8 +1,11 @@
 import Navbar from "../components/Navbar";
+import {useContext} from "react";
+import {UserContext} from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
   const navigate = useNavigate();
+  const { user } = useContext(UserContext);
   return (
     <>
       <Navbar />
@@ -77,7 +80,13 @@ const Landing = () => {
               </li>
             </ul>
             <button
-              onClick={() => navigate("/register")}
+              onClick={() => {
+                  user?.token ? 
+                  navigate("/dashboard") 
+                  :
+                  navigate("/register")
+                }
+              }
               type="button"
               className="text-white bg-ftvprimary hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvsecondary dark:hover:bg-ftvprimary dark:focus:ring-ftvgrey cursor-pointer  sm:w-5/12 tabletmd:w-7/12 mobilelg:w-6/12 w-8/12 mt-5 text-lg">
               JOIN FAST TRACK
@@ -361,7 +370,13 @@ const Landing = () => {
       <section className=" mobilelg:min-h-[300px] py-15 mobilesm:px-8 px-4 dark:bg-white bg-white flex justify-center items-center cta">
         <div className="flex  w-full justify-center items-center ">
           <button
-            onClick={() => navigate("/register")}
+            onClick={() => {
+              user?.token ? 
+              navigate("/dashboard") 
+              :
+              navigate("/register")
+            }
+            }
             type="button"
             className="text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium  py-3 px-5 text-center dark:bg-ftvblack dark:hover:bg-transparent dark:hover:ring-1 dark:hover:ring-ftvblack dark:hover:text-ftvblack dark:focus:ring-ftvgrey cursor-pointer tabletmd:w-3/12 mobilelg:w-5/12 mobilemd:w-8/12 w-10/12 mt-5 text-lg capitalize rounded-full">
             Reach out today

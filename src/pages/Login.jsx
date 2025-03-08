@@ -2,7 +2,7 @@ import { loginUser } from "../services/api";
 import { useState } from "react";
 import ValidationError from "../components/UI/ValidaionError";
 import { runValidation } from "../utils/buchi";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Login = () => {
@@ -68,6 +68,7 @@ const Login = () => {
       <section className="mx-auto px-0">
         <div className="flex items-center justify-center min-h-[680px] mobilelandscape:flex-nowrap flex-wrap">
           <div className="tabletmd:w-6/12 mobilelandscape:w-5/12 mobilelandscape:inline-flex hidden ">
+            
             <img
               src="/right-column.png"
               alt=""
@@ -76,7 +77,7 @@ const Login = () => {
           </div>
           <div className="tabletmd:w-6/12 mobilelandscape:w-7/12 mobilelg:w-9/12 w-full bg-white tabletmd:px-8 px-4  ">
             <div className="mobilesm:p-6 p-0    w-full">
-              <img src="/fasttrack-logo.svg" alt="" className="mb-10 " />
+            <Link to="/"><img src="/fasttrack-logo.svg" alt="" className="mb-10 " /></Link>
               <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
                 Welcome to <span className="text-[#6360F1]">FastTrack </span>
               </h1>
