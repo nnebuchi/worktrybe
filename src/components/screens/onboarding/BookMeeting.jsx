@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { InlineWidget } from "react-calendly";
 const BookMeeting = () => {
   const navigate = useNavigate();
@@ -6,17 +6,17 @@ const BookMeeting = () => {
     <>
       <section className="mx-auto px-0 mobilelg:py-0 py-0">
         <div className="flex  items-center justify-center lg:min-h-[680px] min-h-[620px] mobilelandscape:flex-nowrap flex-wrap">
-          <div className="lg:w-4/12 lg:inline-flex  mobilelandscape:w-5/12  hidden ">
+          {/* <div className="lg:w-4/12 lg:inline-flex  mobilelandscape:w-5/12  hidden ">
             <img
               src="/right-column.png"
               alt=""
               className=" h-[680px] w-full tabletmd:object-none object-cover"
             />
-          </div>
-          <div className="lg:w-8/12 flex flex-col lg:p-10 mobilelg:px-10  px-4 py-0  w-full">
+          </div> */}
+          <div className="lg:w-12/12 flex flex-col lg:p-10 mobilelg:px-10  px-4 py-0  w-full">
             <div className="ring-1 ring-gray-300 min-h-[80] rounded-lg overflow-hidden w-full">
               <div className="flex justify-between items-center tabletmd:flex-nowrap flex-wrap w-full ">
-                <div className="xl:w-6/12 lg:w-7/12 tabletlg:w-5/12 mobilelandscape:w-5/12 w-full bg-white mobilelg:inline-flex hidden  ">
+                <div className="xl:w-5/12 lg:w-7/12 tabletlg:w-5/12 mobilelandscape:w-5/12 w-full bg-white mobilelg:inline-flex hidden  ">
                   <div className="mobilesm:p-6 p-0    w-full">
                     <img
                       src="/fasttrack-logo.svg"
@@ -28,12 +28,11 @@ const BookMeeting = () => {
                     </h1>
 
                     <p className="text-ftvblack text-base plusjakartasans">
-                      This is an example of a meeting you would have with a
-                      potential customer to demonstrate your product.
+                      Connect with us so we understand your request and provide you with the best personnel
                     </p>
                   </div>
                 </div>
-                <div className="xl:w-6/12 lg:w-7/12 tabletmd:w-7/12 mobilelandscape:w-7/12 w-full bg-white flex flex-col justify-start  border-l-[1px] border-gray-300 lg:p-5 min-h-[500px]">
+                <div className="xl:w-7/12 lg:w-7/12 tabletmd:w-7/12 mobilelandscape:w-7/12 w-full bg-white flex flex-col justify-start  border-l-[1px] border-gray-300 lg:p-5 min-h-[500px]">
                   <div>
                     <InlineWidget
                       url="https://calendly.com/emmanueljoce/30min"
@@ -73,8 +72,9 @@ const BookMeeting = () => {
                   <button
                     // onClick={validateSignupForm}
                     type="button"
+                    onClick={() => navigate("/completed")}
                     className="xl:w-6/12 tabletlg:w-8/12 mobilelg:w-9/12 w-7/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center dark:bg-ftvblack  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer plusjakartasans">
-                    Confirm & Submit
+                    Proceed to Dashboard
                   </button>
                 </div>
               </div>

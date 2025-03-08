@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import { UserContext } from "../contexts/UserContext";
 const Navbar = () => {
+
+  const { user } = useContext(UserContext);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
 
@@ -14,6 +16,11 @@ const Navbar = () => {
       return () => clearTimeout(timeoutId);
     }
   }, [showMobileMenu]);
+
+  useEffect(() => {
+    console.log(user);
+    
+  }, [])
   return (
     <header>
       <nav className="bg-transparent fixed w-full z-20 top-0 start-0  backdrop-blur navbar">
@@ -71,19 +78,24 @@ const Navbar = () => {
                       Pricing
                     </a>
                   </li>
-                  {/* <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvblack-300 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent navlink">
-                    Contact
-                  </a>
-                </li> */}
+                 
                 </ul>
-                <Link
-                  to={"register"}
-                  className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
-                  Get started
-                </Link>
+                {
+                  user ?
+
+                  <Link
+                    to={"/dashboard"}
+                    className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
+                    Dashboard
+                  </Link>
+                  :
+                    <Link
+                    to={"/register"}
+                    className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
+                    Get started
+                  </Link>
+                }
+                
 
                 <a
                   href="#"
@@ -99,11 +111,21 @@ const Navbar = () => {
                 </a>
               </div>
             ) : null}
-            <Link
-              to={"register"}
-              className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase">
-              Get started
-            </Link>
+            {
+                  user ?
+
+                  <Link
+                    to={"/dashboard"}
+                    className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
+                    Dashboard
+                  </Link>
+                  :
+                    <Link
+                    to={"/register"}
+                    className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
+                    Get started
+                  </Link>
+                }
 
             <ul className="md:flex uppercase justify-between space-x-6 hidden">
               <li>

@@ -28,6 +28,14 @@ const validateField = async (input, constraints, alias = null, fields) => {
             pass: constraints?.max_length ? (input?.value?.length <= constraints?.max_length) : true,
             message: `${alias ?? getOriginalWordFromCompoundWord(input?.field)} must not exceed ${constraints?.max_length} characters`
         },
+        min_value: {
+            pass: constraints?.min_value ? (input?.value >= constraints?.min_value) : true,
+            message: `${alias ?? getOriginalWordFromCompoundWord(input?.field)} cannot be less than ${constraints?.min_value}`
+        },
+        max_value: {
+            pass: constraints?.max_value ? (input?.value >= constraints?.max_value) : true,
+            message: `${alias ?? getOriginalWordFromCompoundWord(input?.field)} cannot be more than ${constraints?.max_value}`
+        },
         email: {
             pass: constraints?.email && input?.value?.length ? emailPattern.test(input?.value) : true,
             message: `${alias ?? getOriginalWordFromCompoundWord(input?.field)} must be a valid email`

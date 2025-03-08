@@ -2,7 +2,6 @@ import { runValidation } from "../utils/buchi";
 import { useState } from "react";
 import ValidationError from "../components/UI/ValidaionError";
 import { registerUser } from "../services/api";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Register = () => {
@@ -20,7 +19,6 @@ const Register = () => {
     }
   };
 
-  const navigate = useNavigate();
 
   const validateSignupForm = async () => {
     const validate = await runValidation([
@@ -42,7 +40,6 @@ const Register = () => {
     if (validate?.status === false) {
       setValidationErrors(validate.errors);
     } else {
-      // alert("kkkkkk")
       signUp();
     }
   };
@@ -50,16 +47,9 @@ const Register = () => {
     const reg = await registerUser(email, password);
     if (reg?.status === "success") {
       toast.success(reg?.message);
-      // const { token, is_verified } = loginUser;
-      // setUser({ token, is_verified });
       localStorage.setItem("fasttrack_user", JSON.stringify(reg?.data));
-      navigate("/company-info");
-      
-      // setIsLoginModalOpen(false);
+      location.href = "/company-info";
     } else {
-      /*setDisableBtn(false)
-        setLoading(false)
-        toast.error(loginUser?.error);*/
       if (reg.error) {
         toast.error(reg.error);
         setValidationErrors(reg.error);

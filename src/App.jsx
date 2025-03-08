@@ -26,7 +26,7 @@ function App() {
           <Route path="/successful" element={<AlertModal />} />
           <Route path="/company-info" element={<EmployerCompanyInfo />} />
           <Route path="/select-service" element={<SelectRequiredService />} />
-          <Route path="/role-requirement" element={<JobRoleRequirement />} />
+          <Route path="/role-requirement/:hireId" element={<JobRoleRequirement />} />
           <Route path="/book-meeting" element={<BookMeeeting />} />
           <Route path="/completed" element={<Completed />} />
           <Route path="/dashboard" element={<Dashboard />} />

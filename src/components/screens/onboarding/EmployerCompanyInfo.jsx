@@ -68,24 +68,26 @@ const EmployerCompanyInfo = () => {
   };
 
   const profileUpdate = async () => {
-    const update = await updateOrganizationProfile(user?.token, {
-      company_name:organization?.name,
-      company_website:organization?.website,
-      employee_size:organization?.employee_size,
-      industry:organization?.industry
-    });
-    if (update?.status === "success") {
-      toast.success(update?.message);
-      navigate("/select-service");
-    } else {
-      /*setDisableBtn(false)
-            setLoading(false)
-            toast.error(loginUser?.error);*/
-      if (update.error) {
-        toast.error(update.message);
-        setValidationErrors(update.error);
+    try {
+      const update = await updateOrganizationProfile(user?.token, {
+        company_name:organization?.name,
+        company_website:organization?.website,
+        employee_size:organization?.employee_size,
+        industry:organization?.industry
+      });
+      if (update?.status === "success") {
+        toast.success(update?.message);
+        navigate("/select-service");
+      } else {
+        if (update.error) {
+          toast.error(update.message);
+          setValidationErrors(update.error);
+        }
       }
+    } catch (error) {
+      toast.error(error?.message);
     }
+   
   };
 
   useEffect(() => {

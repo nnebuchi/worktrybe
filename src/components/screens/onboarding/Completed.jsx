@@ -1,4 +1,9 @@
+import {useNavigate} from "react-router-dom";
+
 const Completed = () => {
+  
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="mx-auto px-0 mobilelg:py-0 py-0">
@@ -29,13 +34,13 @@ const Completed = () => {
               </div>
               <div className="flex justify-center items-center gap-y-5 w-full mt-6 space-x-3">
                 <button
-                  // onClick={validateSignupForm}
+                  onClick={() => navigate("/")}
                   type="button"
                   className="h-12 text-ftvblack flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full py-2 mobilesm:text-sm text-xs mobilesm:px-5  dark:bg-[#DBDBDB]  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer tabletlg:w-3/12 tabletmd:w-4/12 mobilemd:w-5/12 w-6/12">
                   Return Home
                 </button>
                 <button
-                  // onClick={validateSignupForm}
+                  onClick={() => navigate("/dashboard")}
                   type="button"
                   className="tabletlg:w-3/12 tabletmd:w-4/12 mobilemd:w-5/12 w-6/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full mobilesm:text-sm text-xs mobilesm:px-5 py-2 text-center dark:bg-ftvblack  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer plusjakartasans">
                   Go to Dashboard

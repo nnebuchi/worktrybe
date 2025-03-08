@@ -136,51 +136,109 @@ api.interceptors.response.use(
       });
   };
   
-export const getUserProfile = async (token) => {
-  return await api
-    .get(`profile/get`, {
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then((res) => {
-      return res?.data;
-    })
-    .catch((err) => {
-      return err.response?.data;
-    });
-};
+  export const getUserProfile = async (token) => {
+    return await api
+      .get(`profile/get`, {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
 
-export const logout = async (token) => {
-  return await api
-    .post(`auth/logout`, {}, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then((res) => {
-      return res?.data;
-    })
-    .catch((err) => {
-      return err.response?.data;
-    });
-};
+  export const logout = async (token) => {
+    return await api
+      .post(`auth/logout`, {}, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
 
-export const getIndustries = async (token) => {
-  return await api
-    .get(`industries/get`, {
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    .then((res) => {
-      return res?.data;
-    })
-    .catch((err) => {
-      return err.response?.data;
-    });
-};
+  export const getIndustries = async (token) => {
+    return await api
+      .get(`industries/get`, {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
+
+  export const getServices = async (token) => {
+    return await api
+      .get(`services/get`, {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
+
+  export const createHire = async (token, data) => {
+    return await api
+      .post(
+        "/profile/create-hire", 
+        data,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
+
+  export const updateHire = async (token, data) => {
+    return await api
+      .post(
+        "/profile/update-hire", 
+        data,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };

@@ -1,30 +1,42 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useState, useContext } from "react";
 import ValidationError from "../../UI/ValidaionError";
 import { toast } from "react-toastify";
-import { updateProfile } from "../../../services/api";
+import { updateHire } from "../../../services/api";
 import { runValidation } from "../../../utils/buchi";
 import { UserContext } from "../../../contexts/UserContext";
-const SelectRequiredService = () => {
-  const [validationErrors, setValidationErrors] = useState();
+import { time } from "framer-motion";
 
-  const [experienceLevel, setExperienceLevel] = useState(0);
+
+const SelectRequiredService = () => {
+  const { hireId } = useParams();
+  const { user } = useContext(UserContext);
+  const [validationErrors, setValidationErrors] = useState();
+  const [experienceLevel, setExperienceLevel] = useState("25");
   const [budgetLevel, setBudgetLevel] = useState(0);
+  const [jobType, setJobType] = useState(null);
+  const [selectedTimeZone, setSelectedTimeZone] = useState(null);
+
   const [experienceLevels, setExperienceLevels] = useState([
     { id: 1, label: "Beginner", value: 0 },
     { id: 2, label: "Intermediate", value: 50 },
     { id: 3, label: "Senior", value: 75 },
     { id: 4, label: "Expert", value: 100 },
   ]);
-  const [budgetLevels, SetBudgetLevels] = useState([
+  const budgetLevels =[
     { id: 1, label: "0", value: 0 },
-    { id: 2, label: "1000", value: 1000 },
-    { id: 3, label: "5000", value: 5000 },
-    { id: 4, label: "10000", value: 10000 },
-  ]);
+    { id: 2, label: "50-100", value: "50-100" },
+    { id: 3, label: "100-200", value: "100-200" },
+    { id: 4, label: "200-500", value: "200-500" },
+    { id: 4, label: "500-1000", value: "500-1000" },
+    { id: 4, label: "1000-2000", value: "1000-2000" },
+    { id: 4, label: "2000-5000", value: "2000-5000" },
+  ];
 
   const [tags, setTags] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  
+  
 
   const handleInputChange = (event) => {
     const value = event.target.value.replace(/,/g, "");
@@ -47,13 +59,83 @@ const SelectRequiredService = () => {
 
   const handleSliderChange = (event) => {
     const value = parseInt(event.target.value);
-    setExperienceLevel(value);
+    console.log(value);
+    
+    setExperienceLevel(value.toString());
   };
   const handleBudgetSliderChange = (event) => {
     const value = parseInt(event.target.value);
+    console.log(value);
+    
     setBudgetLevel(value);
   };
+
+  const timezones = [
+    "UTC-12", "UTC-11", "UTC-10", "UTC-9", "UTC-8", "UTC-7", "UTC-6", "UTC-5", "UTC-4", "UTC-3", "UTC-2", "UTC-1", "UTC", "UTC+1", "UTC+2", "UTC+3","UTC+4", "UTC+5", "UTC+6", "UTC+7", "UTC+8", "UTC+9", "UTC+10", "UTC+11", "UTC+12"
+  ];
+
+
   const navigate = useNavigate();
+
+  const validateForm = async () => {
+    const validate = await runValidation([
+      
+      {
+        input: {value: jobType, field: "job_type", type: "text"},
+        rules: { required: true },
+      },
+      {
+        input: { value: selectedTimeZone, field: "timezone", type: "text" },
+        rules: { required: true },
+      },
+      {
+        input: { value: experienceLevel, field: "experience_level", type: "text" },
+        rules: { required: true, min_value: 25 },
+      },
+      {
+        input: { value: budgetLevel*5, field: "budget", type: "text" },
+        rules: { min_value:50 },
+      },
+    ]);
+
+    if (validate?.status === false) {
+      console.log(validate.errors);
+      
+      setValidationErrors(validate.errors);
+    } else {
+      updateHiring()
+      // profileUpdate();
+    }
+  };
+
+   const updateHiring = async () => {
+      const budgetConvert = {
+        "0": "0",
+        "10":"50-100",
+        "20":"100-200",
+        "30":"200+",
+        "40":"200-500",
+        "50":"500+",
+        "60":"500-1000",
+        "70":"1000+",
+        "80":"1000-2000",
+        "90":"2000+",
+        "100":"2000-5000",
+      }
+      const response = await updateHire(user?.token, {
+        job_type: jobType,
+        timezone: selectedTimeZone,
+        experience_level: experienceLevel,
+        budget: budgetConvert[budgetLevel],
+        id: hireId
+      });
+      if (response?.status === "success") {
+        toast.success(" updated successfully");
+        navigate(`/book-meeting`);
+      }else{
+        console.log(response);
+      }
+    }
 
   return (
     <>
@@ -84,41 +166,44 @@ const SelectRequiredService = () => {
 
                     <select
                       id="industry"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 ">
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      onChange={(e) => {setJobType(e.target.value)}}
+                      >
                       <option value="AUT" selected disabled>
                         Select engagement type
                       </option>
-                      <option value="AUT">Full Time</option>
-                      <option value="ACCT">Part Time</option>
-                      <option value="SOFT">Contract</option>
+                      <option value="full_time">Full Time</option>
+                      <option value="part_time">Part Time</option>
+                      <option value="contract">Contract</option>
                     </select>
                     <ValidationError
                       validationErrors={validationErrors}
-                      field="industry"
+                      field="job_type"
                     />
                   </div>
                   <div className="w-full">
                     <label
                       htmlFor="industry"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                      Preferred Work Hours
+                      Preferred Timezone
                     </label>
 
                     <select
                       id="company_size"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 ">
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 "
+                      onChange={(e) => {setSelectedTimeZone(e.target.value)}}
+                      >
                       <option value="AUT" selected disabled>
                         Select work time
                       </option>
-                      <option value="">1-4 hours</option>
-                      <option value="">4-8 hours</option>
-                      <option value="">4-12 hours</option>
-                      <option value="">12+ hours</option>
+                      {timezones.map((timezone, index) => (
+                        <option key={index} value={timezone}>
+                          {timezone}
+                        </option>
+                      ))}
+                      
                     </select>
-                    <ValidationError
-                      validationErrors={validationErrors}
-                      field="industry"
-                    />
+                    <ValidationError  validationErrors={validationErrors} field="timezone"/>
                   </div>
                 </div>
                 <div className="w-full">
@@ -140,13 +225,14 @@ const SelectRequiredService = () => {
                         background: `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${experienceLevel}%, #ccc ${experienceLevel}%, #ccc 100%)`,
                       }}
                       className="w-full h-2 bg-gray-200 rounded-full appearance-none"
+
                     />
                     <div className="flex justify-between w-full mt-2">
                       {experienceLevels.map((level) => (
                         <span
                           key={level.id}
                           className={`text-xs text-ftvblack ${
-                            experienceLevel === level.value
+                            experienceLevel >= level.value
                               ? "font-bold text-ftvprimary"
                               : ""
                           }`}>
@@ -155,8 +241,9 @@ const SelectRequiredService = () => {
                       ))}
                     </div>
                   </div>
+                  <ValidationError validationErrors={validationErrors} field="experience_level"/>
                 </div>
-                <div className="w-full">
+                {/* <div className="w-full">
                   <label
                     htmlFor="industry"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
@@ -190,7 +277,7 @@ const SelectRequiredService = () => {
                       onKeyDown={handleKeyDown}
                     />
                   </div>
-                </div>
+                </div> */}
                 <div className="w-full">
                   <label
                     htmlFor="industry"
@@ -204,7 +291,7 @@ const SelectRequiredService = () => {
                       min="0"
                       max="100"
                       value={budgetLevel}
-                      step="25"
+                      step="10"
                       onChange={handleBudgetSliderChange}
                       style={{
                         background: `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${budgetLevel}%, #ccc ${budgetLevel}%, #ccc 100%)`,
@@ -225,6 +312,7 @@ const SelectRequiredService = () => {
                       ))}
                     </div>
                   </div>
+                  <ValidationError validationErrors={validationErrors} field="budget"/>
                 </div>
 
                 <div className="flex mobilelg:justify-between justify-center mobilelg:flex-nowrap flex-wrap mobilelg:flex-row flex-row-reverse items-center gap-y-5">
@@ -245,7 +333,6 @@ const SelectRequiredService = () => {
                   </div>
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
                     <Link to="/company-info"
-                      // onClick={validateSignupForm}
                       type="button"
                       className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-[#DBDBDB]  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
                       
@@ -253,7 +340,7 @@ const SelectRequiredService = () => {
                       
                     </Link>
                     <button
-                      // onClick={validateSignupForm}
+                      onClick={validateForm}
                       type="button"
                       className="xl:w-9/12 tabletlg:w-8/12 w-9/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center dark:bg-ftvblack  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer plusjakartasans">
                       Next: Book a call
