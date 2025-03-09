@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import { updateHire } from "../../../services/api";
 import { runValidation } from "../../../utils/buchi";
 import { UserContext } from "../../../contexts/UserContext";
-import { time } from "framer-motion";
 
 
 const SelectRequiredService = () => {
