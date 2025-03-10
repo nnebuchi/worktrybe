@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const user_data = localStorage.getItem('fasttrack_user') ? JSON.parse(localStorage.getItem('fasttrack_user')) : null;
+  const user_data = localStorage.getItem('fasttrack_user') && localStorage.getItem('fasttrack_user') != "undefined" ? JSON.parse(localStorage.getItem('fasttrack_user')) : null;
   const [user, setUser] = useState(user_data);   // Store user data
   const [fetching, setFetching] = useState(true); // Loading state to manage API request status
 

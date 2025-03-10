@@ -29,7 +29,7 @@ const EmployerCompanyInfo = () => {
   }
 
   const fetchIndustries = async () => {
-    const response = await getIndustries();
+    const response = await getIndustries(user?.token);
     if (response?.status === "success") {
       setIndustries(response?.data);
     }else{

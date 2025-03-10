@@ -49,7 +49,7 @@ const Register = () => {
     if (reg?.status === "success") {
       toast.success(reg?.message);
       localStorage.setItem("fasttrack_user", JSON.stringify(reg?.data));
-      location.href = "/company-info";
+      window.location.href = "/company-info";
     } else {
       if (reg.error) {
         toast.error(reg.error);

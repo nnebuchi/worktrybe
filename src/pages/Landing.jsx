@@ -362,7 +362,7 @@ const Landing = () => {
           </h1>
           <p className="text-ftvblack plusjakartasans mobilelg:text-lg text-base text-center tabletmd:w-7/12 w-full">
             Ready to accelerate your business growth? Schedule a free
-            consultation to learn how RocketVA can save you up to 20 hours per
+            consultation to learn how Fatstrack Virtual can save you up to 20 hours per
             week
           </p>
         </div>
