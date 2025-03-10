@@ -12,6 +12,7 @@
   --color-ftvgradient-via: #e4f3bf;
   --color-ftvgradient-to: #99ffff;
   --color-ftvgrey: #303437;
+  --color-ftverror: rgb(235, 18, 18);
 
   /* Custom Breakpoints */
   --breakpoint-tabletlg: 62rem;
@@ -36,7 +37,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background-color: var(--color-ftvsecondary);
+}
 
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(221, 232, 245);
+  border-radius: 25px;
+}
 input {
   accent-color: var(--color-ftvprimary);
 }
@@ -76,16 +86,6 @@ input {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* .right-img {
-  background-image: url("/va.png");
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 30%;
-  border: 2px solid red;
-  margin-left: auto;
-} */
 
 .animate-slide-in {
   animation: slide-in 0.3s ease-in-out;
@@ -116,6 +116,16 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 25px;
 }
 
+table::-webkit-scrollbar-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--color-ftvprimary);
+  cursor: pointer;
+}
+
 @keyframes slide-in {
   from {
     transform: translateX(-100%);
@@ -133,15 +143,3 @@ input[type="range"]::-webkit-slider-thumb {
     transform: translateX(-100%);
   }
 }
-/* @media screen and (max-width:640px) {
-  .partners img {
-  width: 150px;
-  height: 80px;
-  box-sizing: border-box;
-  padding: 5px;
-  filter: grayscale(100%);
-  border-radius: 10px;
-  object-fit: contain;
-  cursor: pointer;
-}
-} */
