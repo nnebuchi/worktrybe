@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
-import {useContext} from "react";
-import {UserContext} from "../contexts/UserContext";
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
@@ -81,12 +81,8 @@ const Landing = () => {
             </ul>
             <button
               onClick={() => {
-                  user?.token ? 
-                  navigate("/dashboard") 
-                  :
-                  navigate("/register")
-                }
-              }
+                user?.token ? navigate("/dashboard") : navigate("/register");
+              }}
               type="button"
               className="text-white bg-ftvprimary hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvsecondary dark:hover:bg-ftvprimary dark:focus:ring-ftvgrey cursor-pointer  sm:w-5/12 tabletmd:w-7/12 mobilelg:w-6/12 w-8/12 mt-5 text-lg">
               JOIN FAST TRACK
@@ -125,8 +121,8 @@ const Landing = () => {
                   Financial Management
                 </h3>
                 <p className="text-[#030303] mobilelg:text-base text-sm plusjakartasans">
-                  Lorem ipsum dolor sit amet consectetur. Auctor ultricies
-                  mauris euismod mattis lectus.
+                  Stay on top of your budget with real-time tracking and expert
+                  insights. Let’s optimize your expenses effortlessly.
                 </p>
               </div>
             </div>
@@ -139,8 +135,8 @@ const Landing = () => {
                   Social Media and Marketing
                 </h3>
                 <p className="text-[#030303] mobilelg:text-base text-sm plusjakartasans">
-                  Lorem ipsum dolor sit amet consectetur. Auctor ultricies
-                  mauris euismod mattis lectus.
+                  Boost engagement and grow your brand with data-driven
+                  strategies. We handle the content, you enjoy the results.
                 </p>
               </div>
             </div>
@@ -153,8 +149,8 @@ const Landing = () => {
                   Administrative Tasks
                 </h3>
                 <p className="text-[#030303] mobilelg:text-base text-sm plusjakartasans">
-                  Lorem ipsum dolor sit amet consectetur. Auctor ultricies
-                  mauris euismod mattis lectus.
+                  Free up your time with seamless scheduling, data entry, and
+                  task coordination. Efficiency starts here.
                 </p>
               </div>
             </div>
@@ -167,8 +163,8 @@ const Landing = () => {
                   Email and Customer Service Management
                 </h3>
                 <p className="text-[#030303] mobilelg:text-base text-sm plusjakartasans">
-                  Lorem ipsum dolor sit amet consectetur. Auctor ultricies
-                  mauris euismod mattis lectus.
+                  Keep your inbox organized and customers happy. Prompt
+                  responses, professional support, zero stress.
                 </p>
               </div>
             </div>
@@ -186,7 +182,7 @@ const Landing = () => {
           </h1>
         </div>
       </section>
-      <section className=" mobilelg:min-h-[300px] mobilelg:py-15 xl:px-10 lg:px-8  dark:bg-ftvoffwhite bg-ftvoffwhite flex justify-center items-center">
+      <section className=" mobilelg:min-h-[300px] mobilelg:py-15 py-15 xl:px-10 lg:px-8 md:px-6 px-4  dark:bg-ftvoffwhite bg-ftvoffwhite flex justify-center items-center">
         <div className="flex flex-wrap justify-center xl:gap-10 gap-5 mobilelg:p-8 p-0 w-full">
           <div className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3 ">
             <h3 className="text-ftvprimary font-medium mobilelg:text-xl text-lg">
@@ -362,8 +358,8 @@ const Landing = () => {
           </h1>
           <p className="text-ftvblack plusjakartasans mobilelg:text-lg text-base text-center tabletmd:w-7/12 w-full">
             Ready to accelerate your business growth? Schedule a free
-            consultation to learn how Fatstrack Virtual can save you up to 20 hours per
-            week
+            consultation to learn how Fatstrack Virtual can save you up to 20
+            hours per week
           </p>
         </div>
       </section>
@@ -371,12 +367,8 @@ const Landing = () => {
         <div className="flex  w-full justify-center items-center ">
           <button
             onClick={() => {
-              user?.token ? 
-              navigate("/dashboard") 
-              :
-              navigate("/register")
-            }
-            }
+              user?.token ? navigate("/dashboard") : navigate("/register");
+            }}
             type="button"
             className="text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium  py-3 px-5 text-center dark:bg-ftvblack dark:hover:bg-transparent dark:hover:ring-1 dark:hover:ring-ftvblack dark:hover:text-ftvblack dark:focus:ring-ftvgrey cursor-pointer tabletmd:w-3/12 mobilelg:w-5/12 mobilemd:w-8/12 w-10/12 mt-5 text-lg capitalize rounded-full">
             Reach out today

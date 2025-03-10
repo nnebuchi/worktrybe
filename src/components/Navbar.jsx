@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 const Navbar = () => {
-
   const { user } = useContext(UserContext);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
@@ -19,8 +18,7 @@ const Navbar = () => {
 
   useEffect(() => {
     console.log(user);
-    
-  }, [])
+  }, []);
   return (
     <header>
       <nav className="bg-transparent fixed w-full z-20 top-0 start-0  backdrop-blur navbar">
@@ -33,9 +31,6 @@ const Navbar = () => {
               className="h-12  mobilelg:w-9/12 w-9/12"
               alt="Fasttrack VA Logo"
             />
-            {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-ftvblack-300">
-              Fasttrack VA
-            </span> */}
           </a>
 
           <div className="flex md:order-2 flex-row-reverse justify-start gap-x-7 items-center space-x-3 md:space-x-0 rtl:space-x-reverse tabletlg:w-6/12 mobilelg:w-7/12 ">
@@ -43,9 +38,7 @@ const Navbar = () => {
               <div
                 className={`justify-between absolute inset-0 h-[100vh] dark:bg-linear-45 dark:bg-opacity-4 from-ftvgradient-via to-ftvgradient-to w-full md:flex md:w-auto md:order-1 z-30 flex-col items-start space-y-6 ${
                   showMobileMenu ? "animate-slide-in" : "animate-slide-out"
-                }`}
-                // id="navbar-sticky"
-              >
+                }`}>
                 <div className="absolute bg-white w-full h-fit opacity-80 z-5 inset-0"></div>
                 <div className="flex justify-between px-8 py-4 z-30">
                   <h3 className="text-[#909CA7] text-lg font-semibold uppercase ">
@@ -78,24 +71,20 @@ const Navbar = () => {
                       Pricing
                     </a>
                   </li>
-                 
                 </ul>
-                {
-                  user ?
-
+                {user ? (
                   <Link
                     to={"/dashboard"}
                     className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
                     Dashboard
                   </Link>
-                  :
-                    <Link
+                ) : (
+                  <Link
                     to={"/register"}
                     className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
                     Get started
                   </Link>
-                }
-                
+                )}
 
                 <a
                   href="#"
@@ -105,27 +94,22 @@ const Navbar = () => {
                     className="h-12  w-2/12"
                     alt="Fasttrack VA Logo"
                   />
-                  {/* <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-ftvblack-300">
-              Fasttrack VA
-            </span> */}
                 </a>
               </div>
             ) : null}
-            {
-                  user ?
-
-                  <Link
-                    to={"/dashboard"}
-                    className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
-                    Dashboard
-                  </Link>
-                  :
-                    <Link
-                    to={"/register"}
-                    className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
-                    Get started
-                  </Link>
-                }
+            {user ? (
+              <Link
+                to={"/dashboard"}
+                className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
+                Dashboard
+              </Link>
+            ) : (
+              <Link
+                to={"/register"}
+                className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30 mobilelg:inline-flex hidden">
+                Get started
+              </Link>
+            )}
 
             <ul className="md:flex uppercase justify-between space-x-6 hidden">
               <li>

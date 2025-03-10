@@ -83,7 +83,7 @@ const ResetPassword = () => {
                 />
                 <span
                   onClick={handlePasswordReveal}
-                  className={` absolute xl:inset-x-120 lg:inset-x-80 tabletmd:inset-x-60 inset-x-50 inset-y-10 text-[#6D7B88] fa ${
+                  className={` absolute inset-x-[85%] inset-y-10 text-[#6D7B88] fa ${
                     passwordReveal === "password" ? "fa-eye-slash " : "fa-eye"
                   }`}></span>{" "}
                 <ValidationError
@@ -111,7 +111,7 @@ const ResetPassword = () => {
                 />
                 <span
                   onClick={handlePasswordReveal}
-                  className={` absolute xl:inset-x-120 lg:inset-x-80 tabletmd:inset-x-60 inset-x-50 inset-y-10 text-[#6D7B88] fa ${
+                  className={` absolute inset-x-[85%] inset-y-10 text-[#6D7B88] fa ${
                     passwordReveal === "password" ? "fa-eye-slash " : "fa-eye"
                   }`}></span>{" "}
                 <ValidationError

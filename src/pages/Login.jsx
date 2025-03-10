@@ -68,7 +68,6 @@ const Login = () => {
       <section className="mx-auto px-0">
         <div className="flex items-center justify-center min-h-[680px] mobilelandscape:flex-nowrap flex-wrap">
           <div className="tabletmd:w-6/12 mobilelandscape:w-5/12 mobilelandscape:inline-flex hidden ">
-            
             <img
               src="/right-column.png"
               alt=""
@@ -77,7 +76,9 @@ const Login = () => {
           </div>
           <div className="tabletmd:w-6/12 mobilelandscape:w-7/12 mobilelg:w-9/12 w-full bg-white tabletmd:px-8 px-4  ">
             <div className="mobilesm:p-6 p-0    w-full">
-            <Link to="/"><img src="/fasttrack-logo.svg" alt="" className="mb-10 " /></Link>
+              <Link to="/">
+                <img src="/fasttrack-logo.svg" alt="" className="mb-10 " />
+              </Link>
               <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
                 Welcome to <span className="text-[#6360F1]">FastTrack </span>
               </h1>
@@ -130,7 +131,7 @@ const Login = () => {
                   />
                   <span
                     onClick={handlePasswordReveal}
-                    className={` absolute xl:inset-x-120 lg:inset-x-80 tabletmd:inset-x-60 inset-x-50 inset-y-10 text-[#6D7B88] fa ${
+                    className={` absolute  inset-x-[85%] inset-y-10 text-[#6D7B88] fa ${
                       passwordReveal === "password" ? "fa-eye-slash " : "fa-eye"
                     }`}></span>{" "}
                   <ValidationError
