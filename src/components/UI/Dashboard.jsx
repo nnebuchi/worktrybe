@@ -1,3 +1,8 @@
+import "froala-editor/css/froala_style.min.css";
+import "froala-editor/css/froala_editor.pkgd.min.css";
+import "froala-editor/js/plugins.pkgd.min.js";
+import FroalaEditor from "react-froala-wysiwyg";
+
 const Dashboard = () => {
   const dashboardCardValues = [
     {
@@ -182,7 +187,7 @@ const Dashboard = () => {
                 data-drawer-target="drawer-navigation"
                 data-drawer-toggle="drawer-navigation"
                 aria-controls="drawer-navigation"
-                className="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-ftvwine-400 dark:hover:bg-ftvwine-200 dark:hover:text-white">
+                className="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-ftvblack hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-ftvwine-400 dark:hover:bg-ftvwine-200 dark:hover:text-white">
                 <svg
                   aria-hidden="true"
                   className="w-6 h-6"
@@ -221,7 +226,7 @@ const Dashboard = () => {
               <button
                 type="button"
                 data-dropdown-toggle="notification-dropdown"
-                className="p-2 mr-1 text-ftvsecondary bg-ftvpurple-100 bg-opacity-80 rounded-lg hover:text-gray-900 hover:bg-green-100  dark:hover:text-white dark:hover:bg-ftvprimary focus:ring-1 focus:ring-gray-300 dark:focus:ring-ftvwine-300">
+                className="p-2 mr-1 text-ftvsecondary bg-ftvpurple-100 bg-opacity-80 rounded-lg hover:text-ftvblack hover:bg-green-100  dark:hover:text-white dark:hover:bg-ftvprimary focus:ring-1 focus:ring-gray-300 dark:focus:ring-ftvwine-300">
                 <span className="sr-only">View notifications</span>
                 {/* <!-- Bell icon --> */}
                 <svg
@@ -265,7 +270,7 @@ const Dashboard = () => {
                     <div className="pl-3 w-full">
                       <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
                         New message from
-                        <span className="font-semibold text-gray-900 dark:text-ftvwine-500">
+                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
                           Bonnie Green
                         </span>
                         : "Hey, what's up? All set for the presentation?"
@@ -284,7 +289,7 @@ const Dashboard = () => {
                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                         alt="Jese Leos avatar"
                       />
-                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-gray-900 rounded-full border border-white dark:border-gray-700">
+                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-ftvblack rounded-full border border-white dark:border-gray-700">
                         <svg
                           aria-hidden="true"
                           className="w-3 h-3 text-white"
@@ -297,11 +302,11 @@ const Dashboard = () => {
                     </div>
                     <div className="pl-3 w-full">
                       <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
-                        <span className="font-semibold text-gray-900 dark:text-ftvwine-500">
+                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
                           Jese leos
                         </span>
                         and
-                        <span className="font-medium text-gray-900 dark:text-ftvwine-500">
+                        <span className="font-medium text-ftvblack dark:text-ftvwine-500">
                           5 others
                         </span>
                         started following you.
@@ -336,11 +341,11 @@ const Dashboard = () => {
                     </div>
                     <div className="pl-3 w-full">
                       <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
-                        <span className="font-semibold text-gray-900 dark:text-ftvwine-500">
+                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
                           Joseph Mcfall
                         </span>
                         and
-                        <span className="font-medium text-gray-900 dark:text-ftvwine-500">
+                        <span className="font-medium text-ftvblack dark:text-ftvwine-500">
                           141 others
                         </span>
                         love your story. See it and view more stories.
@@ -375,7 +380,7 @@ const Dashboard = () => {
                     </div>
                     <div className="pl-3 w-full">
                       <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
-                        <span className="font-semibold text-gray-900 dark:text-ftvwine-500">
+                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
                           Leslie Livingston
                         </span>
                         mentioned you in a comment:
@@ -411,7 +416,7 @@ const Dashboard = () => {
                     </div>
                     <div className="pl-3 w-full">
                       <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
-                        <span className="font-semibold text-gray-900 dark:text-ftvwine-500">
+                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
                           Robert Brown
                         </span>
                         posted a new video: Glassmorphism - learn how to
@@ -425,7 +430,7 @@ const Dashboard = () => {
                 </div>
                 <a
                   href="#"
-                  className="block py-2 text-md font-medium text-center text-gray-900 bg-gray-50 hover:bg-ftvwine-50 dark:bg-ftvwine-100 dark:text-ftvwine-500 dark:hover:underline">
+                  className="block py-2 text-md font-medium text-center text-ftvblack bg-gray-50 hover:bg-ftvwine-50 dark:bg-ftvwine-100 dark:text-ftvwine-500 dark:hover:underline">
                   <div className="inline-flex items-center">
                     <svg
                       aria-hidden="true"
@@ -456,7 +461,7 @@ const Dashboard = () => {
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
                 alt="user photo"
               />
-              <button className="p-2 ml-1 text-ftverror bg-red-100 bg-opacity-80 rounded-lg hover:text-gray-900 hover:bg-green-100  dark:hover:text-white dark:hover:bg-ftverror focus:ring-1 focus:ring-gray-300 dark:focus:ring-ftvwine-300">
+              <button className="p-2 ml-1 text-ftverror bg-red-100 bg-opacity-80 rounded-lg hover:text-ftvblack hover:bg-green-100  dark:hover:text-white dark:hover:bg-ftverror focus:ring-1 focus:ring-gray-300 dark:focus:ring-ftvwine-300">
                 <span className="fa fa-arrow-right-from-bracket text-xl  "></span>
               </button>
             </div>
@@ -508,7 +513,7 @@ const Dashboard = () => {
                 aria-hidden="true"
                 className="h-5 w-5 rounded-full mt-0.5"
                 xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 3900 3900">
                 <path fill="#b22234" d="M0 0h7410v3900H0z" />
                 <path
@@ -526,19 +531,19 @@ const Dashboard = () => {
                             id="a"
                             d="M247 90l70.534 217.082-184.66-134.164h228.253L176.466 307.082z"
                           />
-                          <use xlink:href="#a" y="420" />
-                          <use xlink:href="#a" y="840" />
-                          <use xlink:href="#a" y="1260" />
+                          <use xlinkHref="#a" y="420" />
+                          <use xlinkHref="#a" y="840" />
+                          <use xlinkHref="#a" y="1260" />
                         </g>
-                        <use xlink:href="#a" y="1680" />
+                        <use xlinkHref="#a" y="1680" />
                       </g>
-                      <use xlink:href="#b" x="247" y="210" />
+                      <use xlinkHref="#b" x="247" y="210" />
                     </g>
-                    <use xlink:href="#c" x="494" />
+                    <use xlinkHref="#c" x="494" />
                   </g>
-                  <use xlink:href="#d" x="988" />
-                  <use xlink:href="#c" x="1976" />
-                  <use xlink:href="#e" x="2470" />
+                  <use xlinkHref="#d" x="988" />
+                  <use xlinkHref="#c" x="1976" />
+                  <use xlinkHref="#e" x="2470" />
                 </g>
               </svg>
             </button>
@@ -640,7 +645,7 @@ const Dashboard = () => {
                         aria-hidden="true"
                         className="h-3.5 w-3.5 rounded-full mr-2"
                         xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
                         id="flag-icon-css-cn"
                         viewBox="0 0 512 512">
                         <defs>
@@ -655,31 +660,31 @@ const Dashboard = () => {
                           width="30"
                           height="20"
                           transform="matrix(76.8 0 0 76.8 128 128)"
-                          xlink:href="#a"
+                          xlinkHref="#a"
                         />
                         <use
                           width="30"
                           height="20"
                           transform="rotate(-121 142.6 -47) scale(25.5827)"
-                          xlink:href="#a"
+                          xlinkHref="#a"
                         />
                         <use
                           width="30"
                           height="20"
                           transform="rotate(-98.1 198 -82) scale(25.6)"
-                          xlink:href="#a"
+                          xlinkHref="#a"
                         />
                         <use
                           width="30"
                           height="20"
                           transform="rotate(-74 272.4 -114) scale(25.6137)"
-                          xlink:href="#a"
+                          xlinkHref="#a"
                         />
                         <use
                           width="30"
                           height="20"
                           transform="matrix(16 -19.968 19.968 16 256 230.4)"
-                          xlink:href="#a"
+                          xlinkHref="#a"
                         />
                       </svg>
                       中文 (繁體)
@@ -716,61 +721,75 @@ const Dashboard = () => {
               );
             })}
           </div>
-          <div class="max-w-6xl mx-auto plusjakartasans mb-8">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden p-5">
-              <div class="pb-4">
-                <h2 class="text-lg font-semibold">Preselected VAs</h2>
+          {/* Preselected VA */}
+          <div className="max-w-6xl mx-auto plusjakartasans mb-8">
+            <div className="bg-white shadow-lg rounded-lg overflow-hidden p-5">
+              <div className="pb-4 flex justify-between items-center w-full">
+                <h2 className="text-lg font-semibold">Preselected VAs</h2>
+                <button
+                  data-modal-target="static-modal"
+                  data-modal-toggle="static-modal"
+                  type="button"
+                  className="w-2/12 text-white bg-ftvwine-500  hover:bg-ftvprimary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvsecondary  dark:hover:bg-ftvprimaryy dark:focus:ring-ftvgrey cursor-pointer space-x-2">
+                  <span className="fa fa-checklist me-3"></span>
+                  Start Assessment
+                </button>
+                {/* <button
+                  class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  type="button">
+                  Toggle modal
+                </button> */}
               </div>
 
-              <div class="overflow-auto max-h-70 border-1 border-[#EEF0F2] rounded-lg  ">
-                <table class="w-full border-collapse relative">
-                  <thead class="bg-gray-100 ">
-                    <tr class="text-left text-sm text-gray-600">
-                      <th class="p-3">
+              <div className="overflow-auto max-h-70 border-1 border-[#EEF0F2] rounded-lg  ">
+                <table className="w-full border-collapse relative">
+                  <thead className="bg-gray-100 ">
+                    <tr className="text-left text-sm text-gray-600">
+                      <th className="p-3">
                         <input
                           type="checkbox"
                           className="outline-none border-none ring-1 ring-[#EEF0F2] rounded"
                         />
                       </th>
-                      <th class="p-3">Name</th>
-                      <th class="p-3">Job Role</th>
-                      <th class="p-3">Location</th>
-                      <th class="p-3">Experience</th>
-                      <th class="p-3">Education</th>
-                      <th class="p-3">Ratings</th>
-                      <th class="p-3">Date Added</th>
-                      <th class="p-3"></th>
+                      <th className="p-3">Name</th>
+                      <th className="p-3">Job Role</th>
+                      <th className="p-3">Location</th>
+                      <th className="p-3">Experience</th>
+                      <th className="p-3">Education</th>
+                      <th className="p-3">Ratings</th>
+                      <th className="p-3">Date Added</th>
+                      <th className="p-3"></th>
                     </tr>
                   </thead>
                   <tbody className="max-h-50 ">
                     {selectedVAs.map((va, index) => {
                       return (
                         <tr
-                          class=" text-ftvblack text-sm even:bg-gray-50 odd:bg-white"
+                          className=" text-ftvblack text-sm even:bg-gray-50 odd:bg-white"
                           key={index}>
-                          <td class="p-3">
+                          <td className="p-3">
                             <input
                               type="checkbox"
                               className="outline-none border-none ring-1 ring-[#EEF0F2] rounded mb-3"
                             />
                           </td>
-                          <td class="p-3 flex items-center space-x-2">
-                            <div class="w-6 h-6 bg-gray-300 rounded-full"></div>
+                          <td className="p-3 flex items-center space-x-2">
+                            <div className="w-6 h-6 bg-gray-300 rounded-full"></div>
                             <span className="text-ellipsis">
                               {va.firstName}
                               {va.lastName}
                             </span>
                           </td>
-                          <td class="p-3 text-ellipsis">{va.jobRole}</td>
-                          <td class="p-3">{va.location}</td>
-                          <td class="p-3">{va.experience}</td>
-                          <td class="p-3">{va.education}</td>
-                          <td class="p-3 text-green-600 font-semibold">
+                          <td className="p-3 text-ellipsis">{va.jobRole}</td>
+                          <td className="p-3">{va.location}</td>
+                          <td className="p-3">{va.experience}</td>
+                          <td className="p-3">{va.education}</td>
+                          <td className="p-3 text-green-600 font-semibold">
                             ▲ {va.ratings}
                           </td>
-                          <td class="p-3">{va.date}</td>
-                          <td class="p-3">
-                            <button class="px-4 py-2 text-blue-600 border hover:bg-blue-50 cursor-pointer rounded-lg">
+                          <td className="p-3">{va.date}</td>
+                          <td className="p-3">
+                            <button className="px-4 py-2 text-blue-600 border hover:bg-blue-50 cursor-pointer rounded-lg">
                               View
                             </button>
                           </td>
@@ -779,6 +798,75 @@ const Dashboard = () => {
                     })}
                   </tbody>
                 </table>
+              </div>
+            </div>
+          </div>
+
+          {/* Assessments Modal */}
+
+          {/* <!-- Modal toggle --> */}
+
+          {/* <!-- Main modal --> */}
+          <div
+            id="static-modal"
+            data-modal-backdrop="static"
+            tabIndex="-1"
+            aria-hidden="true"
+            className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-full max-h-full">
+            <div className="relative p-4 w-full max-w-2xl max-h-full bg-white rounded-lg">
+              {/* <!-- Modal content --> */}
+              <div className="relative bg-white rounded-lg shadow-sm dark:bg-grey-200">
+                {/* <!-- Modal header --> */}
+                <div className="flex items-center justify-between p-4 md:p-5  rounded-t ">
+                  <h3 className="text-xl font-semibold text-ftvblack dark:text-ftvblack">
+                    Upload Accessment
+                  </h3>
+                  <button
+                    type="button"
+                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-ftvblack rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-hide="static-modal">
+                    <svg
+                      className="w-3 h-3"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 14">
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                      />
+                    </svg>
+                    <span className="sr-only">Close modal</span>
+                  </button>
+                </div>
+                {/* <!-- Modal body --> */}
+                <div></div>
+                <FroalaEditor
+                  tag="textarea"
+                  config={{
+                    placeholder: "Enter any additional task description here",
+                  }}
+                  style={{ margin: "10px", borderRadius: "none" }}
+                />
+
+                {/* <!-- Modal footer --> */}
+                <div className="flex items-center p-4 md:p-5 rounded-b space-x-5 ">
+                  <button
+                    data-modal-target="static-modal"
+                    type="button"
+                    className="min-w-3/12 text-white bg-ftvtransparent  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvprimary  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer space-x-2">
+                    Send Assessment
+                  </button>
+                  <button
+                    data-modal-hide="static-modal"
+                    type="button"
+                    className="min-w-3/12 text-ftvsecondary bg-transparent  hover:bg-blue-50 focus:ring-1 focus:outline-none  ring-1 ring-ftvsecondary focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-transparent  dark:hover:bg-blue-50 dark:focus:ring-ftvgrey cursor-pointer space-x-2">
+                    Cancel
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -797,7 +885,9 @@ const Dashboard = () => {
               <div className="max-h-72 overflow-auto">
                 {upcomingMeetings.map((meeting, index) => {
                   return (
-                    <div className="border-l-blue-300 border-b-0 border-r-0 border-t-0 border-4 rounded-xl  bg-white space-y-1 p-3 mb-2">
+                    <div
+                      className="border-l-blue-300 border-b-0 border-r-0 border-t-0 border-4 rounded-xl  bg-white space-y-1 p-3 mb-2"
+                      key={index}>
                       <div className="flex justify-between items-center">
                         <div className="space-x-3 text-sm">
                           <span className="fa fa-circle text-sm text-ftvsecondary"></span>
@@ -811,7 +901,11 @@ const Dashboard = () => {
                       </div>
                       <div className="flex space-x-3 items-center">
                         <div className="w-6 h-6 rounded-full  bg-gray-300">
-                          <img src="" alt="" className="rounded-full w-full" />
+                          <img
+                            src="/bag.svg"
+                            alt=""
+                            className="rounded-full w-full"
+                          />
                         </div>
                         <div className="w-10/12">
                           <h3 className="font-normal text-ftvblack text-sm">
