@@ -389,17 +389,17 @@ const Landing = () => {
               <div className="mobilelg:w-6/12 w-full space-y-3 text-white ">
                 <h1 className="">Quicklinks</h1>
                 <div className="space-x-4 plusjakartasans">
-                  <span classaName="">
+                  <span className="">
                     <a href="" className="text-sm">
                       Features
                     </a>
                   </span>
-                  <span classaName="">
+                  <span className="">
                     <a href="" className="text-sm">
                       Services
                     </a>
                   </span>
-                  <span classaName="">
+                  <span className="">
                     <a href="" className="text-sm">
                       Jobs
                     </a>
