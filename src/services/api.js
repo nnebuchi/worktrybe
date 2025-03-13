@@ -13,13 +13,13 @@ api.interceptors.response.use(
     (response) => {
       // Check if the response message is "unauthorized
       if (
-        response?.message === "unauthorized" &&
+        response?.message === "Unauthenticated." &&
         window.location.pathname !== "/login" &&
         window.location.pathname !== "/register"&&
         window.location.pathname !== "/"
       ) {
         // Clear ghm_user from local storage
-        localStorage.removeItem("ghm_user");
+        localStorage.removeItem("fasttrack_user");
         // Redirect to the login route
         window.location.href = "/";
       } else {
@@ -28,13 +28,13 @@ api.interceptors.response.use(
     },
     (error) => {
       if (
-        error?.response?.data?.message === "unauthorized" &&
+        error?.response?.data?.message === "Unauthenticated." &&
         window.location.pathname !== "/login" &&
         window.location.pathname !== "/register"&&
         window.location.pathname !== "/"
       ) {
-        // Clear ghm_user from local storage
-        localStorage.removeItem("ghm_user");
+        // Clear fasttrack_user from local storage
+        localStorage.removeItem("fasttrack_user");
   
         // Redirect to the login route
         // You will need to replace '/login' with the actual login route in your application
@@ -242,3 +242,51 @@ api.interceptors.response.use(
         return err.response?.data;
       });
   };
+
+  export const getPreselectedVAs = async (token, hire_id) => {
+    return await api
+      .get(`hire/${hire_id}/get-preselected-vas`, {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
+
+  export const ongoingHire = async (token) => {
+    return await api
+      .get(`ongoing-hire`, {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
+
+  export const addAssessmentData = async (token, data) => {
+    return await api.post(`${import.meta.env.VITE_BASE_URL}/add-assessment-data`, data, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  }

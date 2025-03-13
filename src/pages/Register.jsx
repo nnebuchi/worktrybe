@@ -170,7 +170,7 @@ const Register = () => {
                   className="w-full text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvprimary  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
                   Sign up
                 </button>
-                <button className="gap-4 justify-center items-center w-full">
+                {/* <button className="gap-4 justify-center items-center w-full">
                   <a
                     href="#"
                     className="flex w-full items-center rounded-lg bg-gray-800 px-4 py-2.5 text-ftvwine-500 ring-1 dark:ring-ftvgrey ring-ftvgrey hover:bg-ftvsecondary focus:outline-none focus:ring-1 focus:ring-ftvgrey dark:bg-transparent dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey hover:ring-0  space-x-2 hover:text-white justify-center">
@@ -191,7 +191,7 @@ const Register = () => {
 
                     <span className="mb-1 text-xs">Signup with Google</span>
                   </a>
-                </button>
+                </button> */}
                 <p className="text-sm font-normal text-ftvblack-400 dark:text-[#3B4752] text-center ">
                   Already have an account?{" "}
                   <a
