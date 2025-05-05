@@ -243,6 +243,22 @@ api.interceptors.response.use(
       });
   };
 
+  export const getHireDetail = async(token, hire_id) => {
+    return await api
+      .get(`profile/hires/${hire_id}`, {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  }
+
   export const getPreselectedVAs = async (token, hire_id) => {
     return await api
       .get(`hire/${hire_id}/get-preselected-vas`, {
@@ -280,6 +296,21 @@ api.interceptors.response.use(
       headers: {
         Accept: "application/json",
         "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  }
+
+  export const getWorkTool = async (token) => {
+    return await api.get(`${import.meta.env.VITE_BASE_URL}/tools`, {
+      headers: {
+        Accept: "application/json",
         Authorization: `Bearer ${token}`,
       },
     })

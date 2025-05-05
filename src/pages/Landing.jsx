@@ -22,7 +22,7 @@ const Landing = () => {
             </p>
 
             <a
-              href="#"
+              href="/dashboard"
               className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-white hover:text-white hover:dark:bg-ftvsecondary dark:bg-ftvprimary uppercase">
               Book a consultation
             </a>

@@ -1,15 +1,19 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useLocation  } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../../contexts/UserContext";
-import { getServices, createHire } from "../../../services/api";
+import { getServices, createHire, getHireDetail } from "../../../services/api";
 import { toast } from "react-toastify";
 
 const SelectRequiredService = () => {
   const { user, fetchUserData } = useContext(UserContext);
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const searchParams  = new URLSearchParams(location.search );
+  const hireId = searchParams.get('hireId');
+  
   const [isChecked, setIsChecked] = useState(0);
   const [services, setServices] = useState([]);
+  const [hire, setHire] = useState(null);
   
   const fetchServices = async () => {
     const response = await getServices(user?.token);
@@ -26,7 +30,7 @@ const SelectRequiredService = () => {
       toast.error('Please select a service');
       return;
     }
-    const response = await createHire(user?.token, {service: isChecked});
+    const response = await createHire(user?.token, {service: isChecked, hire_id: hireId});
     if (response?.status === "success") {
       navigate(`/role-requirement/${response?.data?.id}?service=` + isChecked);
     }else{
@@ -35,10 +39,28 @@ const SelectRequiredService = () => {
   }
 
 
+const fetchHireDetail = async () => {
+  const response = await getHireDetail(user?.token, hireId);
+  if (response?.status === "success") {
+    setHire(response?.data);
+    
+    // console.log(response);
+  }else{
+    console.log(response);
+  }
+}
+
   useEffect(()=>{
     fetchUserData(user?.token);
     fetchServices();
+    if(hireId){
+      fetchHireDetail();
+    }
   }, []);
+
+  useEffect(()=>{
+    setIsChecked(hire?.services_id);
+  }, [hire]);
   return (
     <>
       <section className="mx-auto px-0 mobilelg:py-0 py-8">
@@ -113,11 +135,11 @@ const SelectRequiredService = () => {
                     </small>
                   </div>
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
-                  <Link to="/company-info"
+                  <Link to={hireId ? `/company-info/?hireId=${hireId}` :"/company-info"}
                       type="button"
-                      className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-[#DBDBDB]  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
+                      className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-ftvsecondary  dark:hover:bg-[#DBDBDB] dark:focus:ring-ftvgrey cursor-pointer">
                       
-                      <span className="fa fa-arrow-left" ></span>
+                      <span className="fa fa-arrow-left"></span>
                       
                     </Link>
                     <button

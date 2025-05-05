@@ -1,29 +1,47 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import ValidationError from "../../UI/ValidaionError";
 import { toast } from "react-toastify";
-import { updateOrganizationProfile, getIndustries } from "../../../services/api";
+import { updateOrganizationProfile, getIndustries, getWorkTool } from "../../../services/api";
 import { runValidation } from "../../../utils/buchi";
 import { UserContext } from "../../../contexts/UserContext";
+import Select from 'react-select';
+
 
 const EmployerCompanyInfo = () => {
   const { user, fetchUserData } = useContext(UserContext);
   
-
+  const location = useLocation();
+  const searchParams  = new URLSearchParams(location.search );
+  const hireId = searchParams.get('hireId');
+  
   const [organization, setOrganization] = useState(
-    user?.organization ? user?.organization : {}
+    user?.company ? {
+      contact_email: user?.company?.contact_email,
+      contact_name: user?.company?.contact_name,
+      contact_phone: user?.company?.contact_phone,
+      technology_tools: user?.company?.communication_tools,
+      employee_size: user?.company?.employee_size,
+      industry: user?.company?.industry,
+      name: user?.company?.name,
+      website: user?.company?.website,
+      years_in_operation: user?.company?.years_in_operation
+    }:{}
   );
   
-  
   const [industries, setIndustries] = useState([]);
-
   const [validationErrors, setValidationErrors] = useState();
-  const navigate = useNavigate();
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [workTools, setWorkTools] = useState([]);
 
+  const navigate = useNavigate();
   const updateOrganization = (field, value) => {
+    console.log(field);
+    console.log(value);
+    
+    
     const organizationClone = {...organization};
     organizationClone[field] = value;
-    console.log(organizationClone);
     
     setOrganization(organizationClone)
   }
@@ -37,34 +55,19 @@ const EmployerCompanyInfo = () => {
     }
   }
 
-  const validateProfileForm = async () => {
-    const validate = await runValidation([
-      
-      {
-        input: {value: organization?.employee_size, field: "company_size", type: "text"},
-        rules: { required: true },
-      },
-      {
-        input: { value: organization?.website, field: "company_website", type: "text" },
-        rules: { required: true },
-      },
-      {
-        input: { value: organization?.name, field: "company_name", type: "text" },
-        rules: { required: true },
-      },
-      {
-        input: { value: organization?.industry, field: "industry", type: "text" },
-        rules: { required: true },
-      },
-    ]);
-
-    if (validate?.status === false) {
-      console.log(validate.errors);
-      
-      setValidationErrors(validate.errors);
-    } else {
-      profileUpdate();
+  const fetchWorkTools = async () => {
+    const response = await getWorkTool(user?.token);
+    if (response?.status === "success") {
+      setWorkTools(response?.data.map((tool) => ({ value: tool.name, label: tool.name })));
+    
+    }else{
+      console.log(response)
     }
+  }
+
+  const handleWorkToolChange = (options) => {
+    setSelectedOptions(options);
+    updateOrganization('technology_tools', options.map((option) => option.value));
   };
 
   const profileUpdate = async () => {
@@ -73,11 +76,16 @@ const EmployerCompanyInfo = () => {
         company_name:organization?.name,
         company_website:organization?.website,
         employee_size:organization?.employee_size,
-        industry:organization?.industry
+        industry:organization?.industry,
+        years_in_operation:organization?.years_in_operation,
+        technology_tools:organization?.technology_tools,
+        contact_name:organization?.contact_name,
+        contact_email:organization?.contact_email,
+        contact_phone:organization?.contact_phone
       });
       if (update?.status === "success") {
         toast.success(update?.message);
-        navigate("/select-service");
+        navigate(hireId ?`/select-service?hireId=${hireId}`:"/select-service");
       } else {
         if (update.error) {
           toast.error(update.message);
@@ -90,14 +98,71 @@ const EmployerCompanyInfo = () => {
    
   };
 
+  
+  const validateProfileForm = async () => {
+    
+    const validate = await runValidation([
+      
+      {
+        input: {value: organization?.employee_size, field: "company_size", type: "text"},
+        rules: { required: true },
+      },
+      {
+        input: { value: organization?.website, field: "company_website", type: "text" },
+        rules: { required: true },
+      },
+      {
+        input: { value: organization?.name, field: "business_name", type: "text" },
+        rules: { required: true },
+      },
+      {
+        input: { value: organization?.industry, field: "industry", type: "text" },
+        rules: { required: true },
+      },
+      {
+        input: { value: organization?.years_in_operation.toString(), field: "years_in_operation", type: "text" },
+        rules: { required: true },
+      },
+      {
+        input: { value: organization?.technology_tools, field: "technology_tools", type: "text" },
+        rules: { required: true },
+      },
+      {
+        input: { value: organization?.contact_name, field: "primary_contact", type: "text" },
+        rules: { required: true },
+      },
+      {
+        input: { value: organization?.contact_email, field: "contact_email", type: "text" },
+        rules: { required: true, email:true },
+      },
+      {
+        input: { value: organization?.contact_phone, field: "contact_phone", type: "text" },
+        rules: { required: true, min_length:11, max_length:14 },
+      },
+    ]);
+
+    if (validate?.status === false) {
+      
+      setValidationErrors(validate.errors);
+    } else {
+      profileUpdate();
+    }
+  };
+
+  
+
+  
+
   useEffect(() => {
-    console.log(user);
-  }, [user]);
+    setSelectedOptions(organization?.technology_tools?.map((tool) => ({ value: tool, label: tool })));
+  }, [organization]);
 
   useEffect(() => {
     fetchUserData(user?.token);
     fetchIndustries();
-
+    fetchWorkTools();
+    
+    // updateOrganization('technology_tools', organization?.technology_tools);
   }, []);
 
   return (
@@ -122,32 +187,33 @@ const EmployerCompanyInfo = () => {
               </p>
 
               <form className="space-y-3 md:space-y-5 mt-4" action="#">
-                <div className="w-full">
-                  <label
-                    htmlFor="company_name"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    name="company_name"
-                    id="company_name"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
-                    placeholder="ABC Company"
-                    onChange={(e) => {
-                      updateOrganization('name', e.target.value);
-                    }}
-                    value={organization?.name}
-                  />
+                <div className="flex items-start mobilelg:flex-nowrap flex-wrap space-x-10 w-full space-y-4">
+                  <div className="mobilelg:w-6/12 w-full">
+                    <label
+                      htmlFor="company_name"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                      Business Name
+                    </label>
+                    <input
+                      type="text"
+                      name="company_name"
+                      id="company_name"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      placeholder="ABC Company"
+                      onChange={(e) => {
+                        updateOrganization('name', e.target.value);
+                      }}
+                      defaultValue={organization?.name}
+                    />
 
-                  <ValidationError
-                    validationErrors={validationErrors}
-                    field="company_name"
-                  />
-                </div>
-                <div className="w-full">
+                    <ValidationError
+                      validationErrors={validationErrors}
+                      field="business_name"
+                    />
+                  </div>
+                <div className="mobilelg:w-6/12 w-full">
                   <label htmlFor="company_website" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
-                    Company Website
+                    Company Website URL
                   </label>
                   <input
                     type="text"
@@ -158,14 +224,14 @@ const EmployerCompanyInfo = () => {
                     onChange={(e) => {
                       updateOrganization('website', e.target.value);
                     }}
-                    value={organization?.website}
+                    defaultValue={organization?.website}
                   />
                   <ValidationError
                     validationErrors={validationErrors}
                     field="company_website"
                   />
                 </div>
-
+                </div>
                 <div className="flex items-start mobilelg:flex-nowrap flex-wrap space-x-10 w-full space-y-4">
                   <div className="mobilelg:w-6/12 w-full">
                     <label
@@ -177,7 +243,7 @@ const EmployerCompanyInfo = () => {
                     <select
                       id="industry"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 "
-                      defaultValue={organization?.industry_id}
+                      defaultValue={organization?.industry}
                       onChange={(e) => updateOrganization('industry', e.target.value)}
                       name="industry"
                       >
@@ -186,7 +252,7 @@ const EmployerCompanyInfo = () => {
                       </option>
                       {
                         industries.map((sector, index)=>(
-                          <option key={index} value={sector?.id}>{sector?.name}</option>
+                          <option key={index} value={sector?.name}>{sector?.name}</option>
                         ))
                       }
                       
@@ -199,13 +265,13 @@ const EmployerCompanyInfo = () => {
                   </div>
                   <div className="mobilelg:w-6/12 w-full">
                     <label
-                      htmlFor="industry"
+                      htmlFor="company_size"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
                       Company Size
                     </label>
 
                     <select
-                      id="company_size" defaultValue={organization?.company_size}
+                      id="company_size" defaultValue={organization.employee_size}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 "
                       onChange={
                         (e) => updateOrganization('employee_size', e.target.value)
@@ -222,6 +288,112 @@ const EmployerCompanyInfo = () => {
                     <ValidationError
                       validationErrors={validationErrors}
                       field="company_size"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-start mobilelg:flex-nowrap flex-wrap space-x-10 w-full space-y-4">
+                  <div className="mobilelg:w-6/12 w-full">
+                    <label htmlFor="years_in_operation" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    Years in operation
+                    </label>
+                    <input
+                      type="number"
+                      step="1"
+                      min="0"
+                      name="years_in_operation"
+                      id="years_in_operation"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      onChange={(e) => {
+                        updateOrganization('years_in_operation', e.target.value);
+                      }}
+                      defaultValue={organization?.years_in_operation}
+                    />
+                    <ValidationError
+                      validationErrors={validationErrors}
+                      field="years_in_operation"
+                    />
+                  </div>
+                  <div className="mobilelg:w-6/12 w-full">
+                    <label htmlFor="years_in_operation" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    Primary Contact
+                    </label>
+                    <input
+                      type="text"
+                      name="primary_contact"
+                      id="primary_contact"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      onChange={(e) => {
+                        updateOrganization('contact_name', e.target.value);
+                      }}
+                      defaultValue={organization.contact_name || ""}
+                    />
+                    <ValidationError
+                      validationErrors={validationErrors}
+                      field="primary_contact"
+                    />
+                  </div>
+                  
+                </div>
+
+                <div className="flex items-start mobilelg:flex-nowrap flex-wrap space-x-10 w-full space-y-4">
+                  <div className="mobilelg:w-6/12 w-full">
+                    <label htmlFor="contact_phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    Contact Phone
+                    </label>
+                    <input
+                      type="text"
+                      name="contact_phone"
+                      id="contact_phone"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      onChange={(e) => {
+                        updateOrganization('contact_phone', e.target.value);
+                      }}
+                      defaultValue={organization.contact_phone || ""}
+                    />
+                    <ValidationError
+                      validationErrors={validationErrors}
+                      field="contact_phone"
+                    />
+                  </div>
+                  <div className="mobilelg:w-6/12 w-full">
+                    <label htmlFor="contact_email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    Contact Email
+                    </label>
+                    <input
+                      type="text"
+                      name="contact_email"
+                      id="contact_email"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      onChange={(e) => {
+                        updateOrganization('contact_email', e.target.value);
+                      }}
+                      defaultValue={organization.contact_email || user.email}
+                    />
+                    <ValidationError
+                      validationErrors={validationErrors}
+                      field="contact_email"
+                    />
+                  </div>
+                  
+                </div>
+                <div className="flex items-start mobilelg:flex-nowrap flex-wrap space-x-10 w-full space-y-4">
+                  <div className="mobilelg:w-12/12 w-full">
+                    <label htmlFor="technology_took" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    What tools, software, or platforms do you use? <small>(Select all that apply)</small> 
+                    </label>
+                    <Select
+                      isMulti
+                      options={workTools}
+                      value={selectedOptions}
+                      onChange={handleWorkToolChange}
+                      // defaultInputValue={organization.communication_tools}
+                      // onInputChange={updateOrganization}
+                      placeholder="Select options..."
+                    />
+                    <ValidationError
+                      validationErrors={validationErrors}
+                      field="technology_tools"
                     />
                   </div>
                 </div>

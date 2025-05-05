@@ -12,7 +12,7 @@
   --color-ftvgradient-via: #e4f3bf;
   --color-ftvgradient-to: #99ffff;
   --color-ftvgrey: #303437;
-  --color-ftverror: rgb(235, 18, 18);
+  --color-ftverror: #e74d3c;
 
   /* Custom Breakpoints */
   --breakpoint-tabletlg: 62rem;

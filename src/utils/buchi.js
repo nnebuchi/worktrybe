@@ -1,6 +1,6 @@
 // Utility function to get the original word from a compound word
 const getOriginalWordFromCompoundWord = (compoundWord) => {
-    return compoundWord?.replace('_', ' ');
+    return compoundWord?.replaceAll('_', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 };
 
 // Validation function

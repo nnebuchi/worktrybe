@@ -331,9 +331,9 @@ const SelectRequiredService = () => {
                     </small>
                   </div>
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
-                    <Link to="/company-info"
+                    <Link to={"/select-service?hireId="+hireId}
                       type="button"
-                      className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-[#DBDBDB]  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
+                      className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-ftvsecondary  dark:hover:bg-[#DBDBDB] dark:focus:ring-ftvgrey cursor-pointer">
                       
                       <span className="fa fa-arrow-left" ></span>
                       
