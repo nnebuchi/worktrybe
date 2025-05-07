@@ -11,30 +11,58 @@ const Landing = () => {
       <Navbar />
       <section className="bg-ftvwine-25 dark:bg-linear-45 dark:bg-opacity-4 from-ftvgradient-via   to-ftvgradient-to pt-40 pb-10 min-h-[600px] flex items-center flex-col  justify-center relative mobilelg:px-15 w-full ">
         <div className="absolute bg-white w-full min-h-[600px] opacity-70 z-5 inset-0"></div>
-        <div className="flex lg:justify-between justify-content-center items-center z-10 tabletmd:flex-nowrap flex-wrap mobilesm:px-8 px-4">
-          <div className="  tabletmd:w-6/12 mobilelg:w-10/12 w-full mx-auto tabletmd:text-start text-center min-h-[300px] flex flex-col tabletmd:items-start items-center xl:justify-between lg:justify-evenly">
-            <h1 className="mb-4 text-3xl mobilelg:text-4xl sm:text-[40px] font-extrabold tracking-wide leading-none dark:text-ftvblack text-ftvblack lg:text-5xl tabletmd:text-4xl xl:text-[50px] w-full">
-              Free yourself from Administrative tasks
-            </h1>
-            <p className="mb-8 text-base mobilelg:text-lg font-normal text-ftvblack lg:text-xl   dark:text-ftvblack">
-              ... and boost your business growth with Fast Track, a guaranteed
-              path to success.
-            </p>
+          <div className="flex lg:justify-between justify-content-center items-center z-10 tabletmd:flex-nowrap flex-wrap mobilesm:px-8 px-4">
+            <div className="tabletmd:w-6/12 mobilelg:w-10/12 w-full mx-auto tabletmd:text-start text-center flex flex-col tabletmd:items-start items-center xl:justify-between lg:justify-evenly">
+              <h1 className="mb-4 text-3xl mobilelg:text-4xl sm:text-[40px] font-extrabold tracking-wide leading-none dark:text-ftvblack text-ftvblack lg:text-5xl tabletmd:text-4xl xl:text-[45px] w-full">
+                Free yourself from Administrative tasks
+              </h1>
+              <p className="mb-8 text-base mobilelg:text-lg font-normal text-ftvblack lg:text-xl   dark:text-ftvblack">
+                ... and boost your business growth with <br /> Fast Track, a guaranteed
+                path to success.
+              </p>
 
-            <a
-              href="/dashboard"
-              className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-white hover:text-white hover:dark:bg-ftvsecondary dark:bg-ftvprimary uppercase">
-              Book a consultation
-            </a>
+              <a href="/dashboard" className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-white hover:text-white hover:dark:bg-ftvsecondary dark:bg-ftvprimary uppercase">
+                Book a consultation
+              </a>
+            </div>
+            <div className="tabletmd:w-6/12 w-full ">
+            <div className="relative inline-block rounded-xl">
+              <div className="w-full overflow-hidden rounded-xl">
+                  <img
+                    src="/hero-img.jpg" // Update this path
+                    alt="Team working"
+                    className="w-full h-auto rounded object-cover transform scale-150"
+                    // style={{objectFit:"200%"}}
+                  />
+
+              </div>
+              
+              
+              <div className="absolute left-0 flex flex-col gap-4 bottom-4" style={{marginLeft:"-30px"}}>
+                <div className="flex items-center gap-2 bg-ftvprimary text-white font-medium px-4 py-3 rounded-lg shadow-lg hero-service">
+                  <span className="text-lg"><img src="/icons/customer-service.svg" alt="" /></span>
+                  <span>Customer Support</span>
+                </div>
+
+                <div className="flex items-center gap-2 bg-gray-900 text-white font-medium px-4 py-3 rounded-lg shadow-lg hero-service ms-4">
+                  <span className="text-lg"><img src="/icons/task.svg" alt="" /></span>
+                  <span>Project Management</span>
+                </div>
+
+                <div className="flex items-center gap-2 bg-ftvsecondary text-white font-medium px-4 py-3 rounded-lg shadow-lg hero-service">
+                  <span className="text-lg"><img src="/icons/money-bag.svg" alt="" /></span>
+                  <span>Finance Management</span>
+                </div>
+              </div>
+            </div>
+
+              {/* <img
+                src="/hero-img.png"
+                alt=""
+                className="w-full sm:min-h-[450px] h-fit rounded object-cover"
+              /> */}
+            </div>
           </div>
-          <div className="tabletmd:w-6/12 w-full ">
-            <img
-              src="/hero-img.png"
-              alt=""
-              className="w-full sm:min-h-[450px] h-fit"
-            />
-          </div>
-        </div>
         {/* <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36 py-5 z-10">
           <div className="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between partners">
             <a href="#" className="mr-5 mb-5 lg:mb-0  dark:hover:text-gray-400">
@@ -406,7 +434,7 @@ const Landing = () => {
                   </span>
                 </div>
               </div>
-              <div className="mobilelg:w-6/12 w-full space-y-3 text-white  ">
+              {/* <div className="mobilelg:w-6/12 w-full space-y-3 text-white  ">
                 <h1 className="">Socials</h1>
                 <div className="space-x-4 plusjakartasans flex">
                   <a href="" className="text-sm">
@@ -419,7 +447,7 @@ const Landing = () => {
                     <img src="/facebook.svg" alt="" className="w-7 h-7" />
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 

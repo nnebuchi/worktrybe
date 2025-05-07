@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const DashboardSidebar = () => {
     const dashboardNavigation = [
         {
@@ -31,11 +33,14 @@ const DashboardSidebar = () => {
           className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 pt-0"
           aria-label="Sidenav">
           <div className="overflow-y-auto py-5  h-full bg-white  dark:bg-ftvwine-50 dark:border-gray-700">
-            <img
-              src="/fasttrack-logo.svg"
-              alt="fasttrack-logo"
-              className="ms-5 mb-10 w-7/12"
-            />
+            <Link to ="/" >
+              <img
+                src="/fasttrack-logo.svg"
+                alt="fasttrack-logo"
+                className="ms-5 mb-10 w-7/12"
+              />
+            </Link>
+           
             <ul className="space-y-1 plusjakartasans">
               {dashboardNavigation.map((navlink, index) => (
                 <li className="hover:bg-[#DAD9FF] py-2 px-6" key={index}>

@@ -106,10 +106,10 @@ const fetchHireDetail = async () => {
                       <input
                         id="va"
                         type="radio"
-                        checked={isChecked === service.id}
+                        checked={isChecked == service.id}
                         name="service"
                         className={`outline-none absolute rounded-full border-0 top-3 ring-1 focus:border-0 bg-[#F8FAFC] right-3 ${
-                          isChecked === service.id ? "ring-ftvprimary " : "ring-gray-300"
+                          isChecked == service.id ? "ring-ftvprimary " : "ring-gray-300"
                         } `}
                       />
                     </div>
@@ -135,7 +135,7 @@ const fetchHireDetail = async () => {
                     </small>
                   </div>
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
-                  <Link to={hireId ? `/company-info/?hireId=${hireId}` :"/company-info"}
+                  <Link to={hireId ? `/company-info?hireId=${hireId}` :"/company-info"}
                       type="button"
                       className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-ftvsecondary  dark:hover:bg-[#DBDBDB] dark:focus:ring-ftvgrey cursor-pointer">
                       
@@ -159,4 +159,4 @@ const fetchHireDetail = async () => {
   );
 };
 
-export default SelectRequiredService;
+export default SelectRequiredService; 

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate, useLocation   } from "react-router-dom";
 import Landing from "./pages/Landing";
 import "./App.css";
 import Register from "./pages/Register";
@@ -13,6 +13,17 @@ import BookMeeeting from "./components/screens/onboarding/BookMeeting";
 import Dashboard from "./components/UI/Dashboard";
 import Completed from "./components/screens/onboarding/Completed";
 
+const ProtectedRoute = ({ component: Component, ...rest }) => {
+  const isAuthenticated = localStorage.getItem('fasttrack_user') !== null;
+  const location = useLocation();
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return <Component {...rest} />;
+};
+
 function App() {
   return (
     <>
@@ -24,12 +35,13 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/successful" element={<AlertModal />} />
-          <Route path="/company-info" element={<EmployerCompanyInfo />} />
-          <Route path="/select-service" element={<SelectRequiredService />} />
-          <Route path="/role-requirement/:hireId" element={<JobRoleRequirement />} />
-          <Route path="/book-meeting" element={<BookMeeeting />} />
-          <Route path="/completed" element={<Completed />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <ProtectedRoute path="/protected" component={ProtectedComponent} /> */}
+          <Route path="/company-info" element={<ProtectedRoute component={EmployerCompanyInfo} />} />
+          <Route path="/select-service" element={<ProtectedRoute component={SelectRequiredService} />} />
+          <Route path="/role-requirement/:hireId" element={<ProtectedRoute component={JobRoleRequirement} />} />
+          <Route path="/book-meeting" element={<ProtectedRoute component={BookMeeeting} />} />
+          <Route path="/completed" element={ <ProtectedRoute component={Completed} />} />
+          <Route path="/dashboard"element={<ProtectedRoute component={Dashboard} />} />
         </Routes>
       </BrowserRouter>
     </>
