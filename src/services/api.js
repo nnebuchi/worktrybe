@@ -321,3 +321,37 @@ api.interceptors.response.use(
         return err.response?.data;
       });
   }
+
+  export const updateProfessionalData = async (token, data) => {
+    return await api
+      .post(
+        "/profile/update-professional-data", 
+        data,
+        {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((res) => {
+        return res?.data;
+      })
+      .catch((err) => {
+        return err.response?.data;
+      });
+  };
+
+  export const uploadCV = async (token, formData) => {
+  return await api
+    .post("/profile/upload-cv", formData, {
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+        // DO NOT set Content-Type explicitly for FormData
+      },
+    })
+    .then((res) => res?.data)
+    .catch((err) => err.response?.data);
+  };

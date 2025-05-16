@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { updateHire } from "../../../services/api";
 import { runValidation } from "../../../utils/buchi";
 import { UserContext } from "../../../contexts/UserContext";
+import {timezones} from "../../../utils/time";
 
 
 const SelectRequiredService = () => {
@@ -68,10 +69,6 @@ const SelectRequiredService = () => {
     
     setBudgetLevel(value);
   };
-
-  const timezones = [
-    "UTC-12", "UTC-11", "UTC-10", "UTC-9", "UTC-8", "UTC-7", "UTC-6", "UTC-5", "UTC-4", "UTC-3", "UTC-2", "UTC-1", "UTC", "UTC+1", "UTC+2", "UTC+3","UTC+4", "UTC+5", "UTC+6", "UTC+7", "UTC+8", "UTC+9", "UTC+10", "UTC+11", "UTC+12"
-  ];
 
 
   const navigate = useNavigate();
@@ -195,7 +192,7 @@ const SelectRequiredService = () => {
                       <option value="AUT" selected disabled>
                         Select work time
                       </option>
-                      {timezones.map((timezone, index) => (
+                      {timezones().map((timezone, index) => (
                         <option key={index} value={timezone}>
                           {timezone}
                         </option>

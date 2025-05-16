@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
-const Navbar = () => {
+const Navbar = ({setTriggerUserTypeModal}) => {
   const { user } = useContext(UserContext);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
@@ -79,11 +80,12 @@ const Navbar = () => {
                     Dashboard
                   </Link>
                 ) : (
-                  <Link
-                    to={"/register"}
+                  <button
+                    onClick={() => setTriggerUserTypeModal(true)}
+                    // to={"/register"}
                     className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
                     Get started
-                  </Link>
+                  </button>
                 )}
 
                 <a
@@ -104,11 +106,12 @@ const Navbar = () => {
                 Dashboard
               </Link>
             ) : (
-              <Link
-                to={"/register"}
+              <button
+              onClick={() => setTriggerUserTypeModal(true)}
+                // to={"/register"}
                 className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30 mobilelg:inline-flex hidden">
                 Get started
-              </Link>
+              </button>
             )}
 
             <ul className="md:flex uppercase justify-between space-x-6 hidden">

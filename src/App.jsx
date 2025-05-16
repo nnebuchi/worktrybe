@@ -12,6 +12,7 @@ import JobRoleRequirement from "./components/screens/onboarding/JobRoleRequireme
 import BookMeeeting from "./components/screens/onboarding/BookMeeting";
 import Dashboard from "./components/UI/Dashboard";
 import Completed from "./components/screens/onboarding/Completed";
+import TalentOnboarding from "./pages/TalentOnboarding";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   const isAuthenticated = localStorage.getItem('fasttrack_user') !== null;
@@ -37,6 +38,7 @@ function App() {
           <Route path="/successful" element={<AlertModal />} />
           {/* <ProtectedRoute path="/protected" component={ProtectedComponent} /> */}
           <Route path="/company-info" element={<ProtectedRoute component={EmployerCompanyInfo} />} />
+          <Route path="/client-profile-setup" element={<ProtectedRoute component={TalentOnboarding} />} />
           <Route path="/select-service" element={<ProtectedRoute component={SelectRequiredService} />} />
           <Route path="/role-requirement/:hireId" element={<ProtectedRoute component={JobRoleRequirement} />} />
           <Route path="/book-meeting" element={<ProtectedRoute component={BookMeeeting} />} />

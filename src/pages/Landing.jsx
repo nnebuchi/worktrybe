@@ -1,14 +1,21 @@
 import Navbar from "../components/Navbar";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import UserTypeModal from "../components/UI/UserTypeModal";
 
 const Landing = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
+  const [triggerUserTypeModal, setTriggerUserTypeModal] = useState(false);
+
+  useEffect(() => {
+    console.log(triggerUserTypeModal);
+    
+  }, [triggerUserTypeModal]);
   return (
     <>
-      <Navbar />
+      <Navbar setTriggerUserTypeModal={setTriggerUserTypeModal} />
       <section className="bg-ftvwine-25 bg-linear-45 bg-opacity-4 from-ftvgradient-via   to-ftvgradient-to pt-40 pb-10 min-h-[600px] flex items-center flex-col  justify-center relative mobilelg:px-15 w-full ">
         <div className="absolute bg-white w-full min-h-[600px] opacity-70 z-5 inset-0"></div>
           <div className="flex lg:justify-between justify-content-center items-center z-10 tabletmd:flex-nowrap flex-wrap mobilesm:px-8 px-4">
@@ -109,7 +116,7 @@ const Landing = () => {
             </ul>
             <button
               onClick={() => {
-                user?.token ? navigate("/dashboard") : navigate("/register");
+                user?.token ? navigate("/dashboard") : navigate("/login");
               }}
               type="button"
               className="text-white bg-ftvprimary hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center bg-ftvsecondary hover:bg-ftvprimary focus:ring-ftvgrey cursor-pointer  sm:w-5/12 tabletmd:w-7/12 mobilelg:w-6/12 w-8/12 mt-5 text-lg">
@@ -133,7 +140,7 @@ const Landing = () => {
               className="mobilelg:w-10/12 w-full h-fit rounded-lg"
             />
             <button
-              onClick={() => navigate("/register")}
+              onClick={() => navigate("/login")}
               type="button"
               className="text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center bg-ftvblack hover:bg-transparent hover:ring-1 hover:ring-ftvblack hover:text-ftvblack focus:ring-ftvgrey cursor-pointer tabletmd:w-7/12 mobilelg:w-4/12 w-7/12 mt-5 text-lg uppercase">
               Read more
@@ -395,7 +402,7 @@ const Landing = () => {
         <div className="flex  w-full justify-center items-center ">
           <button
             onClick={() => {
-              user?.token ? navigate("/dashboard") : navigate("/register");
+              user?.token ? navigate("/dashboard") : navigate("/login");
             }}
             type="button"
             className="text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium  py-3 px-5 text-center bg-ftvblack hover:bg-transparent hover:ring-1 hover:ring-ftvblack hover:text-ftvblack focus:ring-ftvgrey cursor-pointer tabletmd:w-3/12 mobilelg:w-5/12 mobilemd:w-8/12 w-10/12 mt-5 text-lg capitalize rounded-full">
@@ -481,6 +488,12 @@ const Landing = () => {
           </div>
         </div>
       </footer>
+
+      {triggerUserTypeModal && <UserTypeModal open={triggerUserTypeModal} onClose={() => setTriggerUserTypeModal(false)} onSelect={(role) => {
+          setTriggerUserTypeModal(false);
+          console.log("Selected role:", role);
+          // Navigate to /register/employer or /register/talent
+        }} />}
     </>
   );
 };

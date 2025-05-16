@@ -3,9 +3,13 @@ import { useState } from "react";
 import ValidationError from "../components/UI/ValidaionError";
 import { registerUser } from "../services/api";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useLocation  } from "react-router-dom";
 
 const Register = () => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const userType = searchParams.get('userType');
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [validationErrors, setValidationErrors] = useState();
@@ -48,7 +52,13 @@ const Register = () => {
     if (reg?.status === "success") {
       toast.success(reg?.message);
       localStorage.setItem("fasttrack_user", JSON.stringify(reg?.data));
-      window.location.href = "/company-info";
+      if(userType === 'employer'){
+        window.location.href = "/company-info";
+      }else{
+        window.location.href = "/client-profile-setup";
+      }
+      // const nextScreen = userType === ''
+      
     } else {
       if (reg.error) {
         toast.error(reg.error);
