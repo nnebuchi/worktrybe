@@ -58,7 +58,7 @@ const ResetPassword = () => {
             <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
               Reset Your<span className="text-[#6360F1]"> Password </span>
             </h1>
-            <p className="text-base text-text-center font-normal text-[#3B4752] dark:text-[#3B4752]">
+            <p className="text-base text-text-center font-normal text-[#3B4752] text-[#3B4752]">
               Enter your a new password
             </p>
 
@@ -66,7 +66,7 @@ const ResetPassword = () => {
               <div className="relative">
                 <label
                   htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                  className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                   Password
                 </label>
                 <input
@@ -74,7 +74,7 @@ const ResetPassword = () => {
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none dark:bg-[#F9FAFB] focus:bg-[#F9FAFB] dark:placeholder-gray-400 dark:text-ftvblack  dark:focus:ring-ftvsecondary ring-1 ring-gray-200"
+                  className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none bg-[#F9FAFB] focus:bg-[#F9FAFB] placeholder-gray-400 text-ftvblack  focus:ring-ftvsecondary ring-1 ring-gray-200"
                   onChange={(e) => {
                     setPassword(e.target.value);
                     handlePasswordChange;
@@ -94,7 +94,7 @@ const ResetPassword = () => {
               <div className="relative">
                 <label
                   htmlFor="confirm_password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                  className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                   Confirm Password
                 </label>
                 <input
@@ -102,7 +102,7 @@ const ResetPassword = () => {
                   name="confirm_password"
                   id="confirm_password"
                   placeholder="••••••••"
-                  className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none dark:bg-[#F9FAFB] focus:bg-[#F9FAFB] dark:placeholder-gray-400 dark:text-ftvblack  dark:focus:ring-ftvsecondary ring-1 ring-gray-200"
+                  className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none bg-[#F9FAFB] focus:bg-[#F9FAFB] placeholder-gray-400 text-ftvblack  focus:ring-ftvsecondary ring-1 ring-gray-200"
                   onChange={(e) => {
                     setConfirmPassword(e.target.value);
                     handlePasswordChange;
@@ -123,7 +123,7 @@ const ResetPassword = () => {
               <button
                 onClick={validateResetForm}
                 type="button"
-                className="w-full text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvprimary  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
+                className="w-full text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-ftvprimary  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer">
                 Proceed
               </button>
             </form>

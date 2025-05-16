@@ -137,7 +137,7 @@ const fetchHireDetail = async () => {
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
                   <Link to={hireId ? `/company-info?hireId=${hireId}` :"/company-info"}
                       type="button"
-                      className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-ftvsecondary  dark:hover:bg-[#DBDBDB] dark:focus:ring-ftvgrey cursor-pointer">
+                      className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  bg-ftvsecondary  hover:bg-[#DBDBDB] focus:ring-ftvgrey cursor-pointer">
                       
                       <span className="fa fa-arrow-left"></span>
                       
@@ -145,7 +145,7 @@ const fetchHireDetail = async () => {
                     <button
                       onClick={sendServiceChoice}
                       type="button"
-                      className="xl:w-9/12 tabletlg:w-8/12 w-9/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center dark:bg-ftvblack  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer plusjakartasans">
+                      className="xl:w-9/12 tabletlg:w-8/12 w-9/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center bg-ftvblack  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer plusjakartasans">
                       Next: VA Info
                     </button>
                   </div>

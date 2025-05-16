@@ -4,7 +4,7 @@ const RatingCard = () => {
   return (
     <Link
       to="/"
-      className="w-[27%] h-30 dark:bg-white hover:dark:bg-ftvwine-25 dark:ring-ftvblue-500 dark:ring-1 rounded-lg flex flex-col gap-3 justify-evenly items-between px-5 category-card">
+      className="w-[27%] h-30 bg-white hover:bg-ftvwine-25 ring-ftvblue-500 ring-1 rounded-lg flex flex-col gap-3 justify-evenly items-between px-5 category-card">
       <div className="flex justify-between items-center">
         <h1 className="text-ftvblack-400 text-lg">Software & Coding</h1>
         <span className="text-ftvblack-400 space-x-2">

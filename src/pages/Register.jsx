@@ -77,7 +77,7 @@ const Register = () => {
               <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
                 Welcome to <span className="text-[#6360F1]">FastTrack </span>
               </h1>
-              <p className="text-base text-text-center font-normal text-[#3B4752] dark:text-[#3B4752]">
+              <p className="text-base text-text-center font-normal text-[#3B4752] text-[#3B4752]">
                 Create an account to get started.
               </p>
 
@@ -85,14 +85,14 @@ const Register = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack">
+                    className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack">
                     Your email
                   </label>
                   <input
                     type="email"
                     name="email"
                     id="email"
-                    className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none dark:bg-[#F9FAFB] focus:bg-[#F9FAFB] dark:placeholder-gray-400 dark:text-ftvblack  dark:focus:ring-ftvsecondary ring-1 ring-gray-200"
+                    className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none bg-[#F9FAFB] focus:bg-[#F9FAFB] placeholder-gray-400 text-ftvblack  focus:ring-ftvsecondary ring-1 ring-gray-200"
                     placeholder="name@company.com"
                     required=""
                     onChange={(e) => {
@@ -109,7 +109,7 @@ const Register = () => {
                 <div className="relative">
                   <label
                     htmlFor="password"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Password
                   </label>
                   <input
@@ -117,7 +117,7 @@ const Register = () => {
                     name="password"
                     id="password"
                     placeholder="••••••••"
-                    className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none dark:bg-[#F9FAFB] focus:bg-[#F9FAFB] dark:placeholder-gray-400 dark:text-ftvblack  dark:focus:ring-ftvsecondary ring-1 ring-gray-200"
+                    className="bg-gray-50 border-0 text-gray-900 text-sm rounded-lg focus:ring-ftvsecondary  block w-full p-2.5 outline-none bg-[#F9FAFB] focus:bg-[#F9FAFB] placeholder-gray-400 text-ftvblack  focus:ring-ftvsecondary ring-1 ring-gray-200"
                     onChange={(e) => {
                       setPassword(e.target.value);
                       // handlePasswordChange;
@@ -141,23 +141,23 @@ const Register = () => {
                       id="terms"
                       aria-describedby="terms"
                       type="checkbox"
-                      className="w-4 h-4 border-none ring-1 ring-ftvprimary checked:bg-ftvprimary rounded-sm dark:border-ftvgrey-200  focus:outline-none dark:outline-none"
+                      className="w-4 h-4 border-none ring-1 ring-ftvprimary checked:bg-ftvprimary rounded-sm border-ftvgrey-200  focus:outline-none outline-none"
                       required=""
                     />
                   </div>
                   <div className="ml-3 text-sm">
                     <label
                       htmlFor="terms"
-                      className="font-light text-ftvblack-400 dark:text-ftvblack-400">
+                      className="font-light text-ftvblack-400 text-ftvblack-400">
                       I agree to the{" "}
                       <a
-                        className="font-medium text-primary-600 hover:underline dark:text-ftvwine-500"
+                        className="font-medium text-primary-600 hover:underline text-ftvwine-500"
                         href="#">
                         Terms
                       </a>{" "}
                       and{" "}
                       <a
-                        className="font-medium text-primary-600 hover:underline dark:text-ftvwine-500"
+                        className="font-medium text-primary-600 hover:underline text-ftvwine-500"
                         href="#">
                         Privacy Policy
                       </a>
@@ -167,13 +167,13 @@ const Register = () => {
                 <button
                   onClick={validateSignupForm}
                   type="button"
-                  className="w-full text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvprimary  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
+                  className="w-full text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-ftvprimary  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer">
                   Sign up
                 </button>
                 {/* <button className="gap-4 justify-center items-center w-full">
                   <a
                     href="#"
-                    className="flex w-full items-center rounded-lg bg-gray-800 px-4 py-2.5 text-ftvwine-500 ring-1 dark:ring-ftvgrey ring-ftvgrey hover:bg-ftvsecondary focus:outline-none focus:ring-1 focus:ring-ftvgrey dark:bg-transparent dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey hover:ring-0  space-x-2 hover:text-white justify-center">
+                    className="flex w-full items-center rounded-lg bg-gray-800 px-4 py-2.5 text-ftvwine-500 ring-1 ring-ftvgrey ring-ftvgrey hover:bg-ftvsecondary focus:outline-none focus:ring-1 focus:ring-ftvgrey bg-transparent hover:bg-ftvsecondary focus:ring-ftvgrey hover:ring-0  space-x-2 hover:text-white justify-center">
                     <svg
                       className="w-6 h-6 "
                       aria-hidden="true"
@@ -192,11 +192,11 @@ const Register = () => {
                     <span className="mb-1 text-xs">Signup with Google</span>
                   </a>
                 </button> */}
-                <p className="text-sm font-normal text-ftvblack-400 dark:text-[#3B4752] text-center ">
+                <p className="text-sm font-normal text-ftvblack-400 text-[#3B4752] text-center ">
                   Already have an account?{" "}
                   <a
                     href="/login"
-                    className="font-medium text-ftvblack hover:underline dark:text-ftvblack">
+                    className="font-medium text-ftvblack hover:underline text-ftvblack">
                     Sign in
                   </a>
                 </p>

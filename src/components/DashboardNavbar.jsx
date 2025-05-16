@@ -12,7 +12,7 @@ const DashboardNavbar = () => {
                 data-drawer-target="drawer-navigation"
                 data-drawer-toggle="drawer-navigation"
                 aria-controls="drawer-navigation"
-                className="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-ftvblack hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-ftvwine-400 dark:hover:bg-ftvwine-200 dark:hover:text-white">
+                className="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-ftvblack hover:bg-gray-100 focus:bg-gray-100 focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 focus:ring-gray-700 text-ftvwine-400 hover:bg-ftvwine-200 hover:text-white">
                 <svg
                   aria-hidden="true"
                   className="w-6 h-6"
@@ -51,7 +51,7 @@ const DashboardNavbar = () => {
               <button
                 type="button"
                 data-dropdown-toggle="notification-dropdown"
-                className="p-2 mr-1 text-ftvsecondary bg-ftvpurple-100 bg-opacity-80 rounded-lg hover:text-ftvblack hover:bg-green-100  dark:hover:text-white dark:hover:bg-ftvprimary focus:ring-1 focus:ring-gray-300 dark:focus:ring-ftvwine-300">
+                className="p-2 mr-1 text-ftvsecondary bg-ftvpurple-100 bg-opacity-80 rounded-lg hover:text-ftvblack hover:bg-green-100  hover:text-white hover:bg-ftvprimary focus:ring-1 focus:ring-gray-300 focus:ring-ftvwine-300">
                 <span className="sr-only">View notifications</span>
                 {/* <!-- Bell icon --> */}
                 <svg
@@ -65,22 +65,22 @@ const DashboardNavbar = () => {
               </button>
               {/* <!-- Dropdown menu --> */}
               <div
-                className="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg dark:divide-ftvwine-400 dark:bg-white-25 rounded-xl"
+                className="hidden overflow-hidden z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg divide-ftvwine-400 bg-white-25 rounded-xl"
                 id="notification-dropdown">
-                <div className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-ftvwine-100 dark:text-ftvwine-500">
+                <div className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 bg-ftvwine-100 text-ftvwine-500">
                   Notifications
                 </div>
                 <div>
                   <a
                     href="#"
-                    className="flex py-3 px-4  hoverftvblack-100 dark:hover:bg-ftvwine-25 dark:border-ftvgrey-500">
+                    className="flex py-3 px-4  hoverftvblack-100 hover:bg-ftvwine-25 border-ftvgrey-500">
                     <div className="flex-shrink-0">
                       <img
                         className="w-11 h-11 rounded-full"
                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
                         alt="Bonnie Green avatar"
                       />
-                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 rounded-full border border-white bg-primary-700 dark:border-gray-700">
+                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 rounded-full border border-white bg-primary-700 border-gray-700">
                         <svg
                           aria-hidden="true"
                           className="w-3 h-3 text-white"
@@ -93,28 +93,28 @@ const DashboardNavbar = () => {
                       </div>
                     </div>
                     <div className="pl-3 w-full">
-                      <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
+                      <div className="text-gray-500 font-normal text-sm mb-1.5 text-ftvwine-400">
                         New message from
-                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
+                        <span className="font-semibold text-ftvblack text-ftvwine-500">
                           Bonnie Green
                         </span>
                         : {`"Hey, what's up? All set for the presentation?"`}
                       </div>
-                      <div className="text-xs font-medium text-primary-600 dark:text-ftvblack-500">
+                      <div className="text-xs font-medium text-primary-600 text-ftvblack-500">
                         a few moments ago
                       </div>
                     </div>
                   </a>
                   <a
                     href="#"
-                    className="flex py-3 px-4  hoverftvblack-100 dark:hover:bg-ftvwine-25 dark:border-ftvgrey-500">
+                    className="flex py-3 px-4  hoverftvblack-100 hover:bg-ftvwine-25 border-ftvgrey-500">
                     <div className="flex-shrink-0">
                       <img
                         className="w-11 h-11 rounded-full"
                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
                         alt="Jese Leos avatar"
                       />
-                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-ftvblack rounded-full border border-white dark:border-gray-700">
+                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-ftvblack rounded-full border border-white border-gray-700">
                         <svg
                           aria-hidden="true"
                           className="w-3 h-3 text-white"
@@ -126,31 +126,31 @@ const DashboardNavbar = () => {
                       </div>
                     </div>
                     <div className="pl-3 w-full">
-                      <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
-                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
+                      <div className="text-gray-500 font-normal text-sm mb-1.5 text-ftvwine-400">
+                        <span className="font-semibold text-ftvblack text-ftvwine-500">
                           Jese leos
                         </span>
                         and
-                        <span className="font-medium text-ftvblack dark:text-ftvwine-500">
+                        <span className="font-medium text-ftvblack text-ftvwine-500">
                           5 others
                         </span>
                         started following you.
                       </div>
-                      <div className="text-xs font-medium text-primary-600 dark:text-ftvblack-500">
+                      <div className="text-xs font-medium text-primary-600 text-ftvblack-500">
                         10 minutes ago
                       </div>
                     </div>
                   </a>
                   <a
                     href="#"
-                    className="flex py-3 px-4  hoverftvblack-100 dark:hover:bg-ftvwine-25 dark:border-ftvgrey-500">
+                    className="flex py-3 px-4  hoverftvblack-100 hover:bg-ftvwine-25 border-ftvgrey-500">
                     <div className="flex-shrink-0">
                       <img
                         className="w-11 h-11 rounded-full"
                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png"
                         alt="Joseph McFall avatar"
                       />
-                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-red-600 rounded-full border border-white dark:border-gray-700">
+                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-red-600 rounded-full border border-white border-gray-700">
                         <svg
                           aria-hidden="true"
                           className="w-3 h-3 text-white"
@@ -165,31 +165,31 @@ const DashboardNavbar = () => {
                       </div>
                     </div>
                     <div className="pl-3 w-full">
-                      <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
-                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
+                      <div className="text-gray-500 font-normal text-sm mb-1.5 text-ftvwine-400">
+                        <span className="font-semibold text-ftvblack text-ftvwine-500">
                           Joseph Mcfall
                         </span>
                         and
-                        <span className="font-medium text-ftvblack dark:text-ftvwine-500">
+                        <span className="font-medium text-ftvblack text-ftvwine-500">
                           141 others
                         </span>
                         love your story. See it and view more stories.
                       </div>
-                      <div className="text-xs font-medium text-primary-600 dark:text-ftvblack-500">
+                      <div className="text-xs font-medium text-primary-600 text-ftvblack-500">
                         44 minutes ago
                       </div>
                     </div>
                   </a>
                   <a
                     href="#"
-                    className="flex py-3 px-4  hoverftvblack-100 dark:hover:bg-ftvwine-25 dark:border-ftvgrey-500">
+                    className="flex py-3 px-4  hoverftvblack-100 hover:bg-ftvwine-25 border-ftvgrey-500">
                     <div className="flex-shrink-0">
                       <img
                         className="w-11 h-11 rounded-full"
                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png"
                         alt="Roberta Casas image"
                       />
-                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-green-400 rounded-full border border-white dark:border-gray-700">
+                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-green-400 rounded-full border border-white border-gray-700">
                         <svg
                           aria-hidden="true"
                           className="w-3 h-3 text-white"
@@ -204,31 +204,31 @@ const DashboardNavbar = () => {
                       </div>
                     </div>
                     <div className="pl-3 w-full">
-                      <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
-                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
+                      <div className="text-gray-500 font-normal text-sm mb-1.5 text-ftvwine-400">
+                        <span className="font-semibold text-ftvblack text-ftvwine-500">
                           Leslie Livingston
                         </span>
                         mentioned you in a comment:
-                        <span className="font-medium text-primary-600 dark:text-primary-500">
+                        <span className="font-medium text-primary-600 text-primary-500">
                           @bonnie.green
                         </span>
                         what do you say?
                       </div>
-                      <div className="text-xs font-medium text-primary-600 dark:text-ftvblack-500">
+                      <div className="text-xs font-medium text-primary-600 text-ftvblack-500">
                         1 hour ago
                       </div>
                     </div>
                   </a>
                   <a
                     href="#"
-                    className="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-ftvwine-25">
+                    className="flex py-3 px-4 hover:bg-gray-100 hover:bg-ftvwine-25">
                     <div className="flex-shrink-0">
                       <img
                         className="w-11 h-11 rounded-full"
                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/robert-brown.png"
                         alt="Robert image"
                       />
-                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-purple-500 rounded-full border border-white dark:border-gray-700">
+                      <div className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 bg-purple-500 rounded-full border border-white border-gray-700">
                         <svg
                           aria-hidden="true"
                           className="w-3 h-3 text-white"
@@ -240,14 +240,14 @@ const DashboardNavbar = () => {
                       </div>
                     </div>
                     <div className="pl-3 w-full">
-                      <div className="text-gray-500 font-normal text-sm mb-1.5 dark:text-ftvwine-400">
-                        <span className="font-semibold text-ftvblack dark:text-ftvwine-500">
+                      <div className="text-gray-500 font-normal text-sm mb-1.5 text-ftvwine-400">
+                        <span className="font-semibold text-ftvblack text-ftvwine-500">
                           Robert Brown
                         </span>
                         posted a new video: Glassmorphism - learn how to
                         implement the new design trend.
                       </div>
-                      <div className="text-xs font-medium text-primary-600 dark:text-ftvblack-500">
+                      <div className="text-xs font-medium text-primary-600 text-ftvblack-500">
                         3 hours ago
                       </div>
                     </div>
@@ -255,11 +255,11 @@ const DashboardNavbar = () => {
                 </div>
                 <a
                   href="#"
-                  className="block py-2 text-md font-medium text-center text-ftvblack bg-gray-50 hover:bg-ftvwine-50 dark:bg-ftvwine-100 dark:text-ftvwine-500 dark:hover:underline">
+                  className="block py-2 text-md font-medium text-center text-ftvblack bg-gray-50 hover:bg-ftvwine-50 bg-ftvwine-100 text-ftvwine-500 hover:underline">
                   <div className="inline-flex items-center">
                     <svg
                       aria-hidden="true"
-                      className="mr-2 w-4 h-4 text-gray-500 dark:text-ftvwine-400"
+                      className="mr-2 w-4 h-4 text-gray-500 text-ftvwine-400"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg">
@@ -276,7 +276,7 @@ const DashboardNavbar = () => {
 
               <button
                 type="button"
-                className="w-3/12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvprimary  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer space-x-2">
+                className="w-3/12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-ftvprimary  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer space-x-2">
                 <span className="fa fa-calendar-plus me-3"></span>
                 Book a Meeting
               </button>
@@ -287,7 +287,7 @@ const DashboardNavbar = () => {
                 alt="user photo"
               />
               <button 
-                className="p-2 ml-1 text-ftverror bg-red-100 bg-opacity-80 rounded-lg hover:text-ftvblack hover:bg-green-100  dark:hover:text-white dark:hover:bg-ftverror focus:ring-1 focus:ring-gray-300 dark:focus:ring-ftvwine-300"
+                className="p-2 ml-1 text-ftverror bg-red-100 bg-opacity-80 rounded-lg hover:text-ftvblack hover:bg-green-100  hover:text-white hover:bg-ftverror focus:ring-1 focus:ring-gray-300 focus:ring-ftvwine-300"
                 onClick={signOut}
               >
                 <span className="fa fa-arrow-right-from-bracket text-xl  "></span>

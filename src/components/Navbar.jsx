@@ -36,7 +36,7 @@ const Navbar = () => {
           <div className="flex md:order-2 flex-row-reverse justify-start gap-x-7 items-center space-x-3 md:space-x-0 rtl:space-x-reverse tabletlg:w-6/12 mobilelg:w-7/12 ">
             {showMobileMenu || isAnimatingOut ? (
               <div
-                className={`justify-between absolute inset-0 h-[100vh] dark:bg-linear-45 dark:bg-opacity-4 from-ftvgradient-via to-ftvgradient-to w-full md:flex md:w-auto md:order-1 z-30 flex-col items-start space-y-6 ${
+                className={`justify-between absolute inset-0 h-[100vh] bg-linear-45 bg-opacity-4 from-ftvgradient-via to-ftvgradient-to w-full md:flex md:w-auto md:order-1 z-30 flex-col items-start space-y-6 ${
                   showMobileMenu ? "animate-slide-in" : "animate-slide-out"
                 }`}>
                 <div className="absolute bg-white w-full h-fit opacity-80 z-5 inset-0"></div>
@@ -52,7 +52,7 @@ const Navbar = () => {
                   <li>
                     <a
                       href="#"
-                      className="block py-2 px-3 text-ftvblack rounded-sm md:bg-transparent md:text-ftvblue-700 md:p-0 md:dark:text-ftvprimary"
+                      className="block py-2 px-3 text-ftvblack rounded-sm md:bg-transparent md:text-ftvblue-700 md:p-0 md:text-ftvprimary"
                       aria-current="page">
                       Jobs
                     </a>
@@ -60,14 +60,14 @@ const Navbar = () => {
                   <li>
                     <a
                       href="#"
-                      className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvblack-300 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent navlink">
+                      className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink">
                       Services
                     </a>
                   </li>
                   <li>
                     <a
                       href="#"
-                      className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvblack-300 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent navlink">
+                      className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink">
                       Pricing
                     </a>
                   </li>
@@ -75,13 +75,13 @@ const Navbar = () => {
                 {user ? (
                   <Link
                     to={"/dashboard"}
-                    className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
+                    className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
                     Dashboard
                   </Link>
                 ) : (
                   <Link
                     to={"/register"}
-                    className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
+                    className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
                     Get started
                   </Link>
                 )}
@@ -100,13 +100,13 @@ const Navbar = () => {
             {user ? (
               <Link
                 to={"/dashboard"}
-                className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
+                className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
                 Dashboard
               </Link>
             ) : (
               <Link
                 to={"/register"}
-                className="dark:text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center dark:bg-ftvprimary dark:focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30 mobilelg:inline-flex hidden">
+                className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30 mobilelg:inline-flex hidden">
                 Get started
               </Link>
             )}
@@ -115,7 +115,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-ftvblack rounded-sm md:bg-transparent md:text-ftvblue-700 md:p-0 md:dark:text-ftvprimary"
+                  className="block py-2 px-3 text-ftvblack rounded-sm md:bg-transparent md:text-ftvblue-700 md:p-0 md:text-ftvprimary"
                   aria-current="page">
                   Jobs
                 </a>
@@ -123,14 +123,14 @@ const Navbar = () => {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvblack-300 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent navlink">
+                  className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink">
                   Services
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:dark:hover:text-ftvwine-500 dark:text-ftvblack-300 dark:hover:bg-ftvgrey-700 dark:hover:text-ftvwine-25 md:dark:hover:bg-transparent navlink">
+                  className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink">
                   Pricing
                 </a>
               </li>
@@ -140,7 +140,7 @@ const Navbar = () => {
               onClick={() => setShowMobileMenu(true)}
               // data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-ftvgrey-500 rounded-lg md:hidden hover:bg-ftvgrey-100 focus:outline-none focus:ring-2 focus:ring-ftvgrey dark:text-[#909CA7] dark:hover:bg-ftvgrey-700 dark:focus:ring-ftvgrey-600"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-ftvgrey-500 rounded-lg md:hidden hover:bg-ftvgrey-100 focus:outline-none focus:ring-2 focus:ring-ftvgrey text-[#909CA7] hover:bg-ftvgrey-700 focus:ring-ftvgrey-600"
               // aria-controls="navbar-sticky"
               // aria-expanded="false"
             >
@@ -172,7 +172,7 @@ const Navbar = () => {
                 <input
                   type="text"
                   id="simple-search"
-                  className="bg-grey text-ftvgrey-500  dark:text-ftvgrey-500 text-sm rounded-lg focus:ring-ftvblack-500  focus:border-ftvblack-300 block w-full ps-10 p-2.5  dark:bg-ftvgrey focus:dark:bg-ftvgrey-100 focus:ring-1  outline-none"
+                  className="bg-grey text-ftvgrey-500  text-ftvgrey-500 text-sm rounded-lg focus:ring-ftvblack-500  focus:border-ftvblack-300 block w-full ps-10 p-2.5  bg-ftvgrey focus:bg-ftvgrey-100 focus:ring-1  outline-none"
                   placeholder="Search virtual talents..."
                   required
                 />

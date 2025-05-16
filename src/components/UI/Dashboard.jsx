@@ -199,7 +199,7 @@ const Dashboard = () => {
         data-drawer-toggle="default-sidebar"
         aria-controls="default-sidebar"
         type="button"
-        className="inline-flex items-center p-2 mt-2 ml-3 dark:group-hover:text-ftvwine-25 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-ftvwine-400 dark:hover:bg-ftvwine-300 dark:focus:ring-ftvwine-300">
+        className="inline-flex items-center p-2 mt-2 ml-3 group-hover:text-ftvwine-25 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-ftvwine-400 hover:bg-ftvwine-300 focus:ring-ftvwine-300">
         <span className="sr-only">Open sidebar</span>
         <svg
           className="w-6 h-6"
@@ -214,7 +214,7 @@ const Dashboard = () => {
         </svg>
       </button>
 
-      <div className="antialiased bg-gray-50 dark:bg-ftvwine-25">
+      <div className="antialiased bg-gray-50 bg-ftvwine-25">
        
        <DashboardNavbar />
       
@@ -224,7 +224,7 @@ const Dashboard = () => {
             {dashboardCardValues.map((card, index) => {
               return (
                 <div
-                  className="hover:bg-ftvblue-25 dark:bg-white border-gray-300 rounded-lg h-32 md:h-32 bg-white flex items-center justify-start px-3 plusjarkatasans"
+                  className="hover:bg-ftvblue-25 bg-white border-gray-300 rounded-lg h-32 md:h-32 bg-white flex items-center justify-start px-3 plusjarkatasans"
                   key={index}>
                   <div className="flex space-x-5 items-center ">
                     <div
@@ -257,7 +257,7 @@ const Dashboard = () => {
                   data-modal-target="static-modal"
                   data-modal-toggle="static-modal"
                   type="button"
-                  className="w-2/12 text-white bg-ftvwine-500  hover:bg-ftvprimary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvsecondary  dark:hover:bg-ftvprimaryy dark:focus:ring-ftvgrey cursor-pointer space-x-2">
+                  className="w-2/12 text-white bg-ftvwine-500  hover:bg-ftvprimary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-ftvsecondary  hover:bg-ftvprimaryy focus:ring-ftvgrey cursor-pointer space-x-2">
                   <span className="fa fa-checklist me-3"></span>
                   Start Assessment
                 </button>
@@ -339,15 +339,15 @@ const Dashboard = () => {
             className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-full max-h-full">
             <div className="relative p-4 w-full max-w-2xl max-h-full bg-white rounded-lg">
               {/* <!-- Modal content --> */}
-              <div className="relative bg-white rounded-lg shadow-sm dark:bg-grey-200">
+              <div className="relative bg-white rounded-lg shadow-sm bg-grey-200">
                 {/* <!-- Modal header --> */}
                 <div className="flex items-center justify-between p-4 md:p-5  rounded-t ">
-                  <h3 className="text-xl font-semibold text-ftvblack dark:text-ftvblack">
+                  <h3 className="text-xl font-semibold text-ftvblack text-ftvblack">
                     Upload Accessment
                   </h3>
                   <button
                     type="button"
-                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-ftvblack rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-ftvblack rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center hover:bg-gray-600 hover:text-white"
                     data-modal-hide="static-modal"
                     
                     >
@@ -418,7 +418,7 @@ const Dashboard = () => {
                       data-modal-target="static-modal"
                       type="submit"
                      
-                      className="min-w-3/12 text-white bg-ftvtransparent  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-ftvprimary  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer space-x-2"
+                      className="min-w-3/12 text-white bg-ftvtransparent  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-ftvprimary  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer space-x-2"
                     >
                       Send Assessment
                     </button>
@@ -426,7 +426,7 @@ const Dashboard = () => {
                       data-modal-hide="static-modal"
                       type="button"
                       ref={closeModalRef}
-                      className="min-w-3/12 text-ftvsecondary bg-transparent  hover:bg-blue-50 focus:ring-1 focus:outline-none  ring-1 ring-ftvsecondary focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-transparent  dark:hover:bg-blue-50 dark:focus:ring-ftvgrey cursor-pointer space-x-2"
+                      className="min-w-3/12 text-ftvsecondary bg-transparent  hover:bg-blue-50 focus:ring-1 focus:outline-none  ring-1 ring-ftvsecondary focus:ring-ftvgrey font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-transparent  hover:bg-blue-50 focus:ring-ftvgrey cursor-pointer space-x-2"
                       >
                       Cancel
                     </button>

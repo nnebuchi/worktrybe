@@ -182,7 +182,7 @@ const EmployerCompanyInfo = () => {
               <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
                 Company Information
               </h1>
-              <p className="text-base text-text-center font-normal text-[#3B4752] dark:text-[#3B4752]">
+              <p className="text-base text-text-center font-normal text-[#3B4752] text-[#3B4752]">
                 Tell us a bit about your company
               </p>
 
@@ -191,14 +191,14 @@ const EmployerCompanyInfo = () => {
                   <div className="mobilelg:w-6/12 w-full">
                     <label
                       htmlFor="company_name"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                      className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                       Business Name
                     </label>
                     <input
                       type="text"
                       name="company_name"
                       id="company_name"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200"
                       placeholder="ABC Company"
                       onChange={(e) => {
                         updateOrganization('name', e.target.value);
@@ -212,14 +212,14 @@ const EmployerCompanyInfo = () => {
                     />
                   </div>
                 <div className="mobilelg:w-6/12 w-full">
-                  <label htmlFor="company_website" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                  <label htmlFor="company_website" className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Company Website URL
                   </label>
                   <input
                     type="text"
                     name="company_website"
                     id="company_website"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200"
                     placeholder="company.com"
                     onChange={(e) => {
                       updateOrganization('website', e.target.value);
@@ -236,13 +236,13 @@ const EmployerCompanyInfo = () => {
                   <div className="mobilelg:w-6/12 w-full">
                     <label
                       htmlFor="industry"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                      className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                       Industry
                     </label>
 
                     <select
                       id="industry"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200 "
                       defaultValue={organization?.industry}
                       onChange={(e) => updateOrganization('industry', e.target.value)}
                       name="industry"
@@ -266,13 +266,13 @@ const EmployerCompanyInfo = () => {
                   <div className="mobilelg:w-6/12 w-full">
                     <label
                       htmlFor="company_size"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                      className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                       Company Size
                     </label>
 
                     <select
                       id="company_size" defaultValue={organization.employee_size}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200 "
                       onChange={
                         (e) => updateOrganization('employee_size', e.target.value)
                       }
@@ -294,7 +294,7 @@ const EmployerCompanyInfo = () => {
 
                 <div className="flex items-start mobilelg:flex-nowrap flex-wrap space-x-10 w-full space-y-4">
                   <div className="mobilelg:w-6/12 w-full">
-                    <label htmlFor="years_in_operation" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    <label htmlFor="years_in_operation" className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Years in operation
                     </label>
                     <input
@@ -303,7 +303,7 @@ const EmployerCompanyInfo = () => {
                       min="0"
                       name="years_in_operation"
                       id="years_in_operation"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200"
                       onChange={(e) => {
                         updateOrganization('years_in_operation', e.target.value);
                       }}
@@ -315,14 +315,14 @@ const EmployerCompanyInfo = () => {
                     />
                   </div>
                   <div className="mobilelg:w-6/12 w-full">
-                    <label htmlFor="years_in_operation" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    <label htmlFor="years_in_operation" className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Primary Contact
                     </label>
                     <input
                       type="text"
                       name="primary_contact"
                       id="primary_contact"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200"
                       onChange={(e) => {
                         updateOrganization('contact_name', e.target.value);
                       }}
@@ -338,14 +338,14 @@ const EmployerCompanyInfo = () => {
 
                 <div className="flex items-start mobilelg:flex-nowrap flex-wrap space-x-10 w-full space-y-4">
                   <div className="mobilelg:w-6/12 w-full">
-                    <label htmlFor="contact_phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    <label htmlFor="contact_phone" className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Contact Phone
                     </label>
                     <input
                       type="text"
                       name="contact_phone"
                       id="contact_phone"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200"
                       onChange={(e) => {
                         updateOrganization('contact_phone', e.target.value);
                       }}
@@ -357,14 +357,14 @@ const EmployerCompanyInfo = () => {
                     />
                   </div>
                   <div className="mobilelg:w-6/12 w-full">
-                    <label htmlFor="contact_email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    <label htmlFor="contact_email" className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Contact Email
                     </label>
                     <input
                       type="text"
                       name="contact_email"
                       id="contact_email"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200"
                       onChange={(e) => {
                         updateOrganization('contact_email', e.target.value);
                       }}
@@ -379,7 +379,7 @@ const EmployerCompanyInfo = () => {
                 </div>
                 <div className="flex items-start mobilelg:flex-nowrap flex-wrap space-x-10 w-full space-y-4">
                   <div className="mobilelg:w-12/12 w-full">
-                    <label htmlFor="technology_took" className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    <label htmlFor="technology_took" className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     What tools, software, or platforms do you use? <small>(Select all that apply)</small> 
                     </label>
                     <Select
@@ -418,7 +418,7 @@ const EmployerCompanyInfo = () => {
                     <button
                       onClick={validateProfileForm}
                       type="button"
-                      className="xl:w-9/12 tabletlg:w-8/12 w-9/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center dark:bg-ftvblack  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer plusjakartasans">
+                      className="xl:w-9/12 tabletlg:w-8/12 w-9/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center bg-ftvblack  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer plusjakartasans">
                       Next: Choose Service
                     </button>
                   </div>

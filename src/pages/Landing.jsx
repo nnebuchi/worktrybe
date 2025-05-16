@@ -9,19 +9,19 @@ const Landing = () => {
   return (
     <>
       <Navbar />
-      <section className="bg-ftvwine-25 dark:bg-linear-45 dark:bg-opacity-4 from-ftvgradient-via   to-ftvgradient-to pt-40 pb-10 min-h-[600px] flex items-center flex-col  justify-center relative mobilelg:px-15 w-full ">
+      <section className="bg-ftvwine-25 bg-linear-45 bg-opacity-4 from-ftvgradient-via   to-ftvgradient-to pt-40 pb-10 min-h-[600px] flex items-center flex-col  justify-center relative mobilelg:px-15 w-full ">
         <div className="absolute bg-white w-full min-h-[600px] opacity-70 z-5 inset-0"></div>
           <div className="flex lg:justify-between justify-content-center items-center z-10 tabletmd:flex-nowrap flex-wrap mobilesm:px-8 px-4">
             <div className="tabletmd:w-6/12 mobilelg:w-10/12 w-full mx-auto tabletmd:text-start text-center flex flex-col tabletmd:items-start items-center xl:justify-between lg:justify-evenly">
-              <h1 className="mb-4 text-3xl mobilelg:text-4xl sm:text-[40px] font-extrabold tracking-wide leading-none dark:text-ftvblack text-ftvblack lg:text-5xl tabletmd:text-4xl xl:text-[45px] w-full">
+              <h1 className="mb-4 text-3xl mobilelg:text-4xl sm:text-[40px] font-extrabold tracking-wide leading-none text-ftvblack text-ftvblack lg:text-5xl tabletmd:text-4xl xl:text-[45px] w-full">
                 Free yourself from Administrative tasks
               </h1>
-              <p className="mb-8 text-base mobilelg:text-lg font-normal text-ftvblack lg:text-xl   dark:text-ftvblack">
+              <p className="mb-8 text-base mobilelg:text-lg font-normal text-ftvblack lg:text-xl   text-ftvblack">
                 ... and boost your business growth with <br /> Fast Track, a guaranteed
                 path to success.
               </p>
 
-              <a href="/dashboard" className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 dark:text-white hover:text-white hover:dark:bg-ftvsecondary dark:bg-ftvprimary uppercase">
+              <a href="/dashboard" className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 text-white hover:text-white hover:bg-ftvsecondary bg-ftvprimary uppercase">
                 Book a consultation
               </a>
             </div>
@@ -65,24 +65,24 @@ const Landing = () => {
           </div>
         {/* <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36 py-5 z-10">
           <div className="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between partners">
-            <a href="#" className="mr-5 mb-5 lg:mb-0  dark:hover:text-gray-400">
+            <a href="#" className="mr-5 mb-5 lg:mb-0  hover:text-gray-400">
               <img src="partners/indybiz-pass.png" alt="indybiz-pass-logo" />
             </a>
             <a
               href="#"
-              className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
+              className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 hover:text-gray-400">
               <img src="partners/innopower.png" alt="innopower-logo"></img>
             </a>
             <a
               href="#"
-              className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400">
+              className="mr-5 mb-5 lg:mb-0 hover:text-gray-800 hover:text-gray-400">
               <img src="partners/javat.png" alt="innopower-logo" />
             </a>
           </div>
         </div> */}
       </section>
 
-      <section className="bg-white dark:bg-white flex justify-center items-center min-h-[600px] mobilelg:px-8 mobilelg:py-15 py-8">
+      <section className="bg-white bg-white flex justify-center items-center min-h-[600px] mobilelg:px-8 mobilelg:py-15 py-8">
         <div className="flex justify-between items-center mobilesm:p-8 p-4 gap-10 tabletmd:flex-nowrap flex-wrap">
           <div className=" shadow-lg rounded-lg shadow-ftvgrey-500 hover:shadow-none transition all ease-in-out 300 tabletmd:w-6/12 w-full">
             <img
@@ -92,7 +92,7 @@ const Landing = () => {
             />
           </div>
           <div className="tabletmd:w-6/12 w-full">
-            <h2 className="mb-4 lg:text-4xl mobilelg:text-3xl mobilemd:text-2xl text-xl font-normal text-ftvblack dark:text-ftvblack">
+            <h2 className="mb-4 lg:text-4xl mobilelg:text-3xl mobilemd:text-2xl text-xl font-normal text-ftvblack text-ftvblack">
               The National Small Business Association (NSBA) survey found
             </h2>
 
@@ -112,13 +112,13 @@ const Landing = () => {
                 user?.token ? navigate("/dashboard") : navigate("/register");
               }}
               type="button"
-              className="text-white bg-ftvprimary hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvsecondary dark:hover:bg-ftvprimary dark:focus:ring-ftvgrey cursor-pointer  sm:w-5/12 tabletmd:w-7/12 mobilelg:w-6/12 w-8/12 mt-5 text-lg">
+              className="text-white bg-ftvprimary hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center bg-ftvsecondary hover:bg-ftvprimary focus:ring-ftvgrey cursor-pointer  sm:w-5/12 tabletmd:w-7/12 mobilelg:w-6/12 w-8/12 mt-5 text-lg">
               JOIN FAST TRACK
             </button>
           </div>
         </div>
       </section>
-      <section className="bg-ftvpurple-100 dark:bg-ftvpurple-100 flex flex-col justify-center items-center  min-h-[400px] mobilelg:py-15 mobilelg:px-8 ">
+      <section className="bg-ftvpurple-100 bg-ftvpurple-100 flex flex-col justify-center items-center  min-h-[400px] mobilelg:py-15 mobilelg:px-8 ">
         <div className="  min-h-100 w-full mx-auto flex justify-evenly items-center mobilesm:p-8 p-4 tabletmd:flex-nowrap flex-wrap gap-y-10">
           <div className="tabletmd:w-6/12 flex-col flex lg:justify-between justify-evenly items-start mobilelg:min-h-[550px] mobilelg:gap-0 gap-5">
             <span className=" tabletmd:w-5/12 mobilelg:w-4/12 w-7/12 bg-ftvprimary uppercase text-white text-center py-3 px-5 rounded-full">
@@ -135,7 +135,7 @@ const Landing = () => {
             <button
               onClick={() => navigate("/register")}
               type="button"
-              className="text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center dark:bg-ftvblack dark:hover:bg-transparent dark:hover:ring-1 dark:hover:ring-ftvblack dark:hover:text-ftvblack dark:focus:ring-ftvgrey cursor-pointer tabletmd:w-7/12 mobilelg:w-4/12 w-7/12 mt-5 text-lg uppercase">
+              className="text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center bg-ftvblack hover:bg-transparent hover:ring-1 hover:ring-ftvblack hover:text-ftvblack focus:ring-ftvgrey cursor-pointer tabletmd:w-7/12 mobilelg:w-4/12 w-7/12 mt-5 text-lg uppercase">
               Read more
             </button>
           </div>
@@ -210,7 +210,7 @@ const Landing = () => {
           </h1>
         </div>
       </section>
-      <section className=" mobilelg:min-h-[300px] mobilelg:py-15 py-15 xl:px-10 lg:px-8 md:px-6 px-4  dark:bg-ftvoffwhite bg-ftvoffwhite flex justify-center items-center">
+      <section className=" mobilelg:min-h-[300px] mobilelg:py-15 py-15 xl:px-10 lg:px-8 md:px-6 px-4  bg-ftvoffwhite bg-ftvoffwhite flex justify-center items-center">
         <div className="flex flex-wrap justify-center xl:gap-10 gap-5 mobilelg:p-8 p-0 w-full">
           <div className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3 ">
             <h3 className="text-ftvprimary font-medium mobilelg:text-xl text-lg">
@@ -379,7 +379,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className=" mobilelg:min-h-[200px] mobilelg:py-15 mobilelg:px-8 dark:bg-white bg-white flex justify-center items-center">
+      <section className=" mobilelg:min-h-[200px] mobilelg:py-15 mobilelg:px-8 bg-white bg-white flex justify-center items-center">
         <div className="flex flex-col  justify-center items-center space-y-4 mobilesm:p-8 p-4 ">
           <h1 className="text-ftvblack font-medium mobilelg:text-3xl text-2xl">
             Contact us
@@ -391,19 +391,19 @@ const Landing = () => {
           </p>
         </div>
       </section>
-      <section className=" mobilelg:min-h-[300px] py-15 mobilesm:px-8 px-4 dark:bg-white bg-white flex justify-center items-center cta">
+      <section className=" mobilelg:min-h-[300px] py-15 mobilesm:px-8 px-4 bg-white bg-white flex justify-center items-center cta">
         <div className="flex  w-full justify-center items-center ">
           <button
             onClick={() => {
               user?.token ? navigate("/dashboard") : navigate("/register");
             }}
             type="button"
-            className="text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium  py-3 px-5 text-center dark:bg-ftvblack dark:hover:bg-transparent dark:hover:ring-1 dark:hover:ring-ftvblack dark:hover:text-ftvblack dark:focus:ring-ftvgrey cursor-pointer tabletmd:w-3/12 mobilelg:w-5/12 mobilemd:w-8/12 w-10/12 mt-5 text-lg capitalize rounded-full">
+            className="text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium  py-3 px-5 text-center bg-ftvblack hover:bg-transparent hover:ring-1 hover:ring-ftvblack hover:text-ftvblack focus:ring-ftvgrey cursor-pointer tabletmd:w-3/12 mobilelg:w-5/12 mobilemd:w-8/12 w-10/12 mt-5 text-lg capitalize rounded-full">
             Reach out today
           </button>
         </div>
       </section>
-      <footer className="bg-ftvsecondary antialiased dark:bg-ftvsecondary">
+      <footer className="bg-ftvsecondary antialiased bg-ftvsecondary">
         <div className="mx-auto  mobilesm:p-8 p-4">
           <div className="flex justify-between items-center py-8 mobilelg:flex-nowrap flex-wrap gap-y-10">
             <div className="tabletmd:w-7/12 mobilelg:w-5/12 w-full ">
@@ -453,8 +453,8 @@ const Landing = () => {
 
           <div className="">
             <div className="gap-4 space-y-5 xl:flex xl:items-center xl:justify-between xl:space-y-0">
-              <ul className="flex flex-wrap items-center gap-4 text-sm text-gray-900 dark:text-white xl:justify-center plusjakartasans">
-                <li className="text-sm text-ftvwine-25 dark:text-ftvwine-25">
+              <ul className="flex flex-wrap items-center gap-4 text-sm text-gray-900 text-white xl:justify-center plusjakartasans">
+                <li className="text-sm text-ftvwine-25 text-ftvwine-25">
                   © 2025{" "}
                   <a href="#" className="hover:underline plusjarkatasans">
                     Fasttrack Virtuals

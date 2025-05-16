@@ -159,13 +159,13 @@ const SelectRequiredService = () => {
                   <div className="mobilelg:w-6/12 w-full">
                     <label
                       htmlFor="industry"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                      className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                       Job Type
                     </label>
 
                     <select
                       id="industry"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200"
                       onChange={(e) => {setJobType(e.target.value)}}
                       >
                       <option value="AUT" selected disabled>
@@ -183,13 +183,13 @@ const SelectRequiredService = () => {
                   <div className="w-full">
                     <label
                       htmlFor="industry"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                      className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                       Preferred Timezone
                     </label>
 
                     <select
                       id="company_size"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none dark:bg-ftvwine-25 focus:bg-ftvgrey-25 dark:border-ftvgrey-200  dark:placeholder-gray-400 dark:text-ftvblack-300 dark:focus:ring-ftvwine-300 dark:focus:border-ftvwine-200 "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200 "
                       onChange={(e) => {setSelectedTimeZone(e.target.value)}}
                       >
                       <option value="AUT" selected disabled>
@@ -208,7 +208,7 @@ const SelectRequiredService = () => {
                 <div className="w-full">
                   <label
                     htmlFor="industry"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Preferred Experience Level
                   </label>
 
@@ -245,7 +245,7 @@ const SelectRequiredService = () => {
                 {/* <div className="w-full">
                   <label
                     htmlFor="industry"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Required Skills(8 max)
                   </label>
 
@@ -280,7 +280,7 @@ const SelectRequiredService = () => {
                 <div className="w-full">
                   <label
                     htmlFor="industry"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-ftvblack-400">
+                    className="block mb-2 text-sm font-medium text-gray-900 text-ftvblack-400">
                     Budget Range (in USD)
                   </label>
 
@@ -333,7 +333,7 @@ const SelectRequiredService = () => {
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
                     <Link to={"/select-service?hireId="+hireId}
                       type="button"
-                      className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-ftvsecondary  dark:hover:bg-[#DBDBDB] dark:focus:ring-ftvgrey cursor-pointer">
+                      className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  bg-ftvsecondary  hover:bg-[#DBDBDB] focus:ring-ftvgrey cursor-pointer">
                       
                       <span className="fa fa-arrow-left" ></span>
                       
@@ -341,7 +341,7 @@ const SelectRequiredService = () => {
                     <button
                       onClick={validateForm}
                       type="button"
-                      className="xl:w-9/12 tabletlg:w-8/12 w-9/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center dark:bg-ftvblack  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer plusjakartasans">
+                      className="xl:w-9/12 tabletlg:w-8/12 w-9/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center bg-ftvblack  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer plusjakartasans">
                       Next: Book a call
                     </button>
                   </div>

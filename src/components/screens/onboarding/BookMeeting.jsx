@@ -66,14 +66,14 @@ const BookMeeting = () => {
                   <button
                     // onClick={validateSignupForm}
                     type="button"
-                    className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  dark:bg-[#DBDBDB]  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer">
+                    className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  bg-[#DBDBDB]  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer">
                     <span className="fa fa-arrow-left"></span>
                   </button>
                   <button
                     // onClick={validateSignupForm}
                     type="button"
                     onClick={() => navigate("/completed")}
-                    className="xl:w-6/12 tabletlg:w-8/12 mobilelg:w-9/12 w-7/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center dark:bg-ftvblack  dark:hover:bg-ftvsecondary dark:focus:ring-ftvgrey cursor-pointer plusjakartasans">
+                    className="xl:w-6/12 tabletlg:w-8/12 mobilelg:w-9/12 w-7/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center bg-ftvblack  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer plusjakartasans">
                     Proceed to Dashboard
                   </button>
                 </div>

@@ -32,7 +32,7 @@ const DashboardSidebar = () => {
           id="default-sidebar"
           className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0 pt-0"
           aria-label="Sidenav">
-          <div className="overflow-y-auto py-5  h-full bg-white  dark:bg-ftvwine-50 dark:border-gray-700">
+          <div className="overflow-y-auto py-5  h-full bg-white  bg-ftvwine-50 border-gray-700">
             <Link to ="/" >
               <img
                 src="/fasttrack-logo.svg"
@@ -46,7 +46,7 @@ const DashboardSidebar = () => {
                 <li className="hover:bg-[#DAD9FF] py-2 px-6" key={index}>
                   <a
                     href="#"
-                    className="flex items-center p-2 text-base font-normal text-ftvblack rounded-lg dark:text-ftvwine-400 ">
+                    className="flex items-center p-2 text-base font-normal text-ftvblack rounded-lg text-ftvwine-400 ">
                     <img src={`${navlink.navIcon}`} alt="" />
                     <span className="ml-3  ">{navlink.navTitle}</span>
                   </a>
@@ -54,10 +54,10 @@ const DashboardSidebar = () => {
               ))}
             </ul>
           </div>
-          <div className="hidden absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-ftvsecondary dark:bg-ftvwine-400 z-20  dark:border-gray-700">
+          <div className="hidden absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-ftvsecondary bg-ftvwine-400 z-20  border-gray-700">
             <a
               href="#"
-              className="inline-flex justify-center p-2 text-white rounded cursor-pointer dark:text-ftvwine-25  dark:hover:text-white ">
+              className="inline-flex justify-center p-2 text-white rounded cursor-pointer text-ftvwine-25  hover:text-white ">
               <svg
                 aria-hidden="true"
                 className="w-6 h-6"
@@ -71,7 +71,7 @@ const DashboardSidebar = () => {
             <button
               type="button"
               data-dropdown-toggle="language-dropdown"
-              className="inline-flex justify-center p-2 text-white rounded cursor-pointer dark:hover:text-white dark:text-ftvwine-25 ">
+              className="inline-flex justify-center p-2 text-white rounded cursor-pointer hover:text-white text-ftvwine-25 ">
               <svg
                 aria-hidden="true"
                 className="h-5 w-5 rounded-full mt-0.5"
@@ -112,13 +112,13 @@ const DashboardSidebar = () => {
             </button>
             {/* <!-- Dropdown --> */}
             <div
-              className="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-white"
+              className="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow bg-white"
               id="language-dropdown">
               <ul className="py-1" role="none">
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-ftvwine-500 dark:hover:bg-ftvwine-100"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-white text-ftvwine-500 hover:bg-ftvwine-100"
                     role="menuitem">
                     <div className="inline-flex items-center">
                       <svg
@@ -159,7 +159,7 @@ const DashboardSidebar = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-ftvwine-500 dark:hover:text-white dark:hover:bg-ftvwine-100"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 text-ftvwine-500 hover:text-white hover:bg-ftvwine-100"
                     role="menuitem">
                     <div className="inline-flex items-center">
                       <svg
@@ -179,7 +179,7 @@ const DashboardSidebar = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:text-ftvwine-500 dark:hover:text-white dark:hover:bg-ftvwine-100"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 text-ftvwine-500 hover:text-white hover:bg-ftvwine-100"
                     role="menuitem">
                     <div className="inline-flex items-center">
                       <svg
@@ -201,7 +201,7 @@ const DashboardSidebar = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:text-white dark:text-ftvwine-500 dark:hover:bg-ftvwine-100"
+                    className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 hover:text-white text-ftvwine-500 hover:bg-ftvwine-100"
                     role="menuitem">
                     <div className="inline-flex items-center">
                       <svg
