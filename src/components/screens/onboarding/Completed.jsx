@@ -31,17 +31,17 @@ const Completed = () => {
                 />
               </div>
               <div className="flex justify-center items-center gap-y-5 w-full mt-6 space-x-3">
-                <button
+                {/* <button
                   onClick={() => navigate("/")}
                   type="button"
                   className="h-12 text-ftvblack flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full py-2 mobilesm:text-sm text-xs mobilesm:px-5  bg-[#DBDBDB]  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer tabletlg:w-3/12 tabletmd:w-4/12 mobilemd:w-5/12 w-6/12">
                   Return Home
-                </button>
+                </button> */}
                 <button
-                  onClick={() => navigate("/dashboard")}
+                  onClick={() => navigate("/")}
                   type="button"
                   className="tabletlg:w-3/12 tabletmd:w-4/12 mobilemd:w-5/12 w-6/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full mobilesm:text-sm text-xs mobilesm:px-5 py-2 text-center bg-ftvblack  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer plusjakartasans">
-                  Go to Dashboard
+                  Return Home{/* Go to Dashboard */}
                 </button>
               </div>
             </div>

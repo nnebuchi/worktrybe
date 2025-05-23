@@ -60,6 +60,10 @@ input {
   gap: 1rem;
 }
 
+.navlink {
+  cursor: pointer;
+}
+
 .partners img {
   width: 150px;
   height: 80px;
@@ -146,5 +150,40 @@ table::-webkit-scrollbar-thumb {
 
 
 .hero-service{
-  cursor:"pointer";
+  cursor:pointer!important;
+}
+
+.service-holder{
+  margin-left: -30px;
+}
+
+.hero-service img{
+  height: 30px!important;
+}
+
+.service-title{
+  font-size: 20px!important;
+}
+
+@media screen and (max-width: 640px) {
+  .hero-service img{
+    height: 20px!important;
+  }
+
+  .service-title{
+    font-size:12px!important;
+  }
+
+  .service-holder{
+    margin-left: -20px;
+  }
+  
+}
+
+@media screen and (max-width: 375px) {
+  
+  .service-holder{
+    margin-left: -10px;
+  }
+  
 }

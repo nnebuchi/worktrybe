@@ -74,7 +74,7 @@ const BookMeeting = () => {
                     type="button"
                     onClick={() => navigate("/completed")}
                     className="xl:w-6/12 tabletlg:w-8/12 mobilelg:w-9/12 w-7/12 h-12 text-white bg-ftvwine-500  hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full text-sm px-5 py-2 text-center bg-ftvblack  hover:bg-ftvsecondary focus:ring-ftvgrey cursor-pointer plusjakartasans">
-                    Proceed to Dashboard
+                    Finalise
                   </button>
                 </div>
               </div>

@@ -1,11 +1,24 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef  } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
+import { ScrollContext } from "../contexts/ScrollContext";
+
+import LoadingButton from "./UI/LoadingButton";
+
 const Navbar = ({setTriggerUserTypeModal}) => {
-  const { user } = useContext(UserContext);
+  const { user, signUp } = useContext(UserContext);
+  
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [isAnimatingOut, setIsAnimatingOut] = useState(false);
+
+  const scrollRefs = useContext(ScrollContext);
+
+  const handleScroll = (section) => {
+    scrollRefs[section]?.current?.scrollIntoView({ behavior: 'smooth' });
+    setShowMobileMenu(false)
+  };
 
   useEffect(() => {
     if (!showMobileMenu) {
@@ -51,41 +64,37 @@ const Navbar = ({setTriggerUserTypeModal}) => {
                 </div>
                 <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium  rounded-lg bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0  md:bg-transparent  uppercase space-y-6 z-30 ">
                   <li>
-                    <a
-                      href="#"
-                      className="block py-2 px-3 text-ftvblack rounded-sm md:bg-transparent md:text-ftvblue-700 md:p-0 md:text-ftvprimary"
-                      aria-current="page">
-                      Jobs
-                    </a>
+                    <span
+                      onClick={() => handleScroll('why')}
+                      className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink"
+                      aria-current="page"
+                      >
+                      Why Fasttrack ?
+                    </span>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <span
+                      onClick={() => handleScroll('services')}
                       className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink">
                       Services
-                    </a>
+                    </span>
                   </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink">
-                      Pricing
-                    </a>
-                  </li>
+                  
                 </ul>
                 {user ? (
                   <Link
-                    to={"/dashboard"}
-                    className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
-                    Dashboard
-                  </Link>
-                ) : (
-                  <button
-                    onClick={() => setTriggerUserTypeModal(true)}
-                    // to={"/register"}
+                    to={"/company-info"}
                     className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
                     Get started
-                  </button>
+                  </Link>
+                ) : (
+                  <LoadingButton
+                    onClick={signUp} 
+                    classes={"text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30"}
+                    >
+                      Get started
+                  </LoadingButton>
+                 
                 )}
 
                 <a
@@ -101,42 +110,38 @@ const Navbar = ({setTriggerUserTypeModal}) => {
             ) : null}
             {user ? (
               <Link
-                to={"/dashboard"}
-                className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30">
-                Dashboard
+                to={"/company-info"}
+                className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30 hidden md:flex ">
+                Get started
               </Link>
             ) : (
-              <button
-              onClick={() => setTriggerUserTypeModal(true)}
-                // to={"/register"}
-                className="text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30 mobilelg:inline-flex hidden">
-                Get started
-              </button>
+              <LoadingButton
+                onClick={signUp} 
+                classes={"text-white text-white hover:bg-ftvsecondary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-3 px-5 ms-7 text-center bg-ftvprimary focus:ring-ftvprimary cursor-pointer plusjakartasans uppercase z-30 mobilelg:inline-flex hidden md:flex "}
+                >
+                  Get started
+              </LoadingButton>
+              
             )}
 
             <ul className="md:flex uppercase justify-between space-x-6 hidden">
               <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3 text-ftvblack rounded-sm md:bg-transparent md:text-ftvblue-700 md:p-0 md:text-ftvprimary"
-                  aria-current="page">
-                  Jobs
-                </a>
+                <span
+                      onClick={() => handleScroll('why')}
+                      className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink"
+                      aria-current="page"
+                      >
+                      Why Fasttrack ?
+                    </span>
               </li>
               <li>
-                <a
-                  href="#"
+                <span
+                  onClick={() => handleScroll('services')}
                   className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink">
                   Services
-                </a>
+                </span>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 px-3  rounded-sm hover:bg-ftvgrey-100 md:hover:bg-transparent md:hover:text-ftvprimary md:p-0 md:hover:text-ftvwine-500 text-ftvblack-300 hover:bg-ftvgrey-700 hover:text-ftvwine-25 md:hover:bg-transparent navlink">
-                  Pricing
-                </a>
-              </li>
+              
             </ul>
 
             <button
@@ -164,29 +169,7 @@ const Navbar = ({setTriggerUserTypeModal}) => {
               </svg>
             </button>
 
-            {/* <form className="flex items-center max-w-sm mx-auto me-3 bg-grey rounded">
-              <label htmlFor="simple-search" className="sr-only">
-                Search
-              </label>
-              <div className="relative w-full">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <span className="fa fa-user-plus text-ftvblack-300"></span>
-                </div>
-                <input
-                  type="text"
-                  id="simple-search"
-                  className="bg-grey text-ftvgrey-500  text-ftvgrey-500 text-sm rounded-lg focus:ring-ftvblack-500  focus:border-ftvblack-300 block w-full ps-10 p-2.5  bg-ftvgrey focus:bg-ftvgrey-100 focus:ring-1  outline-none"
-                  placeholder="Search virtual talents..."
-                  required
-                />
-                <button
-                  type="submit"
-                  className="absolute cursor-pointer inset-y-0 end-4">
-                  <span className="fa fa-search text-ftvblack-300"></span>
-                  <span className="sr-only">Search</span>
-                </button>
-              </div>
-            </form> */}
+           
           </div>
         </div>
       </nav>

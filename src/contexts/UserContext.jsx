@@ -3,6 +3,8 @@
 import { createContext, useState, useEffect } from 'react';
 import { getUserProfile, logout } from '../services/api';
 import { toast } from 'react-toastify';
+import { registerUser } from '../services/api';
+import {getRandomEmail, generatePassword} from '../utils/generic';
 
 // Create UserContext
 export const UserContext = createContext();
@@ -42,15 +44,32 @@ export const UserProvider = ({ children }) => {
     }
   }
 
+
+  const signUp = async () => {
+      const email = await getRandomEmail();
+      const password = await generatePassword();
+      const reg = await registerUser(email, password);
+      if (reg?.status === "success") {
+        toast.success(reg?.message);
+        localStorage.setItem("fasttrack_user", JSON.stringify(reg?.data));
+        window.location.href = "/company-info";
+      } else {
+        if (reg.error) {
+          console.log(reg.error);
+          toast.error("Something went wrong");
+        }
+      }
+  };
+
   // Fetch user data only once when the provider is mounted
   useEffect(() => {
     if(user?.token){
         fetchUserData(user.token);
     }
-  }, []);  // Empty array ensures this only runs on mount
+  }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser, fetching, fetchUserData, signOut }}>
+    <UserContext.Provider value={{ user, setUser, fetching, fetchUserData, signOut, signUp }}>
       {children}
     </UserContext.Provider>
   );

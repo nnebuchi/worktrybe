@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import ValidationError from "../../UI/ValidaionError";
 import { toast } from "react-toastify";
@@ -178,7 +178,7 @@ const EmployerCompanyInfo = () => {
           </div>
           <div className="xl:w-6/12 lg:w-7/12 mobilelandscape:w-7/12 mobilelg:w-11/12 w-full bg-white xl:px-8 px-4  ">
             <div className="mobilesm:p-6 p-0    w-full">
-              <img src="/fasttrack-logo.svg" alt="" className="mb-10 " />
+              <Link to="/"><img src="/fasttrack-logo.svg" alt="" className="mb-10 " /></Link>
               <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
                 Company Information
               </h1>
@@ -368,7 +368,7 @@ const EmployerCompanyInfo = () => {
                       onChange={(e) => {
                         updateOrganization('contact_email', e.target.value);
                       }}
-                      defaultValue={organization.contact_email || user.email}
+                      defaultValue={organization.contact_email || ""}
                     />
                     <ValidationError
                       validationErrors={validationErrors}
