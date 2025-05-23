@@ -158,11 +158,6 @@ const handleNext = async () => {
     handleChange("resume", e.target.files[0]);
   };
 
-  const handleSubmit = () => {
-    console.log("Submitting", formData);
-    // submit logic here
-  };
-
   const handleBack = () => {
     if (step > 1) {
       setStep((s) => s - 1);

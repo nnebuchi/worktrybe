@@ -17,12 +17,13 @@ const SelectRequiredService = () => {
   const [jobType, setJobType] = useState(null);
   const [selectedTimeZone, setSelectedTimeZone] = useState(null);
 
-  const [experienceLevels, setExperienceLevels] = useState([
+  const experienceLevels = [
     { id: 1, label: "Beginner", value: 0 },
     { id: 2, label: "Intermediate", value: 50 },
     { id: 3, label: "Senior", value: 75 },
     { id: 4, label: "Expert", value: 100 },
-  ]);
+  ];
+  
   const budgetLevels =[
     { id: 1, label: "0", value: 0 },
     { id: 2, label: "50-100", value: "50-100" },
@@ -33,29 +34,6 @@ const SelectRequiredService = () => {
     { id: 4, label: "2000-5000", value: "2000-5000" },
   ];
 
-  const [tags, setTags] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-  
-  
-
-  const handleInputChange = (event) => {
-    const value = event.target.value.replace(/,/g, "");
-    setInputValue(value);
-  };
-
-  const handleKeyDown = (event) => {
-    if (event.key === "," || event.key === " ") {
-      const newTag = inputValue.trim();
-      if (newTag && tags.length < 8) {
-        setTags([...tags, newTag]);
-        setInputValue("");
-      }
-    }
-  };
-
-  const handleRemoveTag = (index) => {
-    setTags(tags.filter((tag, i) => i !== index));
-  };
 
   const handleSliderChange = (event) => {
     const value = parseInt(event.target.value);

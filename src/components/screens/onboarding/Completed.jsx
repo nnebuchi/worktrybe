@@ -17,12 +17,10 @@ const Completed = () => {
               />
               <div className="w-full">
                 <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-4xl mb-3">
-                  You're All Set! <br /> Let’s Find Your Perfect VA 🎯
+                  {"You're All Set!"} <br /> {"Let’s Find Your Perfect VA 🎯"}
                 </h1>
                 <p className="mobilelg:text-base text-sm text-text-center font-normal text-[#3B4752] text-[#3B4752] mx-auto tabletlg:w-7/12 w-full ">
-                  You've successfully set up your employer profile. Our team
-                  will review your requirements, and you'll be matched with top
-                  VAs shortly
+                  {"You've successfully set up your employer profile. Our team will review your requirements, and you'll be matched with top  VAs shortly"}
                 </p>
               </div>
               <div className="tabletlg:w-7/12 w-full mt-4">

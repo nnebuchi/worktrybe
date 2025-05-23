@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { BrowserRouter, Route, Routes, Navigate, useLocation   } from "react-router-dom";
 import Landing from "./pages/Landing";
 import "./App.css";
@@ -36,7 +37,6 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/successful" element={<AlertModal />} />
-          {/* <ProtectedRoute path="/protected" component={ProtectedComponent} /> */}
           <Route path="/company-info" element={<ProtectedRoute component={EmployerCompanyInfo} />} />
           <Route path="/client-profile-setup" element={<ProtectedRoute component={TalentOnboarding} />} />
           <Route path="/select-service" element={<ProtectedRoute component={SelectRequiredService} />} />

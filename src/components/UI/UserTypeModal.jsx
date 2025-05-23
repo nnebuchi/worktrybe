@@ -3,7 +3,7 @@ import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
 
-export default function UserTypeModal({ open, onClose, onSelect }) {
+export default function UserTypeModal({ open, onClose }) {
   return (
     <Transition appear show={open} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={onClose}>
