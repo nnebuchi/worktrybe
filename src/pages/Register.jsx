@@ -47,6 +47,7 @@ const Register = () => {
       signUp();
     }
   };
+  
   const signUp = async () => {
     const reg = await registerUser(email, password);
     if (reg?.status === "success") {
