@@ -6,11 +6,59 @@ import { Link, useNavigate } from "react-router-dom";
 import UserTypeModal from "../components/UI/UserTypeModal";
 import LoadingButton from "../components/UI/LoadingButton";
 import { ScrollContext } from "../contexts/ScrollContext";
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.3, duration: 1.5, ease: "easeOut" },
+    whileInView: { opacity: 1, y: 0 },
+  }),
+};
+const imageVariant = {
+  hidden: { opacity: 0, scale: 1.2 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1.2, ease: "easeOut" },
+    whileInView: { opacity: 1, scale: 1 },
+  },
+};
+
+const slideInLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1, ease: [0.5, 0, 0.5, 1] },
+  },
+};
+
+const slideInRight = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1.2, ease: [0.5, 0, 0.5, 1] },
+  },
+};
+
+const slideInBottom = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1.4, ease: [0.5, 0, 0.5, 1] },
+  },
+};
+const easing = [0.5, 0, 0.5, 1];
 
 const Landing = () => {
   const navigate = useNavigate();
   const { user, signUp } = useContext(UserContext);
-  
+
   const serviceRef = useRef(null);
   const whyFasttractRef = useRef(null);
 
@@ -22,84 +70,105 @@ const Landing = () => {
 
   useEffect(() => {
     console.log(triggerUserTypeModal);
-    
   }, [triggerUserTypeModal]);
   return (
     <>
       <ScrollContext.Provider value={scrollRefs}>
-
         <Navbar setTriggerUserTypeModal={setTriggerUserTypeModal} />
         <section className="bg-ftvwine-25 bg-linear-45 bg-opacity-4 from-ftvgradient-via   to-ftvgradient-to pt-40 pb-10 min-h-[600px] flex items-center flex-col  justify-center relative mobilelg:px-15 w-full ">
           <div className="absolute bg-white w-full min-h-[600px] opacity-70 z-5 inset-0"></div>
-            <div className="flex lg:justify-between justify-content-center items-center z-10 tabletmd:flex-nowrap flex-wrap mobilesm:px-8 px-4">
-              <div className="tabletmd:w-6/12 mobilelg:w-10/12 w-full mx-auto tabletmd:text-start text-center flex flex-col tabletmd:items-start items-center xl:justify-between lg:justify-evenly">
-                <h1 className="mb-4 text-3xl mobilelg:text-4xl sm:text-[40px] font-extrabold tracking-wide leading-none text-ftvblack text-ftvblack lg:text-5xl tabletmd:text-4xl xl:text-[45px] w-full">
-                  Free yourself from Administrative tasks
-                </h1>
-                <p className="mb-8 text-base mobilelg:text-lg font-normal text-ftvblack lg:text-xl   text-ftvblack">
-                  ... and boost your business growth with <br /> Fast Track, a guaranteed
-                  path to success.
-                </p>
+          <div className="flex lg:justify-between justify-content-center items-center z-10 tabletmd:flex-nowrap flex-wrap mobilesm:px-8 px-4">
+            <motion.div
+              className="tabletmd:w-6/12 mobilelg:w-10/12 w-full mx-auto tabletmd:text-start text-center flex flex-col tabletmd:items-start items-center xl:justify-between lg:justify-evenly"
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              custom={0}
+              viewport={{ once: true, amount: 0.4 }}>
+              <h1 className="mb-4 text-3xl mobilelg:text-4xl sm:text-[40px] font-extrabold tracking-wide leading-none text-ftvblack  lg:text-5xl tabletmd:text-4xl xl:text-[45px] w-full">
+                Free yourself from Administrative tasks
+              </h1>
 
-                {/* <Link to="/dashboard" className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 text-white hover:text-white hover:bg-ftvsecondary bg-ftvprimary uppercase">
+              <p className="mb-8 text-base mobilelg:text-lg font-normal text-ftvblack lg:text-xl   ">
+                ... and boost your business growth with <br /> Fast Track, a
+                guaranteed path to success.
+              </p>
+
+              {/* <Link to="/dashboard" className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 text-white hover:text-white hover:bg-ftvsecondary bg-ftvprimary uppercase">
                   Book a consultation
                 </Link> */}
-                {user ?
-                <Link 
-                  to="/company-info" 
-                  className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 text-white hover:text-white hover:bg-ftvsecondary bg-ftvprimary uppercase">
+              {user ? (
+                <Link
+                  to="/company-info"
+                  className="inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center  rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 text-white hover:text-white hover:bg-ftvsecondary bg-ftvprimary uppercase">
                   Book a consultation
                 </Link>
-                :
-
+              ) : (
                 <LoadingButton
-                  onClick={signUp} 
-                  classes={"inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 text-white hover:text-white hover:bg-ftvsecondary bg-ftvprimary uppercase"}
+                  onClick={signUp}
+                  classes={
+                    "inline-flex justify-center items-center py-3 px-5 text-base font-normal text-center text-white rounded-lg border border-ftvwine-300 hover:bg-ftvwine-100 focus:ring-2 focus:ring-ftvwine-100 text-white hover:text-white hover:bg-ftvsecondary bg-ftvprimary uppercase"
+                  }
                   // children=
-                  >
+                >
                   {"Book a consultation"}
                 </LoadingButton>
-                  
-                }
-              </div>
-              <div className="tabletmd:w-6/12 w-full mt-5 md-mt-0">
-                <div className="relative inline-block rounded-xl">
-                  <div className="w-full overflow-hidden rounded-xl">
-                      <img
-                        src="/hero-img.jpg" // Update this path
-                        alt="Team working"
-                        className="w-full h-auto rounded object-cover transform scale-150"
-                        // style={{objectFit:"200%"}}
-                      />
+              )}
+            </motion.div>
+            <motion.div
+              className="tabletmd:w-6/12 w-full mt-5 md-mt-0"
+              initial="hidden"
+              animate="visible">
+              <div className="relative inline-block rounded-xl">
+                <div className="w-full overflow-hidden rounded-xl">
+                  <motion.img
+                    src="/hero-img.jpg" // Update this path
+                    alt="Team working"
+                    className="w-full h-auto rounded object-cover transform scale-150"
+                    variants={imageVariant}
+                    viewport={{ once: true, amount: 0.4 }}
 
-                  </div>
-                  
-                  
-                  <div className="absolute left-0 flex flex-col gap-4 bottom-4 service-holder">
-                    <div className="flex items-center gap-2 bg-ftvprimary text-white font-medium  md:px-4 md:py-3 px-2 py-1  rounded-lg shadow-lg hero-service">
-                      <span className=""><img src="/icons/customer-service.svg" alt="" /></span>
-                      <span className="service-title">Customer Support</span>
-                    </div>
-
-                    <div className="flex items-center gap-2 bg-gray-900 text-white font-medium md:px-4 md:py-3 px-2 py-1 rounded-lg shadow-lg hero-service ms-4">
-                      <span className=""><img src="/icons/task.svg" alt="" /></span>
-                      <span className="service-title">Project Management</span>
-                    </div>
-
-                    <div className="flex items-center gap-2 bg-ftvsecondary text-white font-medium md:px-4 md:py-3 px-2 py-1 rounded-lg shadow-lg hero-service">
-                      <span className=""><img src="/icons/money-bag.svg" alt="" /></span>
-                      <span className="service-title">Finance Management</span>
-                    </div>
-                  </div>
+                    // style={{objectFit:"200%"}}
+                  />
                 </div>
 
-                {/* <img
+                <div className="absolute left-0 flex flex-col gap-4 bottom-4 service-holder">
+                  <motion.div
+                    className="flex items-center gap-2 bg-ftvprimary text-white font-medium  md:px-4 md:py-3 px-2 py-1  rounded-lg shadow-lg hero-service hover:scale-105 transition ease-in-out duration-300"
+                    variants={slideInRight}>
+                    <span className="">
+                      <img src="/icons/customer-service.svg" alt="" />
+                    </span>
+                    <span className="service-title">Customer Support</span>
+                  </motion.div>
+
+                  <motion.div
+                    className="flex items-center gap-2 bg-gray-900 text-white font-medium md:px-4 md:py-3 px-2 py-1 rounded-lg shadow-lg hero-service ms-4 hover:scale-105 transition ease-in-out duration-300"
+                    variants={slideInLeft}>
+                    <span className="">
+                      <img src="/icons/task.svg" alt="" />
+                    </span>
+                    <span className="service-title">Project Management</span>
+                  </motion.div>
+
+                  <motion.div
+                    className="flex items-center gap-2 bg-ftvsecondary text-white font-medium md:px-4 md:py-3 px-2 py-1 rounded-lg shadow-lg hero-service hover:scale-105 transition ease-in-out duration-300"
+                    variants={slideInBottom}>
+                    <span className="">
+                      <img src="/icons/money-bag.svg" alt="" />
+                    </span>
+                    <span className="service-title">Finance Management</span>
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* <img
                   src="/hero-img.png"
                   alt=""
                   className="w-full sm:min-h-[450px] h-fit rounded object-cover"
                 /> */}
-              </div>
-            </div>
+            </motion.div>
+          </div>
           {/* <div className="px-4 mx-auto text-center md:max-w-screen-md lg:max-w-screen-lg lg:px-36 py-5 z-10">
             <div className="flex flex-wrap justify-center items-center mt-8 text-gray-500 sm:justify-between partners">
               <a href="#" className="mr-5 mb-5 lg:mb-0  hover:text-gray-400">
@@ -119,24 +188,34 @@ const Landing = () => {
           </div> */}
         </section>
 
-        <section className="bg-white bg-white flex justify-center items-center min-h-[600px] mobilelg:px-8 mobilelg:py-15 py-8">
+        <section className="bg-white  flex justify-center items-center min-h-[600px] mobilelg:px-8 mobilelg:py-15 py-8">
           <div className="flex justify-between items-center mobilesm:p-8 p-4 gap-10 tabletmd:flex-nowrap flex-wrap">
-            <div className=" shadow-lg rounded-lg shadow-ftvgrey-500 hover:shadow-none transition all ease-in-out 300 tabletmd:w-6/12 w-full">
+            <motion.div
+              className=" shadow-lg rounded-lg shadow-ftvgrey-500 hover:shadow-none transition all ease-in-out 300 tabletmd:w-6/12 w-full"
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, ease: easing, delay: 0.4 }}
+              viewport={{ once: true, amount: 0.5 }}>
               <img
                 className="w-full rounded-lg object-cover  "
                 src="/stressed.png"
                 alt="office content 1"
               />
-            </div>
-            <div className="tabletmd:w-6/12 w-full">
-              <h2 className="mb-4 lg:text-4xl mobilelg:text-3xl mobilemd:text-2xl text-xl font-normal text-ftvblack text-ftvblack">
+            </motion.div>
+            <motion.div
+              className="tabletmd:w-6/12 w-full"
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, ease: easing, delay: 0.4 }}
+              viewport={{ once: true, amount: 0.5 }}>
+              <h2 className="mb-4 lg:text-4xl mobilelg:text-3xl mobilemd:text-2xl text-xl font-normal  text-ftvblack">
                 The National Small Business Association (NSBA) survey found
               </h2>
 
               <ul className="list-disc ps-10 ">
                 <li className="mb-4 text-ftvgrey mobilelg:text-lg text-base plusjakartasans">
-                  82% of small business owners (including sole proprietors) worked
-                  over 40 hours per week.
+                  82% of small business owners (including sole proprietors)
+                  worked over 40 hours per week.
                 </li>
 
                 <li className="mb-4 text-ftvgrey mobilelg:text-lg text-base plusjakartasans">
@@ -158,16 +237,24 @@ const Landing = () => {
                 onClick={() => {
                   user?.token ? navigate("/company-info") : signUp();
                 }}
-                classes={"text-white bg-ftvprimary hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center bg-ftvsecondary hover:bg-ftvprimary focus:ring-ftvgrey cursor-pointer  sm:w-5/12 tabletmd:w-7/12 mobilelg:w-6/12 w-8/12 mt-5 text-lg"}
-              >
+                classes={
+                  "text-white bg-ftvprimary hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center bg-ftvsecondary hover:bg-ftvprimary focus:ring-ftvgrey cursor-pointer  sm:w-5/12 tabletmd:w-7/12 mobilelg:w-6/12 w-8/12 mt-5 text-lg"
+                }>
                 JOIN FAST TRACK
               </LoadingButton>
-            </div>
+            </motion.div>
           </div>
         </section>
-        <section className="bg-ftvpurple-100 bg-ftvpurple-100 flex flex-col justify-center items-center  min-h-[400px] mobilelg:py-15 mobilelg:px-8 " ref={whyFasttractRef}>
+        <section
+          className="bg-ftvpurple-100 flex flex-col justify-center items-center  min-h-[400px] mobilelg:py-15 mobilelg:px-8 "
+          ref={whyFasttractRef}>
           <div className="  min-h-100 w-full mx-auto flex justify-evenly items-center mobilesm:p-8 p-4 tabletmd:flex-nowrap flex-wrap gap-y-10">
-            <div className="tabletmd:w-6/12 flex-col flex lg:justify-between justify-evenly items-start mobilelg:min-h-[550px] mobilelg:gap-0 gap-5">
+            <motion.div
+              className="tabletmd:w-6/12 flex-col flex lg:justify-between justify-evenly items-start mobilelg:min-h-[550px] mobilelg:gap-0 gap-5"
+              initial={{ x: 0, y: 50, opacity: 0 }}
+              whileInView={{ x: 0, y: 0, opacity: 1 }}
+              transition={{ duration: 0.7, ease: easing, delay: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}>
               <span className=" tabletmd:w-5/12 mobilelg:w-4/12 w-7/12 bg-ftvprimary uppercase text-white text-center py-3 px-5 rounded-full">
                 key benefits
               </span>
@@ -179,19 +266,24 @@ const Landing = () => {
                 alt=""
                 className="mobilelg:w-10/12 w-full h-fit rounded-lg"
               />
-            
 
               <LoadingButton
                 onClick={() => {
                   user?.token ? navigate("/company-info") : signUp();
                 }}
-                classes={"text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center bg-ftvblack hover:bg-transparent hover:ring-1 hover:ring-ftvblack hover:text-ftvblack focus:ring-ftvgrey cursor-pointer tabletmd:w-7/12 mobilelg:w-4/12 w-7/12 mt-5 text-lg uppercase"}
-              >
+                classes={
+                  "text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-lg py-3 px-5 text-center bg-ftvblack hover:bg-transparent hover:ring-1 hover:ring-ftvblack hover:text-ftvblack focus:ring-ftvgrey cursor-pointer tabletmd:w-7/12 mobilelg:w-4/12 w-7/12 mt-5 text-lg uppercase"
+                }>
                 Get Started
               </LoadingButton>
-            </div>
+            </motion.div>
             <div className="tabletmd:w-6/12 w-full border-red-500 space-y-7">
-              <div className="flex space-x-3">
+              <motion.div
+                className="flex space-x-3"
+                initial={{ x: 0, y: 50, opacity: 0 }}
+                whileInView={{ x: 0, y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, ease: easing, delay: 0.5 }}
+                viewport={{ once: true, amount: 0.5 }}>
                 <span className="bg-ftvsecondary text-white text-center flex justify-center items-center w-11 font-bold text-lg h-9 rounded-full">
                   1
                 </span>
@@ -200,12 +292,17 @@ const Landing = () => {
                     Financial Management
                   </h3>
                   <p className="text-[#030303] mobilelg:text-base text-sm plusjakartasans">
-                    Stay on top of your budget with real-time tracking and expert
-                    insights. Let’s optimize your expenses effortlessly.
+                    Stay on top of your budget with real-time tracking and
+                    expert insights. Let’s optimize your expenses effortlessly.
                   </p>
                 </div>
-              </div>
-              <div className="flex space-x-3">
+              </motion.div>
+              <motion.div
+                className="flex space-x-3"
+                initial={{ x: 0, y: 50, opacity: 0 }}
+                whileInView={{ x: 0, y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, ease: easing, delay: 0.8 }}
+                viewport={{ once: true, amount: 0.5 }}>
                 <span className="bg-ftvsecondary text-white text-center flex justify-center items-center w-11 font-bold text-lg h-9 rounded-full">
                   2
                 </span>
@@ -218,8 +315,13 @@ const Landing = () => {
                     strategies. We handle the content, you enjoy the results.
                   </p>
                 </div>
-              </div>
-              <div className="flex space-x-3">
+              </motion.div>
+              <motion.div
+                className="flex space-x-3"
+                initial={{ x: 0, y: 50, opacity: 0 }}
+                whileInView={{ x: 0, y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, ease: easing, delay: 1.1 }}
+                viewport={{ once: true, amount: 0.5 }}>
                 <span className="bg-ftvsecondary text-white text-center flex justify-center items-center w-11 font-bold text-lg h-9 rounded-full">
                   3
                 </span>
@@ -232,8 +334,13 @@ const Landing = () => {
                     task coordination. Efficiency starts here.
                   </p>
                 </div>
-              </div>
-              <div className="flex space-x-3">
+              </motion.div>
+              <motion.div
+                className="flex space-x-3"
+                initial={{ x: 0, y: 50, opacity: 0 }}
+                whileInView={{ x: 0, y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, ease: easing, delay: 1.4 }}
+                viewport={{ once: true, amount: 0.5 }}>
                 <span className="bg-ftvsecondary text-white text-center flex justify-center items-center w-11 font-bold text-lg h-9 rounded-full">
                   4
                 </span>
@@ -246,24 +353,44 @@ const Landing = () => {
                     responses, professional support, zero stress.
                   </p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        <section className="mobilelg:min-h-[300px] mobilelg:py-15 mobilelg:px-8 bg-ftvprimary-400 services" ref={serviceRef}>
-          <div className="xl:w-6/12 tabletmd:w-8/12 md:w-10/12 w-full flex-col flex justify-between items-start space-y-4 mobilesm:p-8 p-4">
+        <section
+          className="mobilelg:min-h-[300px] mobilelg:py-15 mobilelg:px-8 bg-ftvprimary-400 services"
+          ref={serviceRef}>
+          <motion.div
+            className="xl:w-6/12 tabletmd:w-8/12 md:w-10/12 w-full flex-col flex justify-between items-start space-y-4 mobilesm:p-8 p-4"
+            variants={slideInLeft}
+            initial="hidden"
+            animate="visible">
             <span className="sm:w-4/12 mobilelg:w-5/12 w-7/12  bg-white uppercase text-ftvblue font-semibold text-center py-3 px-5 rounded-full">
               Our Services
             </span>
             <h1 className="text-white mobilelg:text-3xl mobilemd:text-2xl text-xl font-medium">
               We Provide a Wide Range Of Services That Help Businesses
             </h1>
-          </div>
+          </motion.div>
         </section>
-        <section className=" mobilelg:min-h-[300px] mobilelg:py-15 py-15 xl:px-10 lg:px-8 md:px-6 px-4  bg-ftvoffwhite bg-ftvoffwhite flex justify-center items-center">
+        <section className=" mobilelg:min-h-[300px] mobilelg:py-15 py-15 xl:px-10 lg:px-8 md:px-6 px-4  bg-ftvoffwhite flex justify-center items-center">
           <div className="flex flex-wrap justify-center xl:gap-10 gap-5 mobilelg:p-8 p-0 w-full">
-            <div className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3 ">
+            <motion.div
+              className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3 "
+              initial={{ opacity: 0, y: 50, rotate: -5, scale: 0.9 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                scale: 1,
+                transition: {
+                  delay: 0.3,
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1], // smooth and elegant
+                },
+              }}
+              viewport={{ once: true, amount: 0.4 }}>
               <h3 className="text-ftvprimary font-medium mobilelg:text-xl text-lg">
                 Marketing & Social Media
               </h3>
@@ -289,8 +416,22 @@ const Landing = () => {
                   84% need help with digital marketing
                 </p>
               </div>
-            </div>
-            <div className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3">
+            </motion.div>
+            <motion.div
+              className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3"
+              initial={{ opacity: 0, y: 50, rotate: -5, scale: 0.9 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                scale: 1,
+                transition: {
+                  delay: 0.3,
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1], // smooth and elegant
+                },
+              }}
+              viewport={{ once: true, amount: 0.4 }}>
               <h3 className="text-ftvprimary font-medium mobilelg:text-xl text-lg">
                 Customer Service
               </h3>
@@ -316,8 +457,22 @@ const Landing = () => {
                   71% require assistance with online customer engagement
                 </p>
               </div>
-            </div>
-            <div className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3">
+            </motion.div>
+            <motion.div
+              className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3"
+              initial={{ opacity: 0, y: 50, rotate: -5, scale: 0.9 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                scale: 1,
+                transition: {
+                  delay: 0.3,
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1], // smooth and elegant
+                },
+              }}
+              viewport={{ once: true, amount: 0.4 }}>
               <h3 className="text-ftvprimary font-medium mobilelg:text-xl text-lg">
                 Administrative Support
               </h3>
@@ -346,8 +501,22 @@ const Landing = () => {
                   60% of owners spend too much time on administrative tasks
                 </p>
               </div>
-            </div>
-            <div className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3">
+            </motion.div>
+            <motion.div
+              className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3"
+              initial={{ opacity: 0, y: 50, rotate: -5, scale: 0.9 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                scale: 1,
+                transition: {
+                  delay: 0.3,
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1], // smooth and elegant
+                },
+              }}
+              viewport={{ once: true, amount: 0.4 }}>
               <h3 className="text-ftvprimary font-medium mobilelg:text-xl text-lg">
                 Financial Tasks
               </h3>
@@ -373,8 +542,22 @@ const Landing = () => {
                   55% handle their own bookkeeping
                 </p>
               </div>
-            </div>
-            <div className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3">
+            </motion.div>
+            <motion.div
+              className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3"
+              initial={{ opacity: 0, y: 50, rotate: -5, scale: 0.9 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                scale: 1,
+                transition: {
+                  delay: 0.3,
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1], // smooth and elegant
+                },
+              }}
+              viewport={{ once: true, amount: 0.4 }}>
               <h3 className="text-ftvprimary font-medium mobilelg:text-xl text-lg">
                 Video Editing
               </h3>
@@ -400,8 +583,22 @@ const Landing = () => {
                   55% handle their own bookkeeping
                 </p>
               </div>
-            </div>
-            <div className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3">
+            </motion.div>
+            <motion.div
+              className="mobilelandscape:w-5/12 mobilelg:w-9/12 min-h-[300px] flex flex-col justify-center w-full tabletlg:p-8 md:p-4 mobilemd:p-8 p-4 rounded-lg bg-white space-y-3"
+              initial={{ opacity: 0, y: 50, rotate: -5, scale: 0.9 }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                rotate: 0,
+                scale: 1,
+                transition: {
+                  delay: 0.3,
+                  duration: 0.7,
+                  ease: [0.22, 1, 0.36, 1], // smooth and elegant
+                },
+              }}
+              viewport={{ once: true, amount: 0.4 }}>
               <h3 className="text-ftvprimary font-medium mobilelg:text-xl text-lg">
                 Software Development
               </h3>
@@ -427,11 +624,17 @@ const Landing = () => {
                   55% handle their own bookkeeping
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
-        <section className=" mobilelg:min-h-[200px] mobilelg:py-15 mobilelg:px-8 bg-white bg-white flex justify-center items-center">
-          <div className="flex flex-col  justify-center items-center space-y-4 mobilesm:p-8 p-4 ">
+        <section className=" mobilelg:min-h-[200px] mobilelg:py-15 mobilelg:px-8 bg-white  flex justify-center items-center">
+          <motion.div
+            className="flex flex-col  justify-center items-center space-y-4 mobilesm:p-8 p-4 "
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0}
+            viewport={{ once: true, amount: 0.4 }}>
             <h1 className="text-ftvblack font-medium mobilelg:text-3xl text-2xl">
               Contact us
             </h1>
@@ -440,22 +643,25 @@ const Landing = () => {
               consultation to learn how Fatstrack Virtual can save you up to 20
               hours per week
             </p>
-          </div>
+          </motion.div>
         </section>
-        <section className=" mobilelg:min-h-[300px] py-15 mobilesm:px-8 px-4 bg-white bg-white flex justify-center items-center cta">
-          <div className="flex  w-full justify-center items-center ">
+        <motion.section
+          className=" mobilelg:min-h-[280px] py-15 mobilesm:px-8 px-4 bg-white flex justify-center items-center cta"
+          variants={imageVariant}
+          viewport={{ once: true, amount: 0.4 }}>
+          <div className="flex w-full justify-center items-center h-full">
             <LoadingButton
-                onClick={() => {
-                  user?.token ? navigate("/company-info") : signUp();
-                }}
-                classes={"text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium  py-3 px-5 text-center bg-ftvblack hover:bg-transparent hover:ring-1 hover:ring-ftvblack hover:text-ftvblack focus:ring-ftvgrey cursor-pointer tabletmd:w-3/12 mobilelg:w-5/12 mobilemd:w-8/12 w-10/12 mt-5 text-lg capitalize rounded-full"}
-              >
-                Reach out today
-              </LoadingButton>
-            
+              onClick={() => {
+                user?.token ? navigate("/company-info") : signUp();
+              }}
+              classes={
+                "text-white bg-ftvblack hover:bg-ftvsecondary focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium  py-3 px-5 text-center bg-ftvblack hover:bg-transparent hover:ring-1 hover:ring-ftvblack hover:text-ftvblack focus:ring-ftvgrey cursor-pointer tabletmd:w-3/12 mobilelg:w-5/12 mobilemd:w-8/12 w-10/12 mt-5 text-lg capitalize rounded-full"
+              }>
+              Reach out today
+            </LoadingButton>
           </div>
-        </section>
-        <footer className="bg-ftvsecondary antialiased bg-ftvsecondary">
+        </motion.section>
+        <footer className="bg-ftvsecondary antialiase">
           <div className="mx-auto  mobilesm:p-8 p-4">
             <div className="flex justify-between items-center py-8 mobilelg:flex-nowrap flex-wrap gap-y-10">
               <div className="tabletmd:w-7/12 mobilelg:w-5/12 w-full ">
@@ -534,11 +740,17 @@ const Landing = () => {
           </div>
         </footer>
 
-        {triggerUserTypeModal && <UserTypeModal open={triggerUserTypeModal} onClose={() => setTriggerUserTypeModal(false)} onSelect={(role) => {
-            setTriggerUserTypeModal(false);
-            console.log("Selected role:", role);
-            // Navigate to /register/employer or /register/talent
-          }} />}
+        {triggerUserTypeModal && (
+          <UserTypeModal
+            open={triggerUserTypeModal}
+            onClose={() => setTriggerUserTypeModal(false)}
+            onSelect={(role) => {
+              setTriggerUserTypeModal(false);
+              console.log("Selected role:", role);
+              // Navigate to /register/employer or /register/talent
+            }}
+          />
+        )}
       </ScrollContext.Provider>
     </>
   );

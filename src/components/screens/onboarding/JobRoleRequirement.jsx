@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 import { updateHire } from "../../../services/api";
 import { runValidation } from "../../../utils/buchi";
 import { UserContext } from "../../../contexts/UserContext";
-import {timezones} from "../../../utils/time";
-
+import { timezones } from "../../../utils/time";
 
 const SelectRequiredService = () => {
   const { hireId } = useParams();
@@ -23,8 +22,8 @@ const SelectRequiredService = () => {
     { id: 3, label: "Senior", value: 75 },
     { id: 4, label: "Expert", value: 100 },
   ];
-  
-  const budgetLevels =[
+
+  const budgetLevels = [
     { id: 1, label: "0", value: 0 },
     { id: 2, label: "50-100", value: "50-100" },
     { id: 3, label: "100-200", value: "100-200" },
@@ -34,28 +33,25 @@ const SelectRequiredService = () => {
     { id: 4, label: "2000-5000", value: "2000-5000" },
   ];
 
-
   const handleSliderChange = (event) => {
     const value = parseInt(event.target.value);
     console.log(value);
-    
+
     setExperienceLevel(value.toString());
   };
   const handleBudgetSliderChange = (event) => {
     const value = parseInt(event.target.value);
     console.log(value);
-    
+
     setBudgetLevel(value);
   };
-
 
   const navigate = useNavigate();
 
   const validateForm = async () => {
     const validate = await runValidation([
-      
       {
-        input: {value: jobType, field: "job_type", type: "text"},
+        input: { value: jobType, field: "job_type", type: "text" },
         rules: { required: true },
       },
       {
@@ -63,58 +59,62 @@ const SelectRequiredService = () => {
         rules: { required: true },
       },
       {
-        input: { value: experienceLevel, field: "experience_level", type: "text" },
+        input: {
+          value: experienceLevel,
+          field: "experience_level",
+          type: "text",
+        },
         rules: { required: true, min_value: 25 },
       },
       {
-        input: { value: budgetLevel*5, field: "budget", type: "text" },
-        rules: { min_value:50 },
+        input: { value: budgetLevel * 5, field: "budget", type: "text" },
+        rules: { min_value: 50 },
       },
     ]);
 
     if (validate?.status === false) {
       console.log(validate.errors);
-      
+
       setValidationErrors(validate.errors);
     } else {
-      updateHiring()
+      updateHiring();
       // profileUpdate();
     }
   };
 
-   const updateHiring = async () => {
-      const budgetConvert = {
-        "0": "0",
-        "10":"50-100",
-        "20":"100-200",
-        "30":"200+",
-        "40":"200-500",
-        "50":"500+",
-        "60":"500-1000",
-        "70":"1000+",
-        "80":"1000-2000",
-        "90":"2000+",
-        "100":"2000-5000",
-      }
-      const response = await updateHire(user?.token, {
-        job_type: jobType,
-        timezone: selectedTimeZone,
-        experience_level: experienceLevel,
-        budget: budgetConvert[budgetLevel],
-        id: hireId
-      });
-      if (response?.status === "success") {
-        toast.success(" updated successfully");
-        navigate(`/book-meeting`);
-      }else{
-        console.log(response);
-      }
+  const updateHiring = async () => {
+    const budgetConvert = {
+      0: "0",
+      10: "50-100",
+      20: "100-200",
+      30: "200+",
+      40: "200-500",
+      50: "500+",
+      60: "500-1000",
+      70: "1000+",
+      80: "1000-2000",
+      90: "2000+",
+      100: "2000-5000",
+    };
+    const response = await updateHire(user?.token, {
+      job_type: jobType,
+      timezone: selectedTimeZone,
+      experience_level: experienceLevel,
+      budget: budgetConvert[budgetLevel],
+      id: hireId,
+    });
+    if (response?.status === "success") {
+      toast.success(" updated successfully");
+      navigate(`/book-meeting`);
+    } else {
+      console.log(response);
     }
+  };
 
   return (
     <>
       <section className="mx-auto px-0 mobilelg:py-0 py-8">
-        <div className="flex items-center justify-center min-h-[680px] mobilelandscape:flex-nowrap flex-wrap">
+        <div className="flex items-start justify-center min-h-[680px] mobilelandscape:flex-nowrap flex-wrap">
           <div className="xl:w-6/12 lg:w-5/12 mobilelandscape:w-5/12 tabletmd:inline-flex hidden ">
             <img
               src="/right-column.png"
@@ -122,7 +122,7 @@ const SelectRequiredService = () => {
               className=" h-[680px] w-full tabletmd:object-none object-cover"
             />
           </div>
-          <div className="xl:w-6/12 lg:w-7/12 tabletmd:w-7/12 mobilelandscape:w-10/12 w-full bg-white xl:px-8 px-4  ">
+          <div className="xl:w-6/12 lg:w-7/12 tabletmd:w-7/12 mobilelandscape:w-10/12 w-full bg-white xl:px-8 px-4 pt-10">
             <div className="mobilesm:p-6 p-0    w-full">
               <img src="/fasttrack-logo.svg" alt="" className="mb-10 " />
               <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-3xl mb-3">
@@ -141,8 +141,9 @@ const SelectRequiredService = () => {
                     <select
                       id="industry"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200"
-                      onChange={(e) => {setJobType(e.target.value)}}
-                      >
+                      onChange={(e) => {
+                        setJobType(e.target.value);
+                      }}>
                       <option value="AUT" selected disabled>
                         Select engagement type
                       </option>
@@ -165,8 +166,9 @@ const SelectRequiredService = () => {
                     <select
                       id="company_size"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 outline-none bg-ftvwine-25 focus:bg-ftvgrey-25 border-ftvgrey-200  placeholder-gray-400 text-ftvblack-300 focus:ring-ftvwine-300 focus:border-ftvwine-200 "
-                      onChange={(e) => {setSelectedTimeZone(e.target.value)}}
-                      >
+                      onChange={(e) => {
+                        setSelectedTimeZone(e.target.value);
+                      }}>
                       <option value="AUT" selected disabled>
                         Select work time
                       </option>
@@ -175,9 +177,11 @@ const SelectRequiredService = () => {
                           {timezone}
                         </option>
                       ))}
-                      
                     </select>
-                    <ValidationError  validationErrors={validationErrors} field="timezone"/>
+                    <ValidationError
+                      validationErrors={validationErrors}
+                      field="timezone"
+                    />
                   </div>
                 </div>
                 <div className="w-full">
@@ -199,7 +203,6 @@ const SelectRequiredService = () => {
                         background: `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${experienceLevel}%, #ccc ${experienceLevel}%, #ccc 100%)`,
                       }}
                       className="w-full h-2 bg-gray-200 rounded-full appearance-none"
-
                     />
                     <div className="flex justify-between w-full mt-2">
                       {experienceLevels.map((level) => (
@@ -215,7 +218,10 @@ const SelectRequiredService = () => {
                       ))}
                     </div>
                   </div>
-                  <ValidationError validationErrors={validationErrors} field="experience_level"/>
+                  <ValidationError
+                    validationErrors={validationErrors}
+                    field="experience_level"
+                  />
                 </div>
                 {/* <div className="w-full">
                   <label
@@ -286,7 +292,10 @@ const SelectRequiredService = () => {
                       ))}
                     </div>
                   </div>
-                  <ValidationError validationErrors={validationErrors} field="budget"/>
+                  <ValidationError
+                    validationErrors={validationErrors}
+                    field="budget"
+                  />
                 </div>
 
                 <div className="flex mobilelg:justify-between justify-center mobilelg:flex-nowrap flex-wrap mobilelg:flex-row flex-row-reverse items-center gap-y-5">
@@ -306,12 +315,11 @@ const SelectRequiredService = () => {
                     </small>
                   </div>
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
-                    <Link to={"/select-service?hireId="+hireId}
+                    <Link
+                      to={"/select-service?hireId=" + hireId}
                       type="button"
                       className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  bg-ftvsecondary  hover:bg-[#DBDBDB] focus:ring-ftvgrey cursor-pointer">
-                      
-                      <span className="fa fa-arrow-left" ></span>
-                      
+                      <span className="fa fa-arrow-left"></span>
                     </Link>
                     <button
                       onClick={validateForm}

@@ -1,4 +1,4 @@
-import { Link, useNavigate, useLocation  } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../../contexts/UserContext";
 import { getServices, createHire, getHireDetail } from "../../../services/api";
@@ -8,63 +8,64 @@ const SelectRequiredService = () => {
   const { user, fetchUserData } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const searchParams  = new URLSearchParams(location.search );
-  const hireId = searchParams.get('hireId');
-  
+  const searchParams = new URLSearchParams(location.search);
+  const hireId = searchParams.get("hireId");
+
   const [isChecked, setIsChecked] = useState(0);
   const [services, setServices] = useState([]);
   const [hire, setHire] = useState(null);
-  
+
   const fetchServices = async () => {
     const response = await getServices(user?.token);
     if (response?.status === "success") {
       setServices(response?.data);
-    }else{
+    } else {
       console.log(response);
-
     }
   };
 
   const sendServiceChoice = async () => {
-    if(isChecked === 0){
-      toast.error('Please select a service');
+    if (isChecked === 0) {
+      toast.error("Please select a service");
       return;
     }
-    const response = await createHire(user?.token, {service: isChecked, hire_id: hireId});
+    const response = await createHire(user?.token, {
+      service: isChecked,
+      hire_id: hireId,
+    });
     if (response?.status === "success") {
       navigate(`/role-requirement/${response?.data?.id}?service=` + isChecked);
-    }else{
+    } else {
       console.log(response);
     }
-  }
+  };
 
+  const fetchHireDetail = async () => {
+    const response = await getHireDetail(user?.token, hireId);
+    if (response?.status === "success") {
+      setHire(response?.data);
 
-const fetchHireDetail = async () => {
-  const response = await getHireDetail(user?.token, hireId);
-  if (response?.status === "success") {
-    setHire(response?.data);
-    
-    // console.log(response);
-  }else{
-    console.log(response);
-  }
-}
+      // console.log(response);
+    } else {
+      console.log(response);
+    }
+  };
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchUserData(user?.token);
     fetchServices();
-    if(hireId){
+    if (hireId) {
       fetchHireDetail();
     }
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     setIsChecked(hire?.services_id);
   }, [hire]);
   return (
     <>
       <section className="mx-auto px-0 mobilelg:py-0 py-8">
-        <div className="flex items-center justify-center min-h-[680px] mobilelandscape:flex-nowrap flex-wrap">
+        <div className="flex items-start justify-center min-h-[680px] mobilelandscape:flex-nowrap flex-wrap">
           <div className="xl:w-6/12 lg:w-5/12 mobilelandscape:w-5/12 tabletmd:inline-flex hidden ">
             <img
               src="/right-column.png"
@@ -72,7 +73,7 @@ const fetchHireDetail = async () => {
               className=" h-[680px] w-full tabletmd:object-none object-cover"
             />
           </div>
-          <div className="xl:w-6/12 lg:w-7/12 tabletmd:w-7/12 mobilelandscape:w-10/12 w-full bg-white xl:px-8 px-4  ">
+          <div className="xl:w-6/12 lg:w-7/12 tabletmd:w-7/12 mobilelandscape:w-10/12 w-full bg-white xl:px-8 px-4 pt-10">
             <div className="mobilesm:p-6 p-0    w-full">
               <img src="/fasttrack-logo.svg" alt="" className="mb-10 " />
               <h1 className="text-2xl mobilemd:text-3xl font-bold  text-ftvblack tabletmd:text-3xl mb-3">
@@ -82,11 +83,13 @@ const fetchHireDetail = async () => {
               <form className="space-y-3 md:space-y-5 mt-4 " action="#">
                 <div className="flex flex-wrap gap-x-0 gap-y-5 justify-between max-h-[400px] overflow-y-auto p-3 ring-1 ring-gray-300 rounded-lg services-container ">
                   {services?.map((service, index) => (
-                      <div
+                    <div
                       key={index}
                       onClick={() => setIsChecked(service.id)}
                       className={`flex justify-content-between items-center mobilelg:w-[48%] w-full relative ring-1 rounded-lg ps-5 min-h-[150px] cursor-pointer ${
-                        isChecked === service.id ? "ring-ftvprimary " : "ring-gray-300 "
+                        isChecked === service.id
+                          ? "ring-ftvprimary "
+                          : "ring-gray-300 "
                       }`}>
                       <div className="space-y-2 mobilelg:w-10/12 w-full">
                         <div
@@ -102,20 +105,20 @@ const fetchHireDetail = async () => {
                           {service.description}
                         </p>
                       </div>
-                      
+
                       <input
                         id="va"
                         type="radio"
                         checked={isChecked == service.id}
                         name="service"
                         className={`outline-none absolute rounded-full border-0 top-3 ring-1 focus:border-0 bg-[#F8FAFC] right-3 ${
-                          isChecked == service.id ? "ring-ftvprimary " : "ring-gray-300"
+                          isChecked == service.id
+                            ? "ring-ftvprimary "
+                            : "ring-gray-300"
                         } `}
                       />
                     </div>
                   ))}
-                  
-                  
                 </div>
 
                 <div className="flex mobilelg:justify-between justify-center mobilelg:flex-nowrap flex-wrap mobilelg:flex-row flex-row-reverse items-center gap-y-5">
@@ -135,12 +138,15 @@ const fetchHireDetail = async () => {
                     </small>
                   </div>
                   <div className="xl:w-6/12 mobilelg:w-7/12 w-full flex space-x-3 items-center mobilelg:justify-end">
-                  <Link to={hireId ? `/company-info?hireId=${hireId}` :"/company-info"}
+                    <Link
+                      to={
+                        hireId
+                          ? `/company-info?hireId=${hireId}`
+                          : "/company-info"
+                      }
                       type="button"
                       className="w-8 h-8 text-white flex justify-center items-center  focus:ring-1 focus:outline-none focus:ring-ftvgrey font-medium rounded-full p-5  bg-ftvsecondary  hover:bg-[#DBDBDB] focus:ring-ftvgrey cursor-pointer">
-                      
                       <span className="fa fa-arrow-left"></span>
-                      
                     </Link>
                     <button
                       onClick={sendServiceChoice}
@@ -159,4 +165,4 @@ const fetchHireDetail = async () => {
   );
 };
 
-export default SelectRequiredService; 
+export default SelectRequiredService;
