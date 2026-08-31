@@ -25,7 +25,7 @@
   --breakpoint-mobilexxs: 20rem;
 }
 
-#root {
+:root {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -148,42 +148,38 @@ table::-webkit-scrollbar-thumb {
   }
 }
 
-
-.hero-service{
-  cursor:pointer!important;
+.hero-service {
+  cursor: pointer !important;
 }
 
-.service-holder{
+.service-holder {
   margin-left: -30px;
 }
 
-.hero-service img{
-  height: 30px!important;
+.hero-service img {
+  height: 30px !important;
 }
 
-.service-title{
-  font-size: 20px!important;
+.service-title {
+  font-size: 20px !important;
 }
 
 @media screen and (max-width: 640px) {
-  .hero-service img{
-    height: 20px!important;
+  .hero-service img {
+    height: 20px !important;
   }
 
-  .service-title{
-    font-size:12px!important;
+  .service-title {
+    font-size: 12px !important;
   }
 
-  .service-holder{
+  .service-holder {
     margin-left: -20px;
   }
-  
 }
 
 @media screen and (max-width: 375px) {
-  
-  .service-holder{
+  .service-holder {
     margin-left: -10px;
   }
-  
 }
